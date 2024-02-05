@@ -14,6 +14,7 @@ console.log(mainnavlink)
 for(i=0; i<mainnavlink.length; i++){
     mainnavlink[i].addEventListener("click", ()=>{
         console.log(`here is the clicked shit  ${mainnavlink[i]}   `)
+        
     })
 
 }
