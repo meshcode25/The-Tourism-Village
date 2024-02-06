@@ -1,45 +1,41 @@
 var chevron=document.getElementsByClassName("dropdown")
     
     
-var mainnavlink=document.querySelectorAll(".mainnavlink");
+var mainnavlinklist=document.getElementsByClassName("mainnavlink");
 
-
-console.log(`here is the list of the chevron  ${chevron}`)
-console.log(chevron)
-console.log( `here is the list for the mainnavlink ${ mainnavlink} `)
-console.log(mainnavlink)
-    
     
 
-for(i=0; i<mainnavlink.length; i++){
-    mainnavlink[i].addEventListener("click", ()=>{
-        console.log(`here is the clicked shit  ${mainnavlink[i]}   `)
-        
-    })
+var mainnavlink=[...mainnavlinklist];
 
-}
+mainnavlink.forEach((currentvalue, index,array)=>{
+    currentvalue.addEventListener("click", ()=>{
+     
+        console.log("lets see what these guys give out");
+        console.log(currentvalue)
+        console.log(index);
+        console.log(array)
 
-// mainnavlink[i].addEventListener("click", ()=>{   
-//     console.log("here is the i for chevron  " + i)
+        console.log(chevron)
+            
+        if(currentvalue.classList.contains("fa-rotate-180")){
+            // chevron[i].classList.remove("dropdown")
+            chevron[index].style.transition="all 1s ease"          
+            chevron[index].classList.remove("fa-rotate-180") 
 
-//     console.log("here is the i for mainnavlink + "+ i) 
+        }
+        else{
+            // chevron[i].classList.add("dropdown")
+            chevron[index].style.transition="all 1s ease"                   
+            chevron[index].classList.add("fa-rotate-180")  
 
-//     if(mainnavlink[].classList.contains("fa-rotate-180")){
-//         // chevron[i].classList.remove("dropdown")
-//         chevron[count].style.transition="all 1s ease"          
-//         chevron[count].classList.remove("fa-rotate-180") 
+        }
+            
+        })
 
-//     }
-
-//     else{
-//         // chevron[i].classList.add("dropdown")
-//         chevron[count].style.transition="all 1s ease"                   
-//         chevron[count].classList.add("fa-rotate-180")  
-
-//     }
+}, )
+  
 
 
-// })
 
     
     

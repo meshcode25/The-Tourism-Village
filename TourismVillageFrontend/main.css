@@ -2,8 +2,12 @@
     box-sizing: border-box;
 }
 
-.mainnavlink {
+/* .mainnavlink { */
     /* color:green;
     list-style: none; */
-    
+/*     
 }
+
+.mainnavlink:hover{
+    cursor:pointer;
+} */
