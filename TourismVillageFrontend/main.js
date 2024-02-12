@@ -12,21 +12,22 @@ mainnavlink.forEach((currentvalue, index,array)=>{
      
         console.log("lets see what these guys give out");
         console.log(currentvalue)
-        console.log(index);
-        console.log(array)
-
-        console.log(chevron)
+        
             
-        if(currentvalue.classList.contains("fa-rotate-180")){
+        if(chevron[index].classList.contains("fa-rotate-180")){
             // chevron[i].classList.remove("dropdown")
             chevron[index].style.transition="all 1s ease"          
             chevron[index].classList.remove("fa-rotate-180") 
+            // chevron[index].style.transform="rotate(180deg)"
+            chevron[index].style.color="green";
+
 
         }
         else{
             // chevron[i].classList.add("dropdown")
             chevron[index].style.transition="all 1s ease"                   
             chevron[index].classList.add("fa-rotate-180")  
+            chevron[index].style.color="blue";
 
         }
             

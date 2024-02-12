@@ -2,12 +2,65 @@
     box-sizing: border-box;
 }
 
-/* .mainnavlink { */
-    /* color:green;
-    list-style: none; */
-/*     
+ .mainnavlink { 
+    color:green;
+    list-style: none; 
+
 }
 
 .mainnavlink:hover{
     cursor:pointer;
-} */
+} 
+
+.navcontainer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navcontainer li{
+    list-style: none;
+    text-decoration:none;
+
+}
+.collapsecontainer ul li{
+    list-style: none;
+    text-decoration:none;
+
+}
+
+.bigcollapsediv{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navlinks{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Media Qeuries list */
+@media screen and (max-width:450px){
+
+}
+
+@media screen and ((min-width:451px) and (max-width:768px)){
+    .navcontainer{
+        display:flex;
+
+    
+    }
+}
+
+@media screen and ((min-width:769px) and (max-width:992px)){
+
+}
+
+@media screen and ((min-width:993px) and (max-width:1200px)){
+
+}
+
+@media screen and (min-width:12001px){
+
+}
+
