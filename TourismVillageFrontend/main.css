@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
  .mainnavlink { 
@@ -22,16 +24,46 @@
     text-decoration:none;
 
 }
+.collapsecontainer ul li{
+    list-style: none;
+    text-decoration:none;
+
+}
+
 .linebreak{
-    width:90%;
-    height:2px;
+    width:100%;
+    height:1px;
     background-color:black;
+    opacity:0.5;
 }
 .bigcollapseheader{
     font-size:medium;
     font-weight:bolder;
 }
+.bigcollapsediv{
+    display:flex;
+}
+.bigcollapsediv{
+    display:flex;
+}
+.collapsediv li a{
+    text-decoration:none;
+    color:blanchedalmond;
+}
+.bigcollapsecolumn li a{
+    text-decoration:none;
+    color:black;
+}
+.supportlinkscontainer ul li a{
+    list-style:none;
+    text-decoration:none;
 
+}
+.supportlinkscontainer ul li ul li a{
+    list-style:none;
+    text-decoration:none;
+    
+}
 
 /* Media Qeuries list */
 @media screen and (max-width:450px){
@@ -39,7 +71,7 @@
 }
 
 @media screen and ((min-width:451px) and (max-width:768px)){
-
+    
 }
 
 @media screen and ((min-width:769px) and (max-width:992px)){
@@ -50,74 +82,188 @@
 }
 
 @media screen and ((min-width:993px) and (max-width:1200px)){
-
+   
 }
 
 @media screen and (min-width:1201px){
 
-    .body{
-        background-color: blue;
-    }
+    nav{
+        height:80px;
+        width:100%;
+        position:fixed;
+        background-color:whitesmoke;
+    }   
     .navcontainer{
+        /* background-color:brown; */
+        width:95%;
+        height:80px;
+        margin:0 auto;
         display:flex;
         justify-content: space-between;
         align-items: center;
     }
-    
-    
-    .bigcollapsediv{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
+        
     .navlinks{
+        width:110%;
+        height:70px;
         display:flex;
         justify-content: space-between;
         align-items: center;
     }
+ 
     .collapsediv{
-        display:none;
+        position:absolute;
+        top:60px;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        width:250px;
+        border-radius:7.5px;
+
+    }
+    .bigcollapsediv{
+        position:absolute;
+        top:60px;
+        justify-content: space-between;
+        align-items: center;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        padding:0.25rem 0.5rem;
+        border-radius:7.5px;
+    }
+    .bigcollapsecolumn{
+        padding:0.5rem 1rem;
+    }
+    .bigcollapsecolumn li{
+        padding:0.5rem 0.25rem;
+    }
+    .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{ 
+        background-color:plum;
+        position:absolute;
+        display:block;
+        top:80px; 
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease;
+        
+    } 
+
+    
+    .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv{ 
+        background-color:whitesmoke;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        position:absolute;
+        top:80px;
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease;
+      
+        /* padding:1rem 2rem; */
+    } 
+
+    .supportlinksdiv{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:100%;
+        /* background-color: purple; */
+    }
+    
+    .supportlinksdiv li   {
+        padding:0.5rem 1rem;
+        color:white;
     }
 
     .supportlinkscontainer ul li ul{
-        display:none;
+        position:absolute;
+        top:60px;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        padding:0.5rem 1rem;
         background-color:yellow;
+        border-radius:7.5px;
     }
-   
-    /* .mainnavlink:hover + .collapsediv {
-        background-color:green;
-        display:block;
-    } */
-
-    .navlinkscontainer .navlinks li:hover div h2 + div { 
-        background-color:red;
-        display:block;
-        position:relative;
-        top:0;
-        left:0;
-
-    } 
-
-
-    .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv { 
-        background-color:red;
-        display:flex;
-        justify-content: space-around;
-        align-items:center;
-        position:relative;
-        top:0;
-        left:0;
-
-    } 
-
     
-
-    .account:hover h5 + ul{
-        display:block;
-        position: relative;
-        top:0;
-        left:0;
+    .supportlinkscontainer ul li ul li {
+       color:white;
     }
+    .account{
+        display:none;
+    }
+    .account:hover h4 + ul{
+        display:block;
+        position:absolute;
+        top:80px;
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease;
+    }
+    .wishlistpopup{
+        position:absolute;
+        visibility:hidden;
+        opacity:0;
+        color:black;
+        transition:all 1s ease;
+    }
+    .wishlist:hover .wishlistpopup{
+        opacity:1;
+        visibility:visible;
+        transition:all 1s ease;
+    }
+    .wishlist{
+
+    }
+    .listtourbutton{
+        padding:0.5rem;
+    }
+    .listtourbutton a {
+        color:black;
+  
+
+    }
+    .contactuslink{
+        padding:0.5rem; 
+        font:bolder;
+        font-size:large;
+    }
+
+    .aboutuslink {
+        padding:0.5rem; 
+        font:bolder;
+        font-size:large;
+    }
+
+    .loginbutton{
+        padding:0.5rem; 
+        font:bold;
+        color:white;
+        border-radius:5px;
+        background-color:blue;
+        font-size:large;
+        border:none;
+        cursor:pointer;
+        
+    }
+
+    .signupbutton {
+        padding:0.5rem; 
+        font:bold;
+        color:white;
+        border-radius:5px;
+        background-color:green;
+        font-size:large;
+        border:none;
+        cursor:pointer;
+
+    }
+
+    .wishlistnotification, .aboutuslink, .contactuslink, .wishlistlink {
+        color:#551A8B;
+    }
+
 }
 

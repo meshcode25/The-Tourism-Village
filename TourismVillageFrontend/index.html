@@ -10,16 +10,16 @@
 <body>
     <nav class="nav">
         <div class="navcontainer">
-            <div class="logo"> LOGO</div>
+            <div class="logo"><h1>LOGO</h1></div>
             
             <div class="navlinkscontainer">
                 <ul class="navlinks">
                     <!-- navlink 1 -->
-                    <li>
+                    <li class="mainnavlinklisted">
                         <div class="bigcollapsecontainer" >
                                 <h2 class="navlinkheading"><a class="mainnavlink">Tours<i class="fa-solid fa-chevron-down tourchevron dropdown"></i> </a></h2> 
                                 
-                                <div class="bigcollapsediv collapsediv"> 
+                                <div class="bigcollapsediv"> 
                                     <!-- Big collapse column one-->
                                     <div class="bigcollapsecolumn">                                        
                                         <h2 class="bigcollapseheader ">Big Collapse Heading</h2>
@@ -93,7 +93,7 @@
                     <li>
                     
                     <!-- navlink 2 -->
-                    <li>
+                    <li class="mainnavlinklisted">
                         <div class="collapsecontainer" >
                                 <h2 class="navlinkheading"><a class="mainnavlink">Providers<i class="fa-solid fa-chevron-down tourchevron dropdown"></i></a></h2>
                                 <div class="collapsediv"> 
@@ -115,7 +115,7 @@
                 
                     <!-- navlink 3 -->
 
-                    <li>
+                    <li class="mainnavlinklisted">
                         <div class="collapsecontainer" >
                                 <h2 class="navlinkheading"><a class="mainnavlink">Destinations<i class="fa-solid  dropdown fa-chevron-down tourchevron"></i></a></h2>
                                 <div class="collapsediv"> 
@@ -135,9 +135,9 @@
                         </div>
                     </li>
                     <!-- Nav link 4 -->
-                    <li>
+                    <li class="mainnavlinklisted">
                         <div class="collapsecontainer" >
-                                <h2 class="navlinkheading"><a class="mainnavlink">Travel/Tours on Offer<i class="fa-solid dropdown fa-chevron-down tourchevron"></i></a></h2>
+                                <h2 class="navlinkheading"><a class="mainnavlink">Tour Offers<i class="fa-solid dropdown fa-chevron-down tourchevron"></i></a></h2>
                                 <div class="collapsediv"> 
                                     <!--collapse column one-->
                                         <div class="linebreak"></div>
@@ -162,11 +162,16 @@
         <div class="supportlinkscontainer">
             <ul class="supportlinksdiv">
                 <li class="listtour"><button class="listtourbutton" type="button"><a href="#" class="listtourlink">List Tour/Travel</a></button></li>
-                <li class="login"><button class= "loginbutton" type="button"><a href="#" class="loginlink">Login</a></button></li>
-                <li class="signup"><button class="signupbutton" type="button"><a href="#" class="signuplink">Sign Up</a></button></li>
-                <li class="wishlist"><Span class="wishlistnotification"></Span><a href="#" class="wishlistlink"> <i class="fa-regular fa-heart"></i></a></li>
-                <li class="account">
-                    <h5><a class="mainnavlink accountlink">Account<i class="fa-solid dropdown fa-chevron-down tourchevron"></i></a> </h5>
+                <li class="wishlist">
+                    <div><a href="#" class="wishlistlink"> <i class="fa-regular fa-heart wishlistheart"></i><Span class="wishlistnotification" style="color:red; padding-left:0.05rem">10</Span></a></div>
+                    <div><a href="#" class="wishlistpopup">Wishlist Tours/Travels</a></div>
+                </li>
+                <li class="aboutus"><a href="#" class="aboutuslink">About Us</a></li> 
+                <li class="contactus"><a href="#" class="contactuslink">Contact Us</a></li> 
+                <li class="login"><button class= "loginbutton" type="button">Log In</button></li>
+                <li class="signup"><button class="signupbutton" type="button">Sign Up</button></li>
+                <li class="account mainnavlinklisted">
+                    <h4><a class="mainnavlink accountlink">Account<i class="fa-solid dropdown fa-chevron-down tourchevron"></i></a> </h4>
                     <ul class="accountmenulist">
                         <li class="myaccount"><a href="#" class="manageaccountlink"><span class="gearicon"><i class="fa-solid fa-gear"></i></span>Manage Account</a></li>
                         <li class="bookings"><a href="#" class="mytourbookings">My Tour/Travel Bookings</a> </li>                            
@@ -177,8 +182,6 @@
                         <li class="myaccount"><a href="#" class="logout">Logout </a></li>
                     </ul>
                 </li>
-                <li class="contactus"><a href="#" class="contactuslink">Contact Us</a></li> 
-                <li class="aboutus"><a href="#" class="aboutuslink">About Us</a></li> 
 
             </ul>
         </div>
