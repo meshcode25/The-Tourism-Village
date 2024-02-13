@@ -12,11 +12,6 @@
     cursor:pointer;
 } 
 
-.navcontainer{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .navcontainer li{
     list-style: none;
     text-decoration:none;
@@ -27,32 +22,30 @@
     text-decoration:none;
 
 }
-
-.bigcollapsediv{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+.linebreak{
+    width:90%;
+    height:2px;
+    background-color:black;
+}
+.bigcollapseheader{
+    font-size:medium;
+    font-weight:bolder;
 }
 
-.navlinks{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 /* Media Qeuries list */
 @media screen and (max-width:450px){
 
 }
 
 @media screen and ((min-width:451px) and (max-width:768px)){
-    .navcontainer{
-        display:flex;
 
-    
-    }
 }
 
 @media screen and ((min-width:769px) and (max-width:992px)){
+
+    
+    
 
 }
 
@@ -60,7 +53,71 @@
 
 }
 
-@media screen and (min-width:12001px){
+@media screen and (min-width:1201px){
 
+    .body{
+        background-color: blue;
+    }
+    .navcontainer{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    
+    .bigcollapsediv{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navlinks{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .collapsediv{
+        display:none;
+    }
+
+    .supportlinkscontainer ul li ul{
+        display:none;
+        background-color:yellow;
+    }
+   
+    /* .mainnavlink:hover + .collapsediv {
+        background-color:green;
+        display:block;
+    } */
+
+    .navlinkscontainer .navlinks li:hover div h2 + div { 
+        background-color:red;
+        display:block;
+        position:relative;
+        top:0;
+        left:0;
+
+    } 
+
+
+    .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv { 
+        background-color:red;
+        display:flex;
+        justify-content: space-around;
+        align-items:center;
+        position:relative;
+        top:0;
+        left:0;
+
+    } 
+
+    
+
+    .account:hover h5 + ul{
+        display:block;
+        position: relative;
+        top:0;
+        left:0;
+    }
 }
 
