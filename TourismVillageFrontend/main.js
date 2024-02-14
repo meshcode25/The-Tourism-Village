@@ -29,7 +29,7 @@ mainnavlink.forEach((currentvalue, index,array)=>{
     
     
 
-    currentvalue.addEventListener("mouseenter" || "click", ()=>{
+    currentvalue.addEventListener("click" || "mouseenter", ()=>{
      
         console.log("lets see what these guys give out");
         console.log(currentvalue)
@@ -59,7 +59,7 @@ mainnavlink.forEach((currentvalue, index,array)=>{
 }, )
 
 mainnavlink.forEach((currentvalue, index,array)=>{
-    currentvalue.addEventListener("mouseleave" || "click", ()=>{
+    currentvalue.addEventListener("click" || "mouseleave", ()=>{
      
         console.log("lets see what these guys give out");
         console.log(currentvalue)
