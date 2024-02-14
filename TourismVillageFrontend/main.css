@@ -66,7 +66,7 @@
 /* Media Qeuries list */
 @media screen and (max-width:450px){
     body{
-        overflow-y:scroll;
+        overflow:scroll;
     }
     nav{
         /* height:80px; */
