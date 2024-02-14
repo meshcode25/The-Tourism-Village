@@ -67,6 +67,185 @@
 
 /* Media Qeuries list */
 @media screen and (max-width:450px){
+    nav{
+        height:80px;
+        width:100%;
+        position:fixed;
+        background-color:whitesmoke;
+    }   
+    .navcontainer{
+        /* background-color:brown; */
+        width:100%;
+        height:80px;
+        margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        
+    .navlinks{
+        /* width:110%;
+        height:70px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center; */
+    }
+ 
+    .collapsediv{
+        /* position:absolute;
+        top:60px;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        width:250px;
+        border-radius:7.5px; */
+
+    }
+    .bigcollapsediv{
+        /* position:absolute;
+        top:60px;
+        justify-content: space-between;
+        align-items: center;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        padding:0.25rem 0.5rem;
+        border-radius:7.5px; */
+    }
+    .bigcollapsecolumn{
+        /* padding:0.5rem 1rem; */
+    }
+    .bigcollapsecolumn li{
+        /* padding:0.5rem 0.25rem; */
+    }
+    .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{ 
+        /* background-color:plum;
+        position:absolute;
+        display:block;
+        top:80px; 
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease; */
+        
+    } 
+
+    
+    .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv{ 
+        /* background-color:whitesmoke;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        position:absolute;
+        top:80px;
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease; */
+      
+        /* padding:1rem 2rem; */
+    } 
+
+    .supportlinksdiv{
+        /* display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:100%; */
+
+
+        /* background-color: purple; */
+    }
+    
+    .supportlinksdiv li   {
+        /* padding:0.5rem 1rem; */
+        color:white;
+    }
+
+    .supportlinkscontainer ul li ul{
+        /* position:absolute; */
+        top:60px;
+        opacity:0;
+        visibility: hidden;
+        transition:all 1s ease;
+        padding:0.5rem 1rem;
+        background-color:yellow;
+        border-radius:7.5px;
+    }
+    
+    .supportlinkscontainer ul li ul li {
+       color:white;
+    }
+    .account{
+        display:none;
+    }
+    .account:hover h4 + ul{
+        display:block;
+        /* position:absolute; */
+        top:80px;
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease;
+    }
+    .wishlistpopup{
+        position:absolute;
+        visibility:hidden;
+        opacity:0;
+        color:black;
+        transition:all 1s ease;
+    }
+    .wishlist:hover .wishlistpopup{
+        opacity:1;
+        visibility:visible;
+        transition:all 1s ease;
+    }
+    .wishlist{
+
+    }
+    .listtourbutton{
+        padding:0.5rem;
+    }
+    .listtourbutton a {
+        color:black;
+  
+
+    }
+    .contactuslink{
+        padding:0.5rem; 
+        font:bolder;
+        font-size:large;
+    }
+
+    .aboutuslink {
+        padding:0.5rem; 
+        font:bolder;
+        font-size:large;
+    }
+
+    .loginbutton{
+        padding:0.5rem; 
+        font:bold;
+        color:white;
+        border-radius:5px;
+        background-color:blue;
+        font-size:large;
+        border:none;
+        cursor:pointer;
+        
+    }
+
+    .signupbutton {
+        padding:0.5rem; 
+        font:bold;
+        color:white;
+        border-radius:5px;
+        background-color:green;
+        font-size:large;
+        border:none;
+        cursor:pointer;
+
+    }
+
+    .wishlistnotification, .aboutuslink, .contactuslink, .wishlistlink {
+        color:#551A8B;
+    }
 
 }
 
