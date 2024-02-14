@@ -69,7 +69,7 @@
         overflow:scroll;
     }
     nav{
-        /* height:80px; */
+        height:80px;
         width:100%;
         position:fixed;
         background-color:whitesmoke;
@@ -87,6 +87,8 @@
         background-color:brown; 
         overflow-y:scroll;
         overflow:auto;
+        position:absolute;
+        top:80px;
         /* width:110%;
         height:70px;
         display:flex;
