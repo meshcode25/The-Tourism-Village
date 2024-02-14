@@ -68,7 +68,7 @@
 /* Media Qeuries list */
 @media screen and (max-width:450px){
     nav{
-        height:80px;
+        /* height:80px; */
         width:100%;
         position:fixed;
         background-color:whitesmoke;
@@ -76,7 +76,7 @@
     .navcontainer{
         /* background-color:brown; */
         width:100%;
-        height:80px;
+        /* height:80px; */
         margin:0 auto;
         display:flex;
         justify-content: space-between;
@@ -156,7 +156,7 @@
     
     .supportlinksdiv li   {
         /* padding:0.5rem 1rem; */
-        color:white;
+        /* color:white; */
     }
 
     .supportlinkscontainer ul li ul{
@@ -171,7 +171,7 @@
     }
     
     .supportlinkscontainer ul li ul li {
-       color:white;
+       /* color:white; */
     }
     .account{
         display:none;
