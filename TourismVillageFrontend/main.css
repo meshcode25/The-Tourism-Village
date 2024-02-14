@@ -82,6 +82,9 @@
         justify-content: space-between;
         align-items: center;
     }
+    .logo{
+        display:fixed;
+    }
     
     .navlinks{
         background-color:brown; 
