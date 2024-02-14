@@ -86,6 +86,7 @@
     .navlinks{
         background-color:brown; 
         overflow-y:scroll;
+        overflow:auto;
         /* width:110%;
         height:70px;
         display:flex;
