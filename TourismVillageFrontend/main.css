@@ -131,7 +131,7 @@
     .bigcollapsecolumn li{
         /* padding:0.5rem 0.25rem; */
     }
-    .navlinkscontainer .navlinks li:active div h2 + .collapsediv{ 
+    .navlinkscontainer .navlinks li div h2 a:active + .collapsediv{ 
         /* 
         position:absolute;
         */
@@ -145,8 +145,7 @@
         
     } 
 
-    
-    .navlinkscontainer .navlinks li:active div h2 + .bigcollapsediv{ 
+    .navlinkscontainer .navlinks li div h2 a:active + .collapsediv{ 
         /* 
         background-color:whitesmoke;
         */
@@ -314,6 +313,12 @@
         border-radius:7.5px;
 
     }
+    .collapse{
+        display:none;
+        visibility:hidden;
+        opacity:0;
+        
+    }
     .bigcollapsediv{
         position:absolute;
         top:60px;
@@ -331,6 +336,7 @@
     .bigcollapsecolumn li{
         padding:0.5rem 0.25rem;
     }
+    /* .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{  */
     .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{ 
         background-color:plum;
         position:absolute;
@@ -341,8 +347,6 @@
         transition:all 1s ease;
         
     } 
-
-    
     .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv{ 
         background-color:whitesmoke;
         display:flex;

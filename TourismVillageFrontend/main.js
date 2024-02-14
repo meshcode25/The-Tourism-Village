@@ -12,11 +12,12 @@ function windowWidth(){
 var mediaQueries=["450", "768", "992", "1200" ]
 
 var chevron=document.getElementsByClassName("dropdown")
-    
-    
 var mainnavlinklist=document.getElementsByClassName("mainnavlinklisted");
-
 var mainnavlinks= document.getElementsByClassName("mainnavlink");    
+
+var bigcollapse
+    
+
 
 var mainnavlink=[...mainnavlinklist];
 
