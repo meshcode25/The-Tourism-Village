@@ -1,4 +1,8 @@
-window.onload = function windowWidth() {
+window.onload = ()=>{
+    windowWidth();
+}
+
+function windowWidth(){
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
     console.log("Window size: " + windowWidth + " x " + windowHeight);
@@ -19,11 +23,10 @@ var mainnavlink=[...mainnavlinklist];
 mainnavlink.forEach((currentvalue, index,array)=>{
     var events= ["mouseenter", "mouseclick", "mouseleave"]
     
-    var screensize=WindowWidth();
+    // var screensize=windowWidth;
     
-    console.log("Here is the screen size" +  screensize)
+    console.log("Here is the screen size" )
     
-    if(currentvalue.isclicked)
     
 
     currentvalue.addEventListener("mouseenter" || "click", ()=>{
@@ -31,8 +34,8 @@ mainnavlink.forEach((currentvalue, index,array)=>{
         console.log("lets see what these guys give out");
         console.log(currentvalue)
         
-        var clickedornot= currentvalue.isclicked()
-        console.log(clickedornot);
+        // var clickedornot= currentvalue.isclicked()
+        // console.log(clickedornot);
         
         if(chevron[index].classList.contains("fa-rotate-180")){
             // chevron[i].classList.remove("dropdown")
