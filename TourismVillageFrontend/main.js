@@ -16,7 +16,7 @@ var chevron=document.getElementsByClassName("dropdown")
     
 var mainnavlinklist=document.getElementsByClassName("mainnavlinklisted");
 
-    
+var mainnavlinks= document.getElementsByClassName("mainnavlink");    
 
 var mainnavlink=[...mainnavlinklist];
 
@@ -29,8 +29,9 @@ mainnavlink.forEach((currentvalue, index,array)=>{
     
     
 
-    currentvalue.addEventListener("click" || "mouseenter", ()=>{
+    currentvalue.addEventListener("mouseenter", ()=>{
      
+
         console.log("lets see what these guys give out");
         console.log(currentvalue)
         
@@ -59,7 +60,7 @@ mainnavlink.forEach((currentvalue, index,array)=>{
 }, )
 
 mainnavlink.forEach((currentvalue, index,array)=>{
-    currentvalue.addEventListener("click" || "mouseleave", ()=>{
+    currentvalue.addEventListener("mouseleave", ()=>{
      
         console.log("lets see what these guys give out");
         console.log(currentvalue)

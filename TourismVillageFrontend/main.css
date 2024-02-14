@@ -131,7 +131,7 @@
     .bigcollapsecolumn li{
         /* padding:0.5rem 0.25rem; */
     }
-    .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{ 
+    .navlinkscontainer .navlinks li:active div h2 + .collapsediv{ 
         /* 
         position:absolute;
         */
@@ -146,7 +146,7 @@
     } 
 
     
-    .navlinkscontainer .navlinks li:hover div h2 + .bigcollapsediv{ 
+    .navlinkscontainer .navlinks li:active div h2 + .bigcollapsediv{ 
         /* 
         background-color:whitesmoke;
         */
