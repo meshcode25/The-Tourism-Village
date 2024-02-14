@@ -65,6 +65,9 @@
 
 /* Media Qeuries list */
 @media screen and (max-width:450px){
+    body{
+        overflow-y:scroll;
+    }
     nav{
         /* height:80px; */
         width:100%;
@@ -99,6 +102,7 @@
         visibility: hidden;
         border-radius:7.5px;
         transition:all 1s ease;
+        display:none;
 
     }
     .bigcollapsediv{
@@ -112,6 +116,7 @@
         visibility: hidden;
         transition:all 1s ease;
         border-radius:7.5px; 
+        display:none;
     }
     .bigcollapsecolumn{
         /* padding:0.5rem 1rem; */
