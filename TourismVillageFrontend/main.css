@@ -83,13 +83,14 @@
         align-items: center;
     }
     .logo{
-        display:fixed;
+        position:static;
     }
     
     .navlinks{
         background-color:brown; 
         overflow-y:scroll;
         overflow:auto;
+        scroll-behavior: auto;
         position:absolute;
         top:80px;
         /* width:110%;
