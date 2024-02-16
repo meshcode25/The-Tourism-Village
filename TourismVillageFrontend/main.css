@@ -63,6 +63,13 @@
     
 }
 
+.collapse{
+    opacity:0;
+    visibility: 0;
+    height:0;
+    width:0;
+}
+
 /* Media Qeuries list */
 @media screen and (max-width:450px){
     body{
@@ -131,7 +138,16 @@
     .bigcollapsecolumn li{
         /* padding:0.5rem 0.25rem; */
     }
-    .navlinkscontainer .navlinks li div h2 a:active + .collapsediv{ 
+    .collapse{
+        opacity:0;
+        visibility: 0;
+        height:0;
+        width:0;
+        transition:all 1s ease; 
+
+    }
+
+    .navlinkscontainer .navlinks li:hover div h2 + .collapsediv{ 
         /* 
         position:absolute;
         */
@@ -144,8 +160,8 @@
         transition:all 1s ease; 
         
     } 
-
-    .navlinkscontainer .navlinks li div h2 a:active + .collapsediv{ 
+        
+    .navlinkscontainer .navlinks li div h2 a:hover + .bigcollapsediv{ 
         /* 
         background-color:whitesmoke;
         */
