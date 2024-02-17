@@ -21,6 +21,7 @@ var mainnavlinks= document.getElementsByClassName("mainnavlink");
 
 var bigcollapse=document.getElementsByClassName("bigCollapsediv");
 var collapsedivs=document.getElementsByClassName("collapsediv");
+var collapsingdiv=document.getElementsByClassName("showing")
 var bigcollapsedivcolumns=document.getElementsByClassName("bigcollapsedivcolumns");
 var bigcollapsecolumheaders=document.getElementsByClassName("bigcollapsecolumheader")
 
@@ -57,48 +58,63 @@ mainnavlink.forEach((currentvalue, index,array)=>{
         
         
 
-        // var clickedornot= currentvalue.isclicked()
-        // console.log(clickedornot);
         
         if(chevron[index].classList.contains("fa-rotate-180")){
-            // chevron[i].classList.remove("dropdown")
+
             chevron[index].style.transition="all 1s ease"          
             chevron[index].classList.remove("fa-rotate-180") 
-            // chevron[index].style.transform="rotate(180deg)"
+
             chevron[index].style.color="green";
 
+        
+            collapsingdiv[index].classList.add("collapsing")
+         
+       
 
         }
         else{
-            // chevron[i].classList.add("dropdown")
             chevron[index].style.transition="all 1s ease"                   
             chevron[index].classList.add("fa-rotate-180")  
             chevron[index].style.color="blue";
 
+            
+
+            console.log('I the cheveron has gotten a mouseover ')
+
+            collapsingdiv[index].classList.remove("collapsing")
+         
+            
         }
 
 
         mainnavlinks[index].addEventListener("click", ()=>{
             
-            // var clickedornot= currentvalue.isclicked()
-            // console.log(clickedornot);
+            
             
             if(chevron[index].classList.contains("fa-rotate-180")){
-                // chevron[i].classList.remove("dropdown")
-                chevron[index].style.transition="all 0.1s ease"          
+
+                chevron[index].style.transition="all 1s ease"          
                 chevron[index].classList.remove("fa-rotate-180") 
-                // chevron[index].style.transform="rotate(180deg)"
+                
                 chevron[index].style.color="green";
+                
 
+                console.log('I the cheveron have been clicked')
 
+                collapsingdiv[index].classList.add("collapsing")
+ 
             }
             else{
-                // chevron[i].classList.add("dropdown")
-                chevron[index].style.transition="all 0.1s ease"                   
+                chevron[index].style.transition="all 1s ease"                   
                 chevron[index].classList.add("fa-rotate-180")  
                 chevron[index].style.color="blue";
 
-            }
+         
+
+                console.log("Attribute should be removed ")
+                collapsingdiv[index].classList.remove("collapsing")
+
+              }
         })
             
         })
@@ -110,26 +126,43 @@ mainnavlink.forEach((currentvalue, index,array)=>{
      
         console.log("lets see what these guys give out");
         console.log(currentvalue)
+
+
+        chevron[index].style.transition="all 1s ease"          
+        chevron[index].classList.remove("fa-rotate-180") 
+        chevron[index].style.color="green";
+
+        collapsingdiv[index].classList.add("collapsing")
+
         
             
-        if(chevron[index].classList.contains("fa-rotate-180")){
-            // chevron[i].classList.remove("dropdown")
-            chevron[index].style.transition="all 0.1s ease"          
-            chevron[index].classList.remove("fa-rotate-180") 
-            // chevron[index].style.transform="rotate(180deg)"
-            chevron[index].style.color="green";
-
-
-        }
-        else{
-            // chevron[i].classList.add("dropdown")
-            chevron[index].style.transition="all 0.1s ease"                   
-            chevron[index].classList.add("fa-rotate-180")  
-            chevron[index].style.color="blue";
-
-        }
-
+        mainnavlinks[index].addEventListener("click", ()=>{
             
+            
+            if(chevron[index].classList.contains("fa-rotate-180")){
+                
+                chevron[index].style.transition="all 1s ease"          
+                chevron[index].classList.remove("fa-rotate-180") 
+                
+                chevron[index].style.color="green";
+                
+
+                console.log('I the cheveron have been clicked')
+
+                collapsingdiv[index].classList.add("collapsing")
+ 
+            }
+            else{
+                chevron[index].style.transition="all 1s ease"                   
+                chevron[index].classList.add("fa-rotate-180")  
+                chevron[index].style.color="blue";
+
+
+                console.log("Attribute should be removed ")
+                collapsingdiv[index].classList.remove("collapsing")
+
+              }
+        })
         })
 
 }, )
