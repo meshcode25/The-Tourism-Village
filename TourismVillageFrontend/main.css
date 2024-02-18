@@ -73,11 +73,7 @@
 
 
 /* Media Qeuries list */
-@media screen and (max-width:450px){
-
-}
-
-@media screen and ((min-width:451px) and (max-width:768px)){
+@media screen and (max-width:450){
    
     nav{
         height:80px;
@@ -377,6 +373,9 @@
         color:#551A8B;
     }
 }
+
+
+
 
 @media screen and ((min-width:451px) and (max-width:768px)){
    
