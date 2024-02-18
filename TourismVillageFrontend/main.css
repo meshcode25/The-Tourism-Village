@@ -35,7 +35,7 @@
     height:1px;
     background-color:black;
     opacity:0.5;
-    margin-left:-1rem;
+
 }
 .bigcollapseheader{
     font-size:medium;
@@ -192,6 +192,7 @@
         transition: all 1s ease !important;
         height: 0px !important ; 
         margin-left:0;
+        padding-left:0 !important;
     
 
 
@@ -203,6 +204,7 @@
 
     /* End of Bigcollapsediv and collapse div and biginning of bigcollapsecolumn collpsible also this was imported from 1200px;  */
 
+    
     .bigcollapsecolumnheader{
 
     }
@@ -210,6 +212,35 @@
     .bigcollapsecolumnheader:hover{
 
     }
+
+    .bigcollapsecolumnul{
+        visibility: hidden ;
+        opacity:0 ;
+        height:0 ;
+        transition: all 1s ease ;
+        display:block;
+        padding-left:0.5rem ;
+    }
+
+    .bigcollapsediv div:hover a + ul{
+        background-color:salmon;
+        position:static;
+        display:block;
+        opacity:1;
+        visibility: visible;
+        transition:all 1s ease;
+        height:auto;
+        padding-left:1rem;
+    }
+
+    .collapsingcolumn{
+        visibility: hidden !important;
+        opacity:0 !important;
+        height:0 !important;
+        transition: all 1s ease !important;
+        display:block !important;
+        padding-left:0.5rem !important;
+    } 
 
 
 
