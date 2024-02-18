@@ -73,7 +73,7 @@
 
 
 /* Media Qeuries list */
-@media screen and (max-width:450){
+@media screen and (max-width:450px){
    
     nav{
         height:80px;
