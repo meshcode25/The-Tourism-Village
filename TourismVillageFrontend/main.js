@@ -24,7 +24,7 @@ console.log( "here is the media queries " + windowWidth());
 var chevron=document.getElementsByClassName("dropdown");
 var caret =document.getElementsByClassName("caret");
 var mainnavlinklist=document.getElementsByClassName("mainnavlinklisted");
-var mainnavlinks= document.getElementsByClassName("mainnavlink");    
+var mainnavlinke= document.getElementsByClassName("mainnavlink");    
 
 var bigcollapse=document.getElementsByClassName("bigCollapsediv");
 var collapsedivs=document.getElementsByClassName("collapsediv");
@@ -44,6 +44,7 @@ var mainnavlink=[...mainnavlinklist];
 var bigcollapsecolumnheaders=[...bigcollapsecolumheader]
 var showingcolumns=[...showingcolumn]
 var bigcollapsecolumncontainers=[...bigcollapsecolumncontainer]
+var mainnavlinks=[...mainnavlinke]
 
 if(screensize < mediaQueries[1]){
     //This is the beginnning of the of the mobile responsiveneness media querry
@@ -99,6 +100,7 @@ if(screensize < mediaQueries[1]){
                 
             }
         })
+    })
     
     // mainnavlink.forEach((currentvalue, index,array)=>{
      mainnavlinks.forEach((currentvalue, index,array)=>{
@@ -134,9 +136,9 @@ if(screensize < mediaQueries[1]){
                   }
             })
                 
-            })
+    })
     
-    }, )
+    
     
     mainnavlink.forEach((currentvalue, index,array)=>{
         currentvalue.addEventListener("mouseout", ()=>{
