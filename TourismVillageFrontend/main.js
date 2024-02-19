@@ -63,7 +63,7 @@ if(screensize < mediaQueries[1]){
         
         
     
-        currentvalue.addEventListener("mouseenter", ()=>{
+        currentvalue.addEventListener("mouseover", ()=>{
          
     
             console.log("lets see what these guys give out");
@@ -98,8 +98,10 @@ if(screensize < mediaQueries[1]){
              
                 
             }
+        })
     
-    
+    mainnavlink.forEach((currentvalue, index,array)=>{
+
             mainnavlinks[index].addEventListener("click", ()=>{
                 
                 
@@ -183,7 +185,7 @@ if(screensize < mediaQueries[1]){
     
     bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
     
-        currentvalue.addEventListener("mouseenter", ()=>{
+        currentvalue.addEventListener("mousover", ()=>{
     
             if(caret[index].classList.contains("fa-rotate-180")){
                     
@@ -217,8 +219,9 @@ if(screensize < mediaQueries[1]){
     
     
     
-    
-    
+    })
+        bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
+
             bigcollapsecolumnheaders[index].addEventListener("click", ()=>{
     
                 console.log("here is the current value")  
@@ -250,8 +253,10 @@ if(screensize < mediaQueries[1]){
                     }
         })
         
-    
-       
+        })
+        
+        bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
+
         currentvalue.addEventListener("mouseleave", ()=>{
     
             caret[index].style.transition="all 1s ease"          
