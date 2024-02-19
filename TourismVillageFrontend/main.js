@@ -14,11 +14,11 @@ function windowWidth(){
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
     console.log("Window size: " + windowWidth + " x " + windowHeight);
-    screensize=windowWidth;
-    return windowWidth
+    return screensize=windowWidth;
+    
 }
 
-console.log( "here is the media queries " + screensize);
+console.log( "here is the media queries " + windowWidth());
 
 //importing Elements from HTML
 var chevron=document.getElementsByClassName("dropdown");
@@ -49,6 +49,11 @@ if(screensize < mediaQueries[1]){
     //This is the beginnning of the of the mobile responsiveneness media querry
         //this is the end of the mobile responsiveneness media querry
     //this is the end of the mobile responsiveneness media querry
+    console.log("this is the width of this shit and it's less than the mobile screen size by " +  screensize)
+
+
+
+
     mainnavlink.forEach((currentvalue, index,array)=>{
         var events= ["mouseenter", "mouseclick", "mouseleave"]
         
@@ -261,51 +266,6 @@ if(screensize < mediaQueries[1]){
     
     })
     
-        
-        bigcollapsecolumnheaders[index].addEventListener("click", ()=>{
-    
-            console.log("here is the current value")  
-            console.log(currentvalue)
-    
-            if(caret[index].classList.contains("fa-rotate-180")){
-                    
-                caret[index].style.transition="all 1s ease"          
-                caret[index].classList.remove("fa-rotate-180") 
-                
-                caret[index].style.color="green";
-                
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-    
-                showingcolumn[index].classList.add("collapsingcolumn")
-    
-            }
-    
-            else{
-                caret[index].style.transition="all 1s ease"                   
-                caret[index].classList.add("fa-rotate-180")  
-                caret[index].style.color="blue";
-    
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-                showingcolumn[index].classList.remove("collapsingcolumn")
-    
-                }
-        })
-    
-    
-    
-        currentvalue.addEventListener("mouseout", ()=>{
-    
-        caret[index].style.transition="all 1s ease"          
-        caret[index].classList.remove("fa-rotate-180") 
-    
-        caret[index].style.color="green";
-    
-    
-        showingcolumn[index].classList.add("collapsingcolumn")
-        })
-    
             
         
 }
@@ -395,6 +355,7 @@ else{
     }, )
     
     mainnavlink.forEach((currentvalue, index,array)=>{
+
         currentvalue.addEventListener("mouseout", ()=>{
          
             console.log("lets see what these guys give out");
@@ -478,7 +439,6 @@ else{
     
     
     
-    
             bigcollapsecolumnheaders[index].addEventListener("click", ()=>{
     
                 console.log("here is the current value")  
@@ -526,52 +486,7 @@ else{
     
     })
     
-        
-        bigcollapsecolumnheaders[index].addEventListener("click", ()=>{
-    
-            console.log("here is the current value")  
-            console.log(currentvalue)
-    
-            if(caret[index].classList.contains("fa-rotate-180")){
                     
-                caret[index].style.transition="all 1s ease"          
-                caret[index].classList.remove("fa-rotate-180") 
-                
-                caret[index].style.color="green";
-                
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-    
-                showingcolumn[index].classList.add("collapsingcolumn")
-    
-            }
-    
-            else{
-                caret[index].style.transition="all 1s ease"                   
-                caret[index].classList.add("fa-rotate-180")  
-                caret[index].style.color="blue";
-    
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-                showingcolumn[index].classList.remove("collapsingcolumn")
-    
-                }
-        })
-    
-    
-    
-        currentvalue.addEventListener("mouseout", ()=>{
-    
-        caret[index].style.transition="all 1s ease"          
-        caret[index].classList.remove("fa-rotate-180") 
-    
-        caret[index].style.color="green";
-    
-    
-        showingcolumn[index].classList.add("collapsingcolumn")
-        })
-    
-            
         
 }
 
