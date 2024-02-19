@@ -100,9 +100,11 @@ if(screensize < mediaQueries[1]){
             }
         })
     
-    mainnavlink.forEach((currentvalue, index,array)=>{
+    // mainnavlink.forEach((currentvalue, index,array)=>{
+     mainnavlinks.forEach((currentvalue, index,array)=>{
 
-            mainnavlinks[index].addEventListener("click", ()=>{
+
+            currentvalue[index].addEventListener("click", ()=>{
                 
                 
                 
@@ -254,7 +256,7 @@ if(screensize < mediaQueries[1]){
         })
         
         })
-        
+
         bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
 
         currentvalue.addEventListener("mouseleave", ()=>{
@@ -357,7 +359,7 @@ else{
                 
             })
     
-    }, )
+    })
     
     mainnavlink.forEach((currentvalue, index,array)=>{
 
@@ -400,100 +402,20 @@ else{
                     console.log("Attribute should be removed ")
                     collapsingdiv[index].classList.remove("collapsing")
     
-                  }
-            })
-            })
-    
-    }, )
-      
-    
-    bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
-    
-        currentvalue.addEventListener("mouseover", ()=>{
-    
-            if(caret[index].classList.contains("fa-rotate-180")){
-                    
-                caret[index].style.transition="all 1s ease"          
-                caret[index].classList.remove("fa-rotate-180") 
-                
-                caret[index].style.color="green";
-                
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-    
-                showingcolumn[index].classList.add("collapsingcolumn")
-    
-            }
-            else{
-                caret[index].style.transition="all 1s ease"                   
-                caret[index].classList.add("fa-rotate-180")  
-                caret[index].style.color="blue";
-    
-    
-                console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-                showingcolumn[index].classList.remove("collapsingcolumn")
-    
-            }
-    
-    
-    
-    
-        })
-    
-    
-    
-    
-    
-            bigcollapsecolumnheaders[index].addEventListener("click", ()=>{
-    
-                console.log("here is the current value")  
-                console.log(currentvalue)
-        
-                if(caret[index].classList.contains("fa-rotate-180")){
-                        
-                    caret[index].style.transition="all 1s ease"          
-                    caret[index].classList.remove("fa-rotate-180") 
-                    
-                    caret[index].style.color="green";
-                    
-        
-                    console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-        
-                    showingcolumn[index].classList.add("collapsingcolumn")
-        
                 }
-    
-                else{
-                    caret[index].style.transition="all 1s ease"                   
-                    caret[index].classList.add("fa-rotate-180")  
-                    caret[index].style.color="blue";
-        
-        
-                    console.log('Bigcollapsedivs has been I the cheveron have been clicked')
-                    showingcolumn[index].classList.remove("collapsingcolumn")
-        
-                    }
+            })
         })
-        
-    
-       
-        currentvalue.addEventListener("mouseout", ()=>{
-    
-            caret[index].style.transition="all 1s ease"          
-            caret[index].classList.remove("fa-rotate-180") 
-            
-            caret[index].style.color="green";
-            
-    
-            showingcolumn[index].classList.add("collapsingcolumn")
-        })
-    
     
     })
+      
+    
+    
+    
+}
     
                     
         
-}
+
 
 
 
