@@ -293,16 +293,16 @@ bigcollapsecolumncontainers.forEach((currentvalue,index, array)=>{
 
 
 
-    currentvalue.addEventListener("mouseout", ()=>{
+    // currentvalue.addEventListener("mouseout", ()=>{
 
-    caret[index].style.transition="all 1s ease"          
-    caret[index].classList.remove("fa-rotate-180") 
+    // caret[index].style.transition="all 1s ease"          
+    // caret[index].classList.remove("fa-rotate-180") 
 
-    caret[index].style.color="green";
+    // caret[index].style.color="green";
 
 
-    showingcolumn[index].classList.add("collapsingcolumn")
-    })
+    // showingcolumn[index].classList.add("collapsingcolumn")
+    // })
 
         
     
