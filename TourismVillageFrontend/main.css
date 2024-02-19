@@ -40,7 +40,7 @@
 .bigcollapseheader{
     font-size:medium;
     font-weight:bolder;
-    color:red;
+    color:black;
     cursor:pointer;
     padding:0.2rem 0.5rem;
 }
@@ -104,11 +104,16 @@
         top:80px;
         display:block;  
         width:70%;
-        overflow-y:auto;
+        /* overflow-y:auto; */
         border-radius:7.5px;
         padding:0.75rem;
         height: auto;
 
+    }
+
+
+    .mainnavlinklisted{
+        padding:2rem 0rem;
     }
 
     /* Imported shit from the other side of 1200px + */
@@ -175,7 +180,7 @@
         visibility: visible;
         transition:all 1s ease;
         height: auto;
-        overflow-y:auto;
+        /* overflow-y:auto; */
         padding-left:1rem;
         background-color:salmon;
     }  
@@ -236,23 +241,6 @@
         display:block !important;
         padding-left:0.5rem !important;
     } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -387,8 +375,6 @@
 
     }   
     .navcontainer{
-        
-        
         width:100%;
         height:80px;
         margin:0 auto; 
@@ -408,11 +394,15 @@
         top:80px;
         display:block;  
         width:70%;
-        overflow-y:auto;
+        /* overflow-y:auto; */
         border-radius:7.5px;
         padding:0.75rem;
         height: auto;
 
+    }
+
+    .mainnavlinklisted{
+        margin:2rem 0rem; 
     }
 
     /* Imported shit from the other side of 1200px + */
@@ -442,19 +432,19 @@
 
     .bigcollapsecolumnul{
         padding:0.5rem 1rem;
-    }
+    } 
 
 
-    .bigcollapsecolumnul li{
+     .bigcollapsecolumnul li{
         padding:0.5rem 0.25rem;
-    }
+    } 
 
 
-    .bigcollapsecolumn{
+     .bigcollapsecolumn{
         padding:0.5rem 1rem;
-    }
+    } 
 
-
+ 
     .bigcollapsecolumn li{
         padding:0.5rem 0.25rem;
     }
@@ -479,7 +469,7 @@
         visibility: visible;
         transition:all 1s ease;
         height: auto;
-        overflow-y:auto;
+        /* overflow-y:auto; */
         padding-left:1rem;
         background-color:salmon;
     }  
@@ -540,29 +530,6 @@
         display:block !important;
         padding-left:0.5rem !important;
     } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -816,6 +783,8 @@
 
     }
 
+     
+  
     .supportlinksdiv{
         display:flex;
         justify-content:space-between;
