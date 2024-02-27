@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Tourism Village</title>
+    <!-- Jquery Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- This pages css in this file -->
     <link rel="stylesheet"  href="./css/signuplogin.css">
     <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="nav">
@@ -18,34 +22,34 @@
     <div class="formcontainer">
         <div class="formdiv">
             <div class="loginheader"><h1>Sign Up</h1></div>
-            <form class="form" method="post" action="/signup.php">
+            <form class="form" method="post" action="">
                 <div class="mainerrormessage"></div>
                 <!-- email -->
                 <div class="formdiv emaildiv">
-                    <div class="labeldiv"><label for="formlable email">Email:</label></div>
-                    <input type="email" class="forminput emailinput"  required="true" placeholder="Enter Email" name="email">
-                    <p class="formerror emailrror"></p>
+                    <div class="labeldiv"><label class="formlable" for="mail">Email:</label></div>
+                    <input type="email" class="forminput emailinput" id="mail"  placeholder="Enter Email" name="email">
+                    <p class="formerror emailerror"></p>
                 </div>
                 <!--username -->
                 <div class="formdiv usernamediv">
-                    <div class="labeldiv"><label for="formlable username">Username:</label></div>
-                    <input type="text" class="forminput usernameinput" required="true" placeholder="Enter User Name" name="username" id="formlable">
-                    <p class="formerror usernamerror"></p>
+                    <div class="labeldiv"><label class="formlable" for="user">Username:</label></div>
+                    <input type="text" class="forminput usernameinput" id="user"  placeholder="Enter User Name" name="username">
+                    <p class="formerror usernameerror"></p>
                 </div>
 
                 
                 <!--passoword -->
                 <div class="formdiv passdiv">
-                    <div class="labeldiv"><label for="formlable password ">Password:</label></div>
-                    <input type="password" class="forminput passwordinput" required="true" placeholder="Enter Password" name="password">
+                    <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
+                    <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
                     <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
                     <p class="formerror passworderror"></p>
                     
                 </div>
                 <!-- confirm password -->
                 <div class="formdiv conpassdiv">
-                    <div class="labeldiv"><label for="formlable username">Confirm Passoword:</label></div>
-                    <input type="password" class="forminput conpasswordinput" required="true" placeholder="Confirm Password" name="conpassword">
+                    <div class="labeldiv"><label class="formlable" for="confpass" >Confirm Password:</label></div>
+                    <input type="password" class="forminput conpasswordinput" id="confpass" placeholder="Confirm Password" name="conpassword">
                     <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></i></span>
                     <p class="formerror conpassworderror"></p>
                 </div>
@@ -78,6 +82,6 @@
         </div>
     </div>
     
-<script src="./javascript/main.js"></script>
+<script src="./javascript/signup.js"></script>
 </body>
 </html> 

@@ -35,7 +35,11 @@ nav{
 
 }
 .mainerrormessage{
-
+color:red;
+padding:1rem 0.5rem;
+width:90%;
+/* margin:1rem auto; */
+background-color:yellow;
 
 }
 .form{
@@ -51,7 +55,7 @@ font-size:large;
 }
 
 .formerror{
-
+    color:red;
 }
 .formdiv{
     margin:1rem 0rem;
