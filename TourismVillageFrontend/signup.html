@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tourism Village</title>
+    <link rel="stylesheet"  href="./css/signuplogin.css">
+    <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navcontainer">
+            <div class="logo"><h1>LOGO</h1></div>
+            <div> hey wahat hthe fuck is going on </div>
+        </navcontainer>
+    </nav>
+
+    <div class="formcontainer">
+        <div class="formdiv">
+            <div class="loginheader"><h1>Sign Up</h1></div>
+            <form class="form" method="post" action="">
+                <div class="mainerrormessage"></div>
+                <div class="formdiv usernamediv">
+                    <div class="labeldiv"><label for="formlable username">Username:</label></div>
+                    <input type="text" class="forminput usernameinput" placeholder="Enter User Name" name="username" id="formlable">
+                    <p class="formerror usernamerror"></p>
+                </div>
+
+                <div class="formdiv emaildiv">
+                    <div class="labeldiv"><label for="formlable email">Email:</label></div>
+                    <input type="email" class="forminput emailinput" placeholder="Enter Email" name="email">
+                    <p class="formerror emailrror"></p>
+                </div>
+
+                <div class="formdiv passdiv">
+                    <div class="labeldiv"><label for="formlable password ">Password:</label></div>
+                    <input type="password" class="forminput passwordinput" placeholder="Enter Passoword" name="passoword">
+                    <span class="eyeslash"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                    <p class="formerror passworderror"></p>
+                    
+                </div>
+
+                <div class="formdiv conpassdiv">
+                    <div class="labeldiv"><label for="formlable username">Confirm Passoword:</label></div>
+                    <input type="password" class="forminput conpasswordinput" placeholder="Confirm Password" name="conpassword">
+                    <span class="eye"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                    <p class="formerror conpassworderror"></p>
+                </div>
+
+                <div class="formdiv submitdiv">
+                    <button class="submitbutton" type="submit">SIGN UP</button>
+                    <span class="loading"><i class="fa fa-spinner" aria-hidden="true"></i></span>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    
+<script src="./javascript/main.js"></script>
+</body>
+</html>

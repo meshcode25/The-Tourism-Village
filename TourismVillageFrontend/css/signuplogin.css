@@ -1,0 +1,72 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+nav{
+    height:80px;
+    width:100%;
+    background-color:whitesmoke;
+}   
+.navcontainer{
+    /* background-color:brown; */
+    width:90%;
+    height:80px;
+    margin:0 auto; 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.formcontainer{
+    width:40%;
+    margin:0 auto;
+}
+.loginheader{
+    text-align:center;
+}
+
+.formdiv{
+    background-color:whitesmoke;
+    padding:0.5rem;
+
+}
+.mainerrormessage{
+
+
+}
+.form{
+    padding:0.5rem;
+}
+.labeldiv{
+
+}
+.forminput{
+    height:2rem;
+    width:90%;
+}
+
+.formerror{
+
+}
+.formdiv{
+    margin:1rem 0.5rem;
+}
+.submitbutton{
+    background-color:green;
+    padding:0.5rem 1rem;
+    border:none;
+    color:white;
+    border-radius:7.5px;
+    font-size: larger;
+    
+}
+.submitbutton:hover{
+    cursor:pointer;
+}
+.loading{
+
+}
+
