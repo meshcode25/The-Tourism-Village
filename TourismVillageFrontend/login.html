@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tourism Village</title>
+    <link rel="stylesheet"  href="./css/signuplogin.css">
+    <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navcontainer">
+            <div class="logo"><h1>LOGO</h1></div>
+            <div> Any Other necessary Stuff could go Here  </div>
+        </navcontainer>
+    </nav>
+
+    <div class="formcontainer">
+        <div class="formdiv">
+            <div class="loginheader"><h1>LOGIN</h1></div>
+            <form class="form" method="post" action="">
+                <div class="mainerrormessage"></div>
+                <!-- email -->
+                <div class="formdiv emaildiv">
+                    <div class="labeldiv"><label for="formlable email">Email/username:</label></div>
+                    <input type="email" class="forminput emailinput"  required="true" placeholder="Enter Email/Username" name="email/username">
+                    <p class="formerror emailrror"></p>
+                </div>
+                <!--username -->
+                <!--passoword -->
+                <div class="formdiv passdiv">
+                    <div class="labeldiv"><label for="formlable password ">Password:</label></div>
+                    <input type="password" class="forminput passwordinput" required="true" placeholder="Enter Password" name="password">
+                    <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                    <p class="formerror passworderror"></p>
+                    
+                </div>
+                <!-- confirm password -->
+           
+                <!-- submit-->
+                <div class="formdiv submitdiv">
+                    <button class="submitbutton" type="submit">LOGIN </button>
+                    <span><i class="fas fa-spinner fa-pulse" style="color:blue; font-size: x-large;"></i></span>
+                </div>
+
+                <!-- forgot password -->
+                <div class="forgotpassdiv">
+                    <a href="#" class="forgotpasslink">Forgot Password??</a>
+                </div>
+                <!-- forgot passsword -->
+              
+            </form>
+        
+            <!-- Or login  -->
+            <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>
+            <!--login with Google or Email-->
+            <div class="logingroup">
+                <div class="login emaillogin" ><a href="./signup.html" class="googleloginlink" >Sign Up</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>
+            
+        </div>
+    </div>
+    
+<script src="./javascript/main.js"></script>
+</body>
+</html>
