@@ -6,6 +6,7 @@
     <title>The Tourism Village</title>
     <link rel="stylesheet"  href="./css/signuplogin.css">
     <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="nav">
@@ -22,25 +23,25 @@
                 <div class="mainerrormessage"></div>
                 <!-- email -->
                 <div class="formdiv emaildiv">
-                    <div class="labeldiv"><label for="formlable email">Email/username:</label></div>
-                    <input type="email" class="forminput emailinput"  required="true" placeholder="Enter Email/Username" name="email/username">
-                    <p class="formerror emailrror"></p>
+                    <div class="labeldiv"><label class="formlable" for="mail">Email:</label></div>
+                    <input type="email" class="forminput emailinput" id="mail"  placeholder="Enter Email" name="email">
+                    <p class="formerror emailerror"></p>
                 </div>
-                <!--username -->
+                <!--username -->  
                 <!--passoword -->
                 <div class="formdiv passdiv">
-                    <div class="labeldiv"><label for="formlable password ">Password:</label></div>
-                    <input type="password" class="forminput passwordinput" required="true" placeholder="Enter Password" name="password">
+                    <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
+                    <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
+                    <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
                     <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
                     <p class="formerror passworderror"></p>
                     
                 </div>
                 <!-- confirm password -->
-           
                 <!-- submit-->
                 <div class="formdiv submitdiv">
-                    <button class="submitbutton" type="submit">LOGIN </button>
-                    <span><i class="fas fa-spinner fa-pulse" style="color:blue; font-size: x-large;"></i></span>
+                    <button class="submitbutton" type="submit" >LOGIN</button>
+                    <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
                 </div>
 
                 <!-- forgot password -->
@@ -57,7 +58,7 @@
             </div>
             <!--login with Google or Email-->
             <div class="logingroup">
-                <div class="login emaillogin" ><a href="./signup.html" class="googleloginlink" >Sign Up</a></div>
+                <div class="login emaillogin" ><a href="./signup.html" class="googleloginlink" >SIGN UP </a></div>
                 <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
                 <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
 
@@ -66,6 +67,6 @@
         </div>
     </div>
     
-<script src="./javascript/main.js"></script>
+<script src="./javascript/signin.js"></script>
 </body>
 </html>

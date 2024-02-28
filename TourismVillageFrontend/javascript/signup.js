@@ -14,7 +14,7 @@ $(document).ready(function(){
 
     })
     //password validation
-    $(".passowordlinput").on("keyup", ()=>{
+    $(".passwordinput").on("keyup", ()=>{
         validatePassword();
         console.log("keyed up");
 
@@ -26,24 +26,105 @@ $(document).ready(function(){
 
     });
 
+    $(".eye:eq(0)").on("click",  function(){
+
+        var log=$(".passwordinput[type~='password']")
+        var loglength=log.length;
+
+        if(loglength==1 ){
+            $(".passwordinput").attr("type", "text")
+            console.log("should hide password ")
+            $(".eye:eq(0)").hide();
+            $(".eyeslash:eq(0)").show()
+        }else{
+            console.log("should show password");
+            $(".passwordinput").attr("type", "password")
+            $(".eye:eq(0)").hide();
+            $(".eyeslash:eq(0)").show()
+        }
+
+
+    })
+ 
+    $(".eyeslash:eq(0)").on("click",  function(){
+
+
+        var log=$(".passwordinput[type~='password']")
+        var loglength=log.length;
+        if(loglength==1 ){
+            $(".passwordinput").attr("type", "text")
+            console.log("should hide password ")
+            $(".eye:eq(0)").show();
+            $(".eyeslash:eq(0)").hide()
+                  
+          
+        }else{
+            console.log("should show password");
+            $(".passwordinput").attr("type", "password")
+            $(".eye:eq(0)").show();
+            $(".eyeslash:eq(0)").hide()
+        }
+    })
+
+    $(".eye:eq(1)").on("click",  function(){
+
+        var log=$(".conpasswordinput[type~='password']")
+        var loglength=log.length;
+
+        if(loglength==1 ){
+            $(".conpasswordinput").attr("type", "text")
+            console.log("should hide password ")
+            $(".eye:eq(1)").hide();
+            $(".eyeslash:eq(1)").show()
+        }else{
+            console.log("should show password");
+            $(".conpasswordinput").attr("type", "password")
+            $(".eye:eq(1)").hide();
+            $(".eyeslash:eq(1)").show()
+        }
+
+
+    })
+ 
+    $(".eyeslash:eq(1)").on("click",  function(){
+
+
+        var log=$(".conpasswordinput[type~='password']")
+        var loglength=log.length;
+        if(loglength==1 ){
+            $(".conpasswordinput").attr("type", "text")
+            console.log("should hide password ")
+            $(".eye:eq(1)").show();
+            $(".eyeslash:eq(1)").hide()
+                  
+          
+        }else{
+            console.log("should show password");
+            $(".conpasswordinput").attr("type", "password")
+            $(".eye:eq(1)").show();
+            $(".eyeslash:eq(1)").hide()
+        }
+    })
+
+    
     //on submit function
     $(".submitbutton").on("click", function (e){        
       e.preventDefault();
       
         validateEmail();
-        validateUsername();
+        // validateUsername();
         validatePassword();
-        validateConfpass();
+        // validateConfpass();
 
 
 
         if (!validateEmail() && !validateUsername() && !validatePassword() && !validateConfpass() ) {
             console.log("errors all around 1");
-            $(".mainerrormessage").html(`<div class="error mainerror">Please fill all the required field</div>`);
+            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
             
         }
          else if (!validateEmail() || !validateUsername() || !validatePassword() || !validateConfpass()) {
-            $(".mainerrormessage").html(`<div class="error mainerror">Please fill all the required fields</div>`);
+            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2"> Please fill out all the required fields</div>`);
             console.log("some Erorross heare and about");
             
         }
@@ -61,37 +142,29 @@ $(document).ready(function(){
                 cache: false,
                 async: false,
 
-                beforeSend: function () {
-
-                    setTimeout(function () {
-                        // $('.form').trigger("reset");
-                        // $('.submitbutton').html('Submit');
-                        // $('.submitbutton').attr("disabled", false);
-                        // $('.submitbutton').css({ "border-radius": "7.5px" });
-
-
-
-                    $('.submitbutton').html('<i class="fa-solid fa-spinner fa-spin"></i>');
-                    $('.submitbutton').attr("disabled", true);
-                    $('.submitbutton').css({ "border-radius": "50%" });
-                    }, 50000);
-
-
-                    $('.submitbutton').html('<i class="fa-solid fa-spinner fa-spin"></i>');
-                    $('.submitbutton').attr("disabled", true);
-                    $('.submitbutton').css({ "border-radius": "50%" });
+                beforeSend:function () {
+                        $('.submitbutton').html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
+                        // $('.spinning').hide();
+                        $('.spinning').css({"color":"white"})
+                        // $('.submitbutton').html(``)
+                        $('.submitbutton').attr("disabled", true);
+                        $('.submitbutton').css({ "border-radius": "7.5px" });
                 },
 
                 success: function (data) {
-                    $('.message').html(data);
+                    $('.mainerrormessage').html('<p style="bakckground-color:red"></p>');
                 },
+
+
+
                 complete: function () {
                     setTimeout(function () {
+                        $('.mainerrormessage').html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
                         $('.form').trigger("reset");
-                        $('.submitbutton').html('Submit');
+                        $('.submitbutton').html('SIGN UP ');
                         $('.submitbutton').attr("disabled", false);
                         $('.submitbutton').css({ "border-radius": "7.5px" });
-                    }, 50000);
+                    }, 500);
                 }
             });
         }
@@ -122,11 +195,11 @@ $(document).ready(function(){
     }
 
     function validateUsername(){
-        var usernamePattern=/^[A-Za-z0-9]+$/
+        var usernamePattern=/^[A-Za-z0-9\s]+$/
         var username=$(".usernameinput").val();
         var validUsername=usernamePattern.test(username);
 
-        if(username ==" "){
+        if(username ==""){
             $(".usernameerror").html('*Username Field Required')
             return false;
         }
@@ -145,12 +218,12 @@ $(document).ready(function(){
         var password=$(".passwordinput").val();
         var validPassword=passwordPattern.test(password);
 
-        if(password ==" "){
+        if(password ==""){
             $(".passworderror").html('*password Field Required')
             return false;
         }
         else if(!validPassword){ 
-            $(".passworderror").html('*Invalid Password! Must be at least 8 characters(at least 1 uppercase, 1 lowercase and 1 Special Character')
+            $(".passworderror").html('<p style="width:90%">*Invalid Password! Must be at least 8 characters(at least 1 uppercase, 1 lowercase and 1 Special Character</p>')
             return false;
         }
         else{
@@ -164,7 +237,7 @@ $(document).ready(function(){
         var confpass=$(".conpasswordinput").val();
       
     
-        if(confpass == " "){
+        if(confpass == ""){
             $(".conpassworderror").html('*Verify password Field Required')
             return false;
         }
@@ -178,4 +251,5 @@ $(document).ready(function(){
         }
           
     }
+
 })

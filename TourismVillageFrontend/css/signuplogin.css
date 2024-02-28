@@ -35,11 +35,10 @@ nav{
 
 }
 .mainerrormessage{
-color:red;
-padding:1rem 0.5rem;
-width:90%;
+width:89%;
+/* padding:3rem; */
 /* margin:1rem auto; */
-background-color:yellow;
+/* background-color:yellow; */
 
 }
 .form{
@@ -58,7 +57,7 @@ font-size:large;
     color:red;
 }
 .formdiv{
-    margin:1rem 0rem;
+    margin:0.5rem 0rem;
 }
 .submitdiv{
     /* width:40%; */
@@ -82,12 +81,21 @@ font-size:large;
 .loading{
 
 }
-
+.spinning{
+    /* display:none; */
+    display:none;
+}
 .showeye:hover{
     cursor:pointer;
 }
 .hideeye:hover {
 cursor:pointer;
+}
+.eyeslash{
+display:none;
+}
+.eye{
+
 }
 .logindiv{
     width:80%;
