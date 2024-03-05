@@ -8,11 +8,11 @@ $(document).ready(function(){
     })
 
     //username validation
-    $(".usernameinput").on("keyup", ()=>{
-        validateUsername();
-        console.log("keyed up");
+    // $(".usernameinput").on("keyup", ()=>{
+    //     validateUsername();
+    //     console.log("keyed up");
 
-    })
+    // })
     //password validation
     $(".passwordinput").on("keyup", ()=>{
         validatePassword();
@@ -20,11 +20,11 @@ $(document).ready(function(){
 
     })
     //confirm password validation
-    $(".conpasswordinput").on("keyup", ()=>{
-        validateConfpass();
-        console.log("keyed up");
+    // $(".conpasswordinput").on("keyup", ()=>{
+    //     validateConfpass();
+    //     console.log("keyed up");
 
-    });
+    // });
 
     $(".eye:eq(0)").on("click",  function(){
 
@@ -112,9 +112,9 @@ $(document).ready(function(){
       e.preventDefault();
       
         validateEmail();
-        validateUsername();
+        // validateUsername();
         validatePassword();
-        validateConfpass();
+        // validateConfpass();
 
 
 
@@ -199,10 +199,12 @@ $(document).ready(function(){
     function validatePassword(){
         // var passwordPattern= /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         var password=$(".passwordinput").val();
+        console.log(`here is the password input check the fuck up if it's empty ${password}`)
         // var validPassword=passwordPattern.test(password);
 
-        if(password ==" "){
-            $(".passworderror").html('*password Field Required')
+        if(password ==""){
+            $(".passworderror").text('*password Field Required')
+            console.log("Where the fuck is the password input and error data ")
             return false;
         }
         // else if(!validPassword){ 

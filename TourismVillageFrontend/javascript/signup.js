@@ -124,7 +124,7 @@ $(document).ready(function(){
             
         }
          else if (!validateEmail() || !validateUsername() || !validatePassword() || !validateConfpass()) {
-            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2"> Please fill out all the required fields</div>`);
+            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
             console.log("some Erorross heare and about");
             
         }
@@ -252,4 +252,4 @@ $(document).ready(function(){
           
     }
 
-})
+})``
