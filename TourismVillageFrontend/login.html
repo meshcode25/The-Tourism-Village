@@ -19,7 +19,7 @@
     <div class="formcontainer">
         <div class="formdiv">
             <div class="loginheader"><h1>LOGIN</h1></div>
-            <form class="form" method="post" action="">
+            <form class="form" enctype="multipart/form-data" method="post" action="" id="form">
                 <div class="mainerrormessage"></div>
                 <!-- email -->
                 <div class="formdiv emaildiv">
@@ -31,7 +31,7 @@
                 <!--passoword -->
                 <div class="formdiv passdiv">
                     <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
-                    <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
+                    <input type="password" class="forminput passwordinput" id="pass" autocomplete="on" placeholder="Enter Password" name="password">
                     <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
                     <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
                     <p class="formerror passworderror"> </p>

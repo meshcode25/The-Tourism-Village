@@ -4,7 +4,7 @@ $(document).ready(function(){
        
     $(".emailinput").on("keyup", ()=>{
         validateEmail();
-        console.log("keyed up");
+        // console.log("keyed up");
     })
 
     //username validation
@@ -16,7 +16,7 @@ $(document).ready(function(){
     //password validation
     $(".passwordinput").on("keyup", ()=>{
         validatePassword();
-        console.log("keyed up");
+        // console.log("keyed up");
 
     })
     //confirm password validation
@@ -33,11 +33,11 @@ $(document).ready(function(){
 
         if(loglength==1 ){
             $(".passwordinput").attr("type", "text")
-            console.log("should hide password ")
+            // console.log("should hide password ")
             $(".eye:eq(0)").hide();
             $(".eyeslash:eq(0)").show()
         }else{
-            console.log("should show password");
+            // console.log("should show password");
             $(".passwordinput").attr("type", "password")
             $(".eye:eq(0)").hide();
             $(".eyeslash:eq(0)").show()
@@ -53,13 +53,13 @@ $(document).ready(function(){
         var loglength=log.length;
         if(loglength==1 ){
             $(".passwordinput").attr("type", "text")
-            console.log("should hide password ")
+            // console.log("should hide password ")
             $(".eye:eq(0)").show();
             $(".eyeslash:eq(0)").hide()
                   
           
         }else{
-            console.log("should show password");
+            // console.log("should show password");
             $(".passwordinput").attr("type", "password")
             $(".eye:eq(0)").show();
             $(".eyeslash:eq(0)").hide()
@@ -73,11 +73,11 @@ $(document).ready(function(){
 
         if(loglength==1 ){
             $(".conpasswordinput").attr("type", "text")
-            console.log("should hide password ")
+            // console.log("should hide password ")
             $(".eye:eq(1)").hide();
             $(".eyeslash:eq(1)").show()
         }else{
-            console.log("should show password");
+            // console.log("should show password");
             $(".conpasswordinput").attr("type", "password")
             $(".eye:eq(1)").hide();
             $(".eyeslash:eq(1)").show()
@@ -93,13 +93,13 @@ $(document).ready(function(){
         var loglength=log.length;
         if(loglength==1 ){
             $(".conpasswordinput").attr("type", "text")
-            console.log("should hide password ")
+            // console.log("should hide password ")
             $(".eye:eq(1)").show();
             $(".eyeslash:eq(1)").hide()
                   
           
         }else{
-            console.log("should show password");
+            // console.log("should show password");
             $(".conpasswordinput").attr("type", "password")
             $(".eye:eq(1)").show();
             $(".eyeslash:eq(1)").hide()
@@ -129,16 +129,41 @@ $(document).ready(function(){
             
         }
         else {
+
+
             console.log("Seems everything is Okayok");
             $(".mainerrormessage").html("");
-            var form = $('.form')[0];
-            var data = new FormData(form);
+            var formm = $('#form')[0];
+            var dataa = new FormData(formm);
+            // console.log(...dataa)
+
+            dataa.append("email", $(".emailinput").val());
+            dataa.append("password", $(".passwordinput").val());
+            // console.log(dataa);
+        
+
+            var email =$(".emailinput").val();
+            var password=$(".passwordinput").val();
+       
+            var form ={
+                "email":email,
+                "password":password,
+
+            }
+            
+
+            
+                
+            // console.log(form);
+            console.log(dataa);
+
             $.ajax({
                 type: "POST",
-                url: "process.php",
-                data: data,
+                url: "http://localhost/www/php/index.php",
+                data:dataa,
                 processData: false,
-                contentType: false,
+                contentType:false,
+                dataType: false,
                 cache: false,
                 async: false,
 
@@ -151,8 +176,15 @@ $(document).ready(function(){
                         $('.submitbutton').css({ "border-radius": "7.5px" });
                 },
 
-                success: function (data) {
+                success: function (response, status,xhr) {
                     $('.mainerrormessage').html('<p style="bakckground-color:red"></p>');
+                    console.log("here below are the success response")
+                    var data=JSON.parse(response);
+                    console.log(data.email);
+                    console.log(data.password);
+
+                    console.log(status);
+                    console.log(xhr);
                 },
 
 
@@ -164,7 +196,11 @@ $(document).ready(function(){
                         $('.submitbutton').html('SIGN IN ');
                         $('.submitbutton').attr("disabled", false);
                         $('.submitbutton').css({ "border-radius": "7.5px" });
-                    }, 500);
+                        console.log("here below are the completed response");
+                        // var data=s(dataa);
+                        // console.log(data)
+                        // window.location=`http://localhost/www/php/index.php?emai=meshcode75@gmail.com&password=Yegon@2029`;
+                    }, 800);
                 }
             });
         }
@@ -179,18 +215,18 @@ $(document).ready(function(){
 
         if(email == ""){
             $(".emailerror").text('*Email Field Required')
-            console.log("this space is fucking empty")
+            // console.log("this space is fucking empty")
             return false;
 
         }
          else if(!validEmail){ 
             $(".emailerror").text('*Input Valid Email Address')
-            console.log("it's not a  match")
+            // console.log("it's not a  match")
             return false;
         }
         else{
             $(".emailerror").html(' ')
-            console.log("it's a fucking match")
+            // console.log("it's a fucking match")
             return true;
 
         }
@@ -199,12 +235,12 @@ $(document).ready(function(){
     function validatePassword(){
         // var passwordPattern= /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         var password=$(".passwordinput").val();
-        console.log(`here is the password input check the fuck up if it's empty ${password}`)
+        // console.log(`here is the password input check the fuck up if it's empty ${password}`)
         // var validPassword=passwordPattern.test(password);
 
         if(password ==""){
             $(".passworderror").text('*password Field Required')
-            console.log("Where the fuck is the password input and error data ")
+            // console.log("Where the fuck is the password input and error data ")
             return false;
         }
         // else if(!validPassword){ 
