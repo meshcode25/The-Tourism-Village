@@ -159,7 +159,7 @@ $(document).ready(function(){
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/www/php/index.php",
+                url: "http://localhost/www/php/index.php? id=1 & name=mesh& email=kipmesh@gmail.com",
                 data:dataa,
                 processData: false,
                 contentType:false,
@@ -179,9 +179,9 @@ $(document).ready(function(){
                 success: function (response, status,xhr) {
                     $('.mainerrormessage').html('<p style="bakckground-color:red"></p>');
                     console.log("here below are the success response")
-                    var data=JSON.parse(response);
-                    console.log(data.email);
-                    console.log(data.password);
+                    // var data=JSON.parse(response);
+                    console.log(response);
+                    // console.log(data.password);
 
                     console.log(status);
                     console.log(xhr);
@@ -196,11 +196,12 @@ $(document).ready(function(){
                         $('.submitbutton').html('SIGN IN ');
                         $('.submitbutton').attr("disabled", false);
                         $('.submitbutton').css({ "border-radius": "7.5px" });
+                        console.log("prove me wrong");
                         console.log("here below are the completed response");
                         // var data=s(dataa);
                         // console.log(data)
-                        // window.location=`http://localhost/www/php/index.php?emai=meshcode75@gmail.com&password=Yegon@2029`;
-                    }, 800);
+                        // window.location.href=`http://localhost/www/php/index.php?email=meshcode75@gmail.com&password=Yegon@2029`;
+                    }, 8000);
                 }
             });
         }

@@ -1,0 +1,16 @@
+#Activate ModRewrite
+RewriteEngine On
+
+#let the folders and files to be access
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Rewrite URL
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+
+#The basic format of the RewriteRule directive is:
+RewriteRule pattern substitution [flags] 
+
+
+#The basic format of the RewriteCond directive is:
+RewriteCond TestString CondPattern [flags] 

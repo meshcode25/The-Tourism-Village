@@ -34,7 +34,7 @@ $routes = [
     [
         "pattern"=> "/^resetpassword$/",
         "method"=> "GET",
-        "controller"=> "login"
+        "controller"=> "resetpassword"
 
     ]
 ];
@@ -57,6 +57,8 @@ class Routing{
     public function __construct($route =''){
         if(!empty($route)){
             $this->route = $route;
+            echo "the next line of code is what I am talking about <br>";
+            echo $this->route;
             // Validate route
             if($this->validate_route()){
                 // If route is valid
