@@ -14,3 +14,6 @@ RewriteRule pattern substitution [flags]
 
 #The basic format of the RewriteCond directive is:
 RewriteCond TestString CondPattern [flags] 
+
+# path managent 
+# php_value include_path '.;C:\xampp\php\PEAR;C:\xampp\htdocs\k2'

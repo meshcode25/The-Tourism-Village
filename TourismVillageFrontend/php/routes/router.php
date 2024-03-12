@@ -8,34 +8,36 @@ $routes = [
     [
         "pattern" => '/^index$/',
         "method" => "ANY",
-        "controller" => "Index"
+        "controller" => "index",
+        "class"=>"Index",
     ],
     [
         "pattern" => "/^user\/(\d+)$/",
         "method" => "GET",
         "controller" => "Users",
-        "page" => "edit"
+        "page" => "edit",
+        "class"=>"Edit",
     ],
 
     [
         "pattern"=> "/^login$/",
         "method"=> "POST",
-        "controller"=> "login"
-
+        "controller"=> "loginController",
+        "class"=>"Login"
     ],
 
     [
         "pattern"=> "/^signup$/",
         "method"=> "POST",
-        "controller"=> "signup"
-
+        "controller"=> "signupController",
+        "class"=>"Signup",
     ],
 
     [
         "pattern"=> "/^resetpassword$/",
         "method"=> "GET",
-        "controller"=> "resetpassword"
-
+        "controller"=> "resetPassword",
+        "class"=>"Resetpassword",
     ]
 ];
  
@@ -53,49 +55,63 @@ class Routing{
     public $params =[];
     // URI parameter = the controller's object argument(s)
     public $args =[];
+
+    public $class;
     
     public function __construct($route =''){
         if(!empty($route)){
             $this->route = $route;
-            echo "the next line of code is what I am talking about <br>";
-            echo $this->route;
+            echo "the next line of code is what I am talking about ".  $this->route;
             // Validate route
             if($this->validate_route()){
                 // If route is valid
                 ob_start();
                 // load the controller class
-                include_once("controllers/{$this->controller}.php");
- 
+                // $path ='C:\xampp\php\PEAR';
+                // set_include_path(get_include_path() . "/". $path);
+                $path=getcwd();
+                // $fullpath=$path."\controllers\
+                // echo $path;
+                // echo "CURRENTLY WORKING DIRECTORY" .$path;
+
+                $currentcontroller=$this->controller;
+                // include_once($fullpath $currentcontroller .".php");
+
+                include_once("C:/xampp/htdocs/www/php/controllers/$this->controller.php");
+                // ./routes/router.php
+   
                 if(!$this->page){
                     // If page is not set
                     $this->page = 'index';
                 }
                 // Initializing the controller with the request data
-                $controller = new ($this->controller)($this->params);
+                $controller = new ($this->class)($this->params);
+
                 // Execute the object of the class
                 $controller->{$this->page}(...$this->args);
+
                 echo ob_get_clean();
+
             }else{
                 // Throw an Error if route is not valid
-                throw new ErrorException("Undefined Route.");
+                throw new ErrorException(" Unable to validtae Route in Validate_Route function Undefined Route.");
             }
         }else{
             // Throw an Error if route is not defined
-            throw new ErrorException("Undefined Route.");
+            throw new ErrorException("Route is empty pUndefined Route.");
         }
     }
  
     protected function validate_route(){
         global $routes;
- 
+        echo "here is the route I am validating ". $this->route;
+
         foreach($routes as $route){
             /**
                 * Check if the route is allowed
                 */
             if(preg_match($route['pattern'], $this->route, $matches)){
-                /**
-                    * Checking if the provided method and the request method are match
-                    */
+                /* Checking if the provided method and the request method are match*/
                 if($route['method'] != "ANY"){
                     if($route['method'] != $_SERVER['REQUEST_METHOD']){
                         throw new ErrorException("Request Method is denied!");
@@ -103,8 +119,7 @@ class Routing{
                 }
  
                 /***
-                       * Defining the Arguments
-                    */
+                       * Defining the Arguments*/
                     if(isset($matches[1])){
                         if(!is_array($matches[1])){
                             $this->args = [$matches[1]];
@@ -121,6 +136,8 @@ class Routing{
                         * Defining the class name
                         */
                     $this->controller = $route['controller'];
+
+                    $this->class=$route['class'];
      
                     // Store POST Request Data
                     $this->params['post'] = $_POST ?? []; 
@@ -132,6 +149,9 @@ class Routing{
                 }
 
             }
+
+            print_r("here is the route I am validating ". $this->route); 
+            throw new ErrorException("This route didn't match any in our routes array!");
             return false;
         }
     }

@@ -149,17 +149,14 @@ $(document).ready(function(){
                 "email":email,
                 "password":password,
 
-            }
-            
-
-            
+            }  
                 
             // console.log(form);
             console.log(dataa);
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/www/php/index.php? id=1 & name=mesh& email=kipmesh@gmail.com",
+                url: "http://localhost/www/php/index.php/login",
                 data:dataa,
                 processData: false,
                 contentType:false,
