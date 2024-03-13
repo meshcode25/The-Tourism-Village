@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Tourism Village</title>
-    <link rel="stylesheet"  href="./css/signuplogin.css">
+    <link rel="stylesheet"  href="../css/signuplogin.css">
     <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -19,7 +19,7 @@
     <div class="formcontainer">
         <div class="formdiv">
             <div class="loginheader"><h1>LOGIN</h1></div>
-            <form class="form" method="post" action="">
+            <form class="form" enctype="multipart/form-data" method="post" action="" id="form">
                 <div class="mainerrormessage"></div>
                 <!-- email -->
                 <div class="formdiv emaildiv">
@@ -31,7 +31,7 @@
                 <!--passoword -->
                 <div class="formdiv passdiv">
                     <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
-                    <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
+                    <input type="password" class="forminput passwordinput" id="pass" autocomplete="on" placeholder="Enter Password" name="password">
                     <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
                     <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
                     <p class="formerror passworderror"> </p>
@@ -46,7 +46,7 @@
 
                 <!-- forgot password -->
                 <div class="forgotpassdiv">
-                    <a href="#" class="forgotpasslink">Forgot Password??</a>
+                    <a href="../pages/resetpassword.html" class="forgotpasslink">Forgot Password??</a>
                 </div>
                 <!-- forgot passsword -->
               
@@ -58,7 +58,7 @@
             </div>
             <!--login with Google or Email-->
             <div class="logingroup">
-                <div class="login emaillogin" ><a href="./signup.html" class="googleloginlink" >SIGN UP </a></div>
+                <div class="login emaillogin" ><a href="../pages/signup.html" class="googleloginlink" >SIGN UP </a></div>
                 <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
                 <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
 
@@ -67,6 +67,6 @@
         </div>
     </div>
     
-<script src="./javascript/signin.js"></script>
+<script src="../javascript/signin.js"></script>
 </body>
 </html>

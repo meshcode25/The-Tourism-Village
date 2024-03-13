@@ -28,7 +28,10 @@ require_once('./routes/router.php');
         echo "the params are not set";
     }
 
-    new Routing(rtrim("login" ?? '','/'), rtrim($par ?? ' ', '/'));
+    echo "this is the path of we got from the request string";
+    new Routing(rtrim($path ?? '','/'), rtrim($par ?? ' ', '/'));
+
+    // new Routing("login");
 
 
 

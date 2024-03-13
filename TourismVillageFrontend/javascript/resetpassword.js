@@ -1,6 +1,10 @@
 $(document).ready(function(){
     //sign up validation //
     //gmail validation
+
+    var STING="HIRE IS THE THE THING";
+    $(".passdiv").append({STING: "THIS IS THE THING"});
+    $(".conpassdiv").hide();
        
     $(".emailinput").on("keyup", ()=>{
         validateEmail();

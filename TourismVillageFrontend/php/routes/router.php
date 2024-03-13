@@ -20,21 +20,28 @@ $routes = [
     ],
 
     [
-        "pattern"=> "/^login$/",
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*login$/",
         "method"=> "POST",
+        "controller"=> "loginController",
+        "class"=>"Login"
+    ],
+    
+    [
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*login$/",
+        "method"=> "GET",
         "controller"=> "loginController",
         "class"=>"Login"
     ],
 
     [
-        "pattern"=> "/^signup$/",
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*signup$/",
         "method"=> "POST",
         "controller"=> "signupController",
         "class"=>"Signup",
     ],
 
     [
-        "pattern"=> "/^resetpassword$/",
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*resetpassword$/",
         "method"=> "GET",
         "controller"=> "resetPassword",
         "class"=>"Resetpassword",
@@ -85,10 +92,11 @@ class Routing{
                     $this->page = 'index';
                 }
                 // Initializing the controller with the request data
-                $controller = new ($this->class)($this->params);
-
+                // $controller = new ($this->class)($this->params);
+                $controller= new ($this->class)([1,2,3], ["post", "get"], ["create user"]);
                 // Execute the object of the class
-                $controller->{$this->page}(...$this->args);
+                 echo $controller->printParams();
+                //  echo $controller->{$this->page}(...$this->args);
 
                 echo ob_get_clean();
 
