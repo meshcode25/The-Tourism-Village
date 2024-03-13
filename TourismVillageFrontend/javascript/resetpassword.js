@@ -2,9 +2,9 @@ $(document).ready(function(){
     //sign up validation //
     //gmail validation
 
-    var STING="HIRE IS THE THE THING";
-    $(".passdiv").append({STING: "THIS IS THE THING"});
-    $(".conpassdiv").hide();
+
+    // $(".passdiv").css({"display":"none"})
+    // $(".conpassdiv").css({"display":"none"});
        
     $(".emailinput").on("keyup", ()=>{
         validateEmail();
@@ -120,14 +120,26 @@ $(document).ready(function(){
         validatePassword();
         // validateConfpass();
 
+        var computedvalue=$(".passdiv")[0];
+        // if($(.))
+        var style=window.getComputedStyle(computedvalue);
+        var value=style.getPropertyValue("display");
+
+        if(value=="none"){
 
 
-        if (!validateEmail() && !validateUsername() && !validatePassword() && !validateConfpass() ) {
+        }else{
+
+
+        }
+
+           
+        if (!validateEmail() && !validatePassword() && !validateConfpass() ) {
             console.log("errors all around 1");
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
             
         }
-         else if (!validateEmail() || !validateUsername() || !validatePassword() || !validateConfpass()) {
+         else if (!validateEmail() || !validatePassword() || !validateConfpass()) {
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
             console.log("some Erorross heare and about");
             
@@ -148,7 +160,7 @@ $(document).ready(function(){
 
             $.ajax({
                 type: "POST",
-                url:"http://localhost/www/php/index.php/signup",
+                url:"http://localhost/www/php/index.php/resetpassword",
                 data: data,
                 processData: false,
                 contentType: false,
@@ -178,7 +190,7 @@ $(document).ready(function(){
                     setTimeout(function () {
                         $('.mainerrormessage').html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
                         $('.form').trigger("reset");
-                        $('.submitbutton').html('SIGN UP ');
+                        $('.submitbutton').html('SUBMIT ');
                         $('.submitbutton').attr("disabled", false);
                         $('.submitbutton').css({ "border-radius": "7.5px" });
                         console.log( "and now here is the completed message from signup request")

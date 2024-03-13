@@ -20,31 +20,37 @@ $routes = [
     ],
 
     [
-        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*login$/",
+        "pattern"=> "/^(.*)[0-9a-zA-Z-\/]*\/login$/",
         "method"=> "POST",
         "controller"=> "loginController",
         "class"=>"Login"
     ],
     
     [
-        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*login$/",
+        "pattern"=> "/^(.*)[0-9a-zA-Z-\/]*\/login$/",
         "method"=> "GET",
         "controller"=> "loginController",
         "class"=>"Login"
     ],
 
     [
-        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*signup$/",
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*\/signup$/",
         "method"=> "POST",
         "controller"=> "signupController",
         "class"=>"Signup",
     ],
 
     [
-        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*resetpassword$/",
-        "method"=> "GET",
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*\/resetpassword$/",
+        "method"=> "POST",
         "controller"=> "resetPassword",
         "class"=>"Resetpassword",
+    ],
+    [
+        "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*\/preresetpassword$/",
+        "method"=> "POST",
+        "controller"=> "preresetPassword",
+        "class"=>"Preresetpassword",
     ]
 ];
  
@@ -68,23 +74,23 @@ class Routing{
     public function __construct($route =''){
         if(!empty($route)){
             $this->route = $route;
-            echo "the next line of code is what I am talking about ".  $this->route;
+            echo "Route is NOT EMPTY i HAVE TO SAY ".  $this->route;
             // Validate route
+
             if($this->validate_route()){
+                echo "THE VALIDATIONS COMPLETE, IT'S A VALID ROUTE  ".  $this->route;
+
                 // If route is valid
                 ob_start();
                 // load the controller class
                 // $path ='C:\xampp\php\PEAR';
                 // set_include_path(get_include_path() . "/". $path);
                 $path=getcwd();
-                // $fullpath=$path."\controllers\
-                // echo $path;
-                // echo "CURRENTLY WORKING DIRECTORY" .$path;
-
-                $currentcontroller=$this->controller;
-                // include_once($fullpath $currentcontroller .".php");
-
-                include_once("C:/xampp/htdocs/www/php/controllers/$this->controller.php");
+                // echo $path; 
+            
+                echo __DIR__;
+            
+                include_once("/opt/lampp/htdocs/www/php/controllers/$this->controller.php");
                 // ./routes/router.php
    
                 if(!$this->page){
@@ -95,12 +101,14 @@ class Routing{
                 // $controller = new ($this->class)($this->params);
                 $controller= new ($this->class)([1,2,3], ["post", "get"], ["create user"]);
                 // Execute the object of the class
-                 echo $controller->printParams();
+                $controller->printParams();
                 //  echo $controller->{$this->page}(...$this->args);
-
-                echo ob_get_clean();
+                
+                ob_get_clean();
 
             }else{
+                echo "OOPS, IT'S AN INVALID ROUTE ".  $this->route;
+
                 // Throw an Error if route is not valid
                 throw new ErrorException(" Unable to validtae Route in Validate_Route function Undefined Route.");
             }
@@ -112,7 +120,7 @@ class Routing{
  
     protected function validate_route(){
         global $routes;
-        echo "here is the route I am validating ". $this->route;
+        echo "NOW I AM DOING VALIDATION    ". $this->route;
 
         foreach($routes as $route){
             /**
@@ -120,12 +128,13 @@ class Routing{
                 */
             if(preg_match($route['pattern'], $this->route, $matches)){
                 /* Checking if the provided method and the request method are match*/
-                if($route['method'] != "ANY"){
+                if($route['method'] == "ANY"){
+                    ECHO $_SERVER['REQUEST_METHOD'];
                     if($route['method'] != $_SERVER['REQUEST_METHOD']){
                         throw new ErrorException("Request Method is denied!");
                     }
                 }
- 
+
                 /***
                        * Defining the Arguments*/
                     if(isset($matches[1])){
@@ -157,8 +166,7 @@ class Routing{
                 }
 
             }
-
-            print_r("here is the route I am validating ". $this->route); 
+            ECHO "AFTER VALIDATION, INVALID ROUTE ERRORS FOLLOW   ";
             throw new ErrorException("This route didn't match any in our routes array!");
             return false;
         }
