@@ -1,5 +1,27 @@
 <?php
 
+$servername="127.0.0.1";
+$username="root@localhost";
+$password="Yegon@2029";
+$dbname="tourismvillage db";
+$options=[
+    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+
+];
+
+try{
+    $conn = new PDO("mysql:host=$servername, dbname=$dbname", $username, $password, $options);
+    //set Atttributes to handles exception erros 
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+
+    
+    ECHO " SUCCESSFULLY CONNECTED TO THE DATABASE   ";
+
+}catch(PDOException $e){
+    echo "DATABASE CONNECTION FAILED   ". $e->getMessage(). "END OF DATABASE CONNECTION ERROR   ";
+
+}
+
 // Load Routing Class
 require_once('./routes/router.php');
 
