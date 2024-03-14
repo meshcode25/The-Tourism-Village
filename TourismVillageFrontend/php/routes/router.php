@@ -43,13 +43,13 @@ $routes = [
     [
         "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*\/resetpassword$/",
         "method"=> "POST",
-        "controller"=> "resetPassword",
+        "controller"=> "resetpasswordController",
         "class"=>"Resetpassword",
     ],
     [
         "pattern"=> "/^(.*)[0-9 a-z A-Z-\/]*\/preresetpassword$/",
         "method"=> "POST",
-        "controller"=> "preresetPassword",
+        "controller"=> "preresetpasswordController",
         "class"=>"Preresetpassword",
     ]
 ];
@@ -78,7 +78,7 @@ class Routing{
             // Validate route
 
             if($this->validate_route()){
-                echo "THE VALIDATIONS COMPLETE, IT'S A VALID ROUTE  ".  $this->route;
+                echo "  THE VALIDATIONS COMPLETE, IT'S A VALID ROUTE  ".  $this->route;
 
                 // If route is valid
                 ob_start();
@@ -88,9 +88,11 @@ class Routing{
                 $path=getcwd();
                 // echo $path; 
             
-                echo __DIR__;
+                // echo __DIR__;
+                // echo $path;
             
-                include_once("/opt/lampp/htdocs/www/php/controllers/$this->controller.php");
+                // include_once("/opt/lampp/htdocs/www/php/controllers/$this->controller.php");
+                include_once("C:/xampp/htdocs/www/php/controllers/$this->controller.php");
                 // ./routes/router.php
    
                 if(!$this->page){
@@ -98,13 +100,15 @@ class Routing{
                     $this->page = 'index';
                 }
                 // Initializing the controller with the request data
+                ob_get_clean();
                 // $controller = new ($this->class)($this->params);
+                echo $this->class;
+                // echo 
                 $controller= new ($this->class)([1,2,3], ["post", "get"], ["create user"]);
                 // Execute the object of the class
                 $controller->printParams();
                 //  echo $controller->{$this->page}(...$this->args);
                 
-                ob_get_clean();
 
             }else{
                 echo "OOPS, IT'S AN INVALID ROUTE ".  $this->route;
@@ -128,8 +132,9 @@ class Routing{
                 */
             if(preg_match($route['pattern'], $this->route, $matches)){
                 /* Checking if the provided method and the request method are match*/
-                if($route['method'] == "ANY"){
+                if($route['method'] != "ANY"){
                     ECHO $_SERVER['REQUEST_METHOD'];
+                    echo "  It DOESN'T HAVE TO END HERE  ";
                     if($route['method'] != $_SERVER['REQUEST_METHOD']){
                         throw new ErrorException("Request Method is denied!");
                     }

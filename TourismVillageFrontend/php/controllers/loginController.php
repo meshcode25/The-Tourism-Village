@@ -37,7 +37,7 @@ class Login{
         echo $this->method;
         echo $this->args;
 
-        echo "Here is the login function print it ";
+        echo "  Here is the LOGIN function print it   ";
 
 
         if($_SERVER['REQUEST_METHOD']=="POST"){
