@@ -2,18 +2,28 @@
 RewriteEngine On
 
 #let the folders and files to be access
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d;
+RewriteCond %{REQUEST_FILENAME} !-f;
 
 #Rewrite URL
-RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+RewriteRule ^(.*)$ index.php?route=$1 [QSA, L];
 
 #The basic format of the RewriteRule directive is:
-RewriteRule pattern substitution [flags] 
+# RewriteRule pattern substitution [flags] 
 
 
 #The basic format of the RewriteCond directive is:
-RewriteCond TestString CondPattern [flags] 
+# RewriteCond TestString CondPattern [flags] 
 
 # path managent 
+
+# dbconnection="mysql";
+# servername="127.0.0.1";
+# username="Yegon";
+# password="";
+# dbname="tourismvillage db";
+
+
+
+
 # php_value include_path '.;C:\xampp\php\PEAR;C:\xampp\htdocs\k2'

@@ -1,16 +1,45 @@
 <?php
 
-$servername="127.0.0.1";
-$username="root@localhost";
+// echo (__DIR__."/.".".htacess");
+// include_once(__DIR__."/.".".htacess");
+
+// public PDO::__construct(
+//     string $dsn;
+//     ?string $username = null;
+//     ?string $password = null;
+//     ?array $options = null;
+
+
+
+//     // $dbconnection="mysqli";
+//     // $servername="127.0.0.1";
+//     // $username="root";
+//     // $password="";
+//     // $dbname="tourismvillage db";
+//     // $options=[
+//     //     PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+//     // ];
+// )
+
+$dbconnection="mysqli";
+$servername="localhost";
+$username="Yegon";
 $password="Yegon@2029";
 $dbname="tourismvillage db";
+$charset=""
 $options=[
     PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-
 ];
 
+
+// $dbconnection=$_ENV["dbconnection"];
+// $servername=$_ENV["dbconnection"];
+// $username=$_ENV["username"];
+// $password=$_ENV["password"];
+// $dbname=$_ENV["dbname"];
+
 try{
-    $conn = new PDO("mysql:host=$servername, dbname=$dbname", $username, $password, $options);
+    $conn = new PDO("$dbconnection:host=$servername, dbname=$dbname", $username, $password, $options);
     //set Atttributes to handles exception erros 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
