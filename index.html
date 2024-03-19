@@ -185,8 +185,9 @@
 
             </ul>
         </div>
-        </navcontainer>
+  
     </nav>
+    
     <div class="bodycontainer">
         
         <div class="wholemiddlecontainer">
@@ -208,15 +209,65 @@
                                 <h1 class="searchcollapseheader">Start Typing or Select Destionation</h1>    
                                 <div class="searchcollapse">
                                     <form class="selectdestinycheckbox">
-                                        <div class="destinycheckboxformdiv">
-                                        
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="checkbox1" />
-                                                <label for="checkbox1"></label>
-                                              </div>
-                                            
-
-                                        </div>
+                                       
+                                            <label for="destinationdropdown">Select Destination</label>
+                                            <select name="destinationdropdown" id="destinationdropdown" multiple>
+                                                <option value="select">Select a Destination</option>
+                                                <option value="nairobi">Nairobi </option>
+                                                <option value="nakuru">Nakuru </option>
+                                                <option value="mombasa"> Mombasa</option>
+                                                <option value="kisumu">Kisumu </option>
+                                                <option value="kilifi"> Kilifi</option>
+                                                <option value="voi">Voi </option>
+                                                <option value="nanyuki">Nanyuki </option>
+                                                <option value="turkanana">Turkanana </option>
+                                                <option value="trans-zoia">Tranz-Zoia</option>
+                                                <option value="narok">Narok </option>
+                                                <option value="lamu">Lamu </option>
+                                                <option value="kwale"> Kwale</option>
+                                                <option value="tanariver">Tana River  </option>
+                                                <option value="taitataveta"> Taita Taveta </option>
+                                                <option value="Meru ">Meru</option>
+                                                <option value="nanyuki">Tharaka-Niithi </option>
+                                                <option value="kajiado">Kajiado </option>
+                                                <option value="uasin Gishu "> Uasin Gishu</option>
+                                                <option value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
+                                                <option value="nandi">   Nandi    </option>
+                                                <option value="baringo"> Baringo    </option>
+                                                <option value="laikipia"> Laikipia   </option>
+                                                <option value="kericho">  Kericho   </option>
+                                                <option value="bomet">    Bomet   </option>
+                                                <option value="kakamega"> Kakamega   </option>
+                                                <option value="vihiga">   Vihiga   </option>
+                                                <option value="bungoma">  Bungoma   </option>
+                                                <option value="busia" >Busia </option>
+                                                <option value="siaya" >Siaya </option>
+                                                <option value="kisumu">Kisumu  </option>  
+                                                <option value="homa Bay">Homa Bay </option>
+                                                <option value="migori" >Migori </option>
+                                                <option value="kisii" >Kisii  </option>
+                                                <option value="nyamira">Nyamira </option> 
+                                                <option value="tana River">Tana River</option>
+                                                <option value="lamu ">Lamu</option>
+                                                <option value="garissa">Garissa </option>
+                                                <option value="wajir" >Wajir</option>
+                                                <option value="mandera">Mandera </option>
+                                                <option value="marsabit">Marsabit </option>
+                                                <option value="isiolo ">Isiolo</option>
+                                                <option value="embu" >Embu </option>
+                                                <option value="kitui "> Kitui</option>
+                                                <option value="Machakos">Machakos</option>                                    
+                                                <option value="Makueni">Makueni</option>                                    
+                                                <option value="Nyandarua">Nyandarua</option>                                    
+                                                <option value="Nyeri">Nyeri</option>                                    
+                                                <option value="Kirinyaga">Kirinyaga</option>                                    
+                                                <option value="Murang'a">Murang'a</option>                                    
+                                                <option value=" Kiambu">Kiambu</option>                                                                                    
+                                                <option value="West Pokot">West Pokot</option>                                    
+                                                <option value="Samburu">Samburu</option>                                    
+                                              <input type="submit" value="Submit" />
+  
+                                            </select>
 
                                           
                                     </form>
@@ -227,17 +278,29 @@
                         </div>
 
                         <div class="datediv">
-                            <label class="mainsearchlabel" >Search Destination/Tour/Travel</label>
+                            <label class="mainsearchlabel" >Select Date</label>
                             <div class="destinydiv">
                                 <div class="destinyinputplaceholder">
-                                    <h6>Tour Destionation</h6>
-                                    <input type="search" class="mainsearchinput" name="mainsearchinput" placeholder="Search Tour/Travel/Destination" >
+                                    <h6>Select Date</h6>
+                                    <input  type="date" class="datetimeinput" name="datepicker" placeholder="Select Date/Travel" min="04/30/2024" >
                                 </div>
                             </div>
 
                             <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
                         </div>
 
+                        <div class="travellersdiv">
+                            <label class="travellers" >Select Date</label>
+                            <div class="travellersdiv">
+                                <div class="travellersinputplaceholder">
+                                    <h6>Enter no of travellers</h6>
+                                    <input type="number" class="travellersinput" name="travellersinput" placeholder="Enter number of travellers " >
+                                    <button class="minusbutton"><H1>-</H1></button><input type="number" placeholder="enter number" min="1" minlength="5"><button class="addbutton"><h1>+</h1></button>
+                                </div>
+                            </div>
+
+                            <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
+                        </div>
                     </form>
                 </div>
             </div>
