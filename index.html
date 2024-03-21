@@ -212,17 +212,18 @@
                             <div class="destinydiv">
                                 <div class="destinyinputplaceholder">
                                     <h6>Tour Destionation</h6>
-                                    <input type="search" class="mainsearchinput" name="mainsearchinput" placeholder="Search Tour/Travel/Destination" >
+
+                                    <input type="search" class="mainsearchinput" name="mainsearchinput"  id="destinationsearchinput" >
+                                    <label class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</label>
                                     <span class="searchiconspan"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                </div>
-                            </div>
+
+                                       <!-- here starrts the collapsediv -->
                             <div class="searchcollapsediv">
                                 <h5 class="searchcollapseheader">Start Typing or Select Destination</h5>    
                                 <div class="searchcollapse">
-                                    <form class="selectdestinycheckbox">
-                                       
-                                            <label for="destinationdropdown">Select Destination</label>
-                                            <select name="destinationdropdown" id="destinationdropdown" multiple>
+                                    <form class="selectdestinycheckbox">   
+                                        <select class= "searchselectcollapse" name="destinationdropdown" id="destinationdropdown" multiple>
+                                                <label for="destinationdropdown">Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue">adfadsfad </i> </label><i class="fa-solid fa-x"></i>
                                                 <option value="select">Select a Destination</option>
                                                 <option value="nairobi">Nairobi </option>
                                                 <option value="nakuru">Nakuru </option>
@@ -284,6 +285,10 @@
                                     </form>
                                 </div>
                             </div>
+                                </div>
+                            </div>
+
+                         
 
                             <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
                         </div>
