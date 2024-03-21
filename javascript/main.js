@@ -1,3 +1,6 @@
+$(document).ready(function(){
+
+
 //on load 
 
 let screensize;
@@ -414,9 +417,120 @@ else{
     
     
 }
-    
-                    
+    // This is the beginining of the body part of the website
+    // .introjumbotron{
+    //     /* background-color:yellow; */
+    // }
+    // .formdiv{
+    //     background-color: bisque; 
+    //     padding:1rem;
+    //     /* background-color:blue; */
+    // }
+    // .mainsearchform{
         
+    // }
+    // .selectdestinycheckbox{
+    //     background-color: blue;
+    //     height:500px;
+    //     width:100%;
+    // }
+    // .destinationsearchlabel{
+    //     position:relative;
+    //     top:-2.7rem;
+    //     font-size:medium;
+    //     color:gray;
+    //     left:0rem;
+    //     padding:0.5rem;
+    // }
+
+    // .mainsearchinput{
+    //     font-size:medium;
+    //     padding:1.5rem 0.5rem ;
+    //     outline: none;
+    //     border:3px solid violet;
+    //     color:blue;
+    // }
+    // .searchcollapsediv{
+    //     width:100%;
+    //     height:500px;
+    //     border-radius: 15px;
+    //     background-color: green;
+    //     display:none;
+    // }
+    $(".mainsearchinput").on("focus", function (){
+        $(".destinationsearchlabel").css({
+           " position":"relative",
+            "top":"-4rem",
+           " font-size":"medium",
+            "color":"gray",
+            "left":"0rem",
+        });
+
+
+        $(".searchcollapsediv").css({
+            "display":"block"
+        })
+    })
+// on focuss out 
+    // $(".mainsearchinput").on("focusout", function (){
+    //     $(".destinationsearchlabel").css({
+    //         "position":"relative",
+    //         "top":"-2.7rem",
+    //         "font-size":"medium",
+    //         "color":"gray",
+    //         "left":"10px",
+    //         "padding":"0.5rem", 
+    //         /* /* margin-left:10px; */
+    //         "padding":"0", 
+    //         "margin":"0",
+    //         "pointer-events":" none",
+    //     });
+
+
+    //     $(".searchcollapsediv").css({
+    //         "display":"none"
+    //     })
+    // })
+
+    // $(".searchcollapsediv").on("mousesenter", function (){
+    //     $(".destinationsearchlabel").css({
+    //         "position":"relative",
+    //         "top":"-2.7rem",
+    //         "font-size":"medium",
+    //         "color":"gray",
+    //         "left":"10px",
+    //         "padding":"0.5rem", 
+    //         /* /* margin-left:10px; */
+    //         "padding":"0", 
+    //         "margin":"0",
+    //         "pointer-events":" none",
+    //     });
+
+
+    //     $(".searchcollapsediv").css({
+    //         "display":"block    "
+    //     })
+    // })
+
+
+    // on focuss out all above this 
+    // .searchselectcollapse{
+    //     width:80%;
+    //     height:200%;
+    //     border-radius: 10px;
+
+    // }
+    // .destinyinputplaceholder .mainsearchinput:focus ~ .searchcollapsediv{
+    //     display:block;
+    // }
+    // .destinationsearchinput{
+    //     position:relative;
+    //     top:80px;
+    //     color:yellow;
+    //     left:2rem;
+    // }
+                    
+})   
 
 
 

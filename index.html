@@ -6,6 +6,8 @@
     <title>The Tourism Village</title>
     <link rel="stylesheet"  href="./css/main.css">
     <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     <nav class="nav">
@@ -209,21 +211,22 @@
                     <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
                         <div class="destinationsearchdiv">
                             <!-- <label class="mainsearchlabel" >Search Destination/Tour/Travel</label> -->
-                            <div class="destinydiv">
-                                <div class="destinyinputplaceholder">
-                                    <h6>Tour Destionation</h6>
+                        <div class="destinydiv">
+                            <div class="destinyinputplaceholder">
+                                <h6>Tour Destionation</h6>
 
-                                    <input type="search" class="mainsearchinput" name="mainsearchinput"  id="destinationsearchinput" >
-                                    <label class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</label>
-                                    <span class="searchiconspan"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input list="destinationdropdown" type="text" class="mainsearchinput" name="mainsearchinput"  id="destinationsearchinput" >
+                                <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
+                                <span class="searchiconspan"><button><i class="fa-solid fa-magnifying-glass"></i></button></span>
+                                <span class="searchiconcancel"><button><i class="fa-solid fa-x"></i></button></span>
 
-                                       <!-- here starrts the collapsediv -->
+                            <!-- here starrts the collapsediv -->
                             <div class="searchcollapsediv">
                                 <h5 class="searchcollapseheader">Start Typing or Select Destination</h5>    
                                 <div class="searchcollapse">
-                                    <form class="selectdestinycheckbox">   
-                                        <select class= "searchselectcollapse" name="destinationdropdown" id="destinationdropdown" multiple>
-                                                <label for="destinationdropdown">Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue">adfadsfad </i> </label><i class="fa-solid fa-x"></i>
+                                    <form class="selectdestinyform">   
+                                        <datalist class="searchselectcollapse" name="destinationdropdown" id="destinationdropdown" >
+                                                <label for="destinationdropdown">Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i>
                                                 <option value="select">Select a Destination</option>
                                                 <option value="nairobi">Nairobi </option>
                                                 <option value="nakuru">Nakuru </option>
@@ -277,9 +280,9 @@
                                                 <option value=" Kiambu">Kiambu</option>                                                                                    
                                                 <option value="West Pokot">West Pokot</option>                                    
                                                 <option value="Samburu">Samburu</option>                                    
-                                              <input type="submit" value="Submit" />
+                                              <datalist type="submit" value="Submit" />
   
-                                            </select>
+                                        </select>
 
                                           
                                     </form>
