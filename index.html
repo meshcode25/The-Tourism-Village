@@ -215,74 +215,74 @@
                             <div class="destinyinputplaceholder">
                                 <h6>Tour Destionation</h6>
 
-                                <input list="destinationdropdown" type="text" class="mainsearchinput" name="mainsearchinput"  id="destinationsearchinput" >
+                                <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput" name="destinationdropdown"  id="destinationsearchinput" >
                                 <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
                                 <span class="searchiconspan"><button><i class="fa-solid fa-magnifying-glass"></i></button></span>
                                 <span class="searchiconcancel"><button><i class="fa-solid fa-x"></i></button></span>
-
+                            
                             <!-- here starrts the collapsediv -->
                             <div class="searchcollapsediv">
                                 <h5 class="searchcollapseheader">Start Typing or Select Destination</h5>    
                                 <div class="searchcollapse">
                                     <form class="selectdestinyform">   
-                                        <datalist class="searchselectcollapse" name="destinationdropdown" id="destinationdropdown" >
-                                                <label for="destinationdropdown">Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i>
-                                                <option value="select">Select a Destination</option>
-                                                <option value="nairobi">Nairobi </option>
-                                                <option value="nakuru">Nakuru </option>
-                                                <option value="mombasa"> Mombasa</option>
-                                                <option value="kisumu">Kisumu </option>
-                                                <option value="kilifi"> Kilifi</option>
-                                                <option value="voi">Voi </option>
-                                                <option value="nanyuki">Nanyuki </option>
-                                                <option value="turkanana">Turkanana </option>
-                                                <option value="trans-zoia">Tranz-Zoia</option>
-                                                <option value="narok">Narok </option>
-                                                <option value="lamu">Lamu </option>
-                                                <option value="kwale"> Kwale</option>
-                                                <option value="tanariver">Tana River  </option>
-                                                <option value="taitataveta"> Taita Taveta </option>
-                                                <option value="Meru ">Meru</option>
-                                                <option value="nanyuki">Tharaka-Niithi </option>
-                                                <option value="kajiado">Kajiado </option>
-                                                <option value="uasin Gishu "> Uasin Gishu</option>
-                                                <option value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
-                                                <option value="nandi">   Nandi    </option>
-                                                <option value="baringo"> Baringo    </option>
-                                                <option value="laikipia"> Laikipia   </option>
-                                                <option value="kericho">  Kericho   </option>
-                                                <option value="bomet">    Bomet   </option>
-                                                <option value="kakamega"> Kakamega   </option>
-                                                <option value="vihiga">   Vihiga   </option>
-                                                <option value="bungoma">  Bungoma   </option>
-                                                <option value="busia" >Busia </option>
-                                                <option value="siaya" >Siaya </option>
-                                                <option value="kisumu">Kisumu  </option>  
-                                                <option value="homa Bay">Homa Bay </option>
-                                                <option value="migori" >Migori </option>
-                                                <option value="kisii" >Kisii  </option>
-                                                <option value="nyamira">Nyamira </option> 
-                                                <option value="tana River">Tana River</option>
-                                                <option value="lamu ">Lamu</option>
-                                                <option value="garissa">Garissa </option>
-                                                <option value="wajir" >Wajir</option>
-                                                <option value="mandera">Mandera </option>
-                                                <option value="marsabit">Marsabit </option>
-                                                <option value="isiolo ">Isiolo</option>
-                                                <option value="embu" >Embu </option>
-                                                <option value="kitui "> Kitui</option>
-                                                <option value="Machakos">Machakos</option>                                    
-                                                <option value="Makueni">Makueni</option>                                    
-                                                <option value="Nyandarua">Nyandarua</option>                                    
-                                                <option value="Nyeri">Nyeri</option>                                    
-                                                <option value="Kirinyaga">Kirinyaga</option>                                    
-                                                <option value="Murang'a">Murang'a</option>                                    
-                                                <option value=" Kiambu">Kiambu</option>                                                                                    
-                                                <option value="West Pokot">West Pokot</option>                                    
-                                                <option value="Samburu">Samburu</option>                                    
-                                              <datalist type="submit" value="Submit" />
+                                        <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown"  style>
+                                                <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i>
+                                                <!-- <option value="select">Select a Destination</option> -->
+                                                <option class="mainsearchoptions" value="nairobi">Nairobi </option>
+                                                <option class="mainsearchoptions" value="nakuru">Nakuru </option>
+                                                <option class="mainsearchoptions" value="mombasa"> Mombasa</option>
+                                                <option class="mainsearchoptions"value="kisumu">Kisumu </option>
+                                                <option class="mainsearchoptions" value="kilifi"> Kilifi</option>
+                                                <option class="mainsearchoptions" value="voi">Voi </option>
+                                                <option class="mainsearchoptions" value="nanyuki">Nanyuki </option>
+                                                <option class="mainsearchoptions" value="turkanana">Turkanana </option>
+                                                <option class="mainsearchoptions" value="trans-zoia">Tranz-Zoia</option>
+                                                <option class="mainsearchoptions" value="narok">Narok </option>
+                                                <option class="mainsearchoptions" value="lamu">Lamu </option>
+                                                <option class="mainsearchoptions" value="kwale"> Kwale</option>
+                                                <option  class="mainsearchoptions"value="tanariver">Tana River  </option>
+                                                <option class="mainsearchoptions" value="taitataveta"> Taita Taveta </option>
+                                                <option class="mainsearchoptions" value="Meru ">Meru</option>
+                                                <option class="mainsearchoptions" value="nanyuki">Tharaka-Niithi </option>
+                                                <option class="mainsearchoptions" value="kajiado">Kajiado </option>
+                                                <option class="mainsearchoptions" value="uasin Gishu "> Uasin Gishu</option>
+                                                <option class="mainsearchoptions" value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
+                                                <option class="mainsearchoptions" value="nandi">   Nandi    </option>
+                                                <option class="mainsearchoptions" value="baringo"> Baringo    </option>
+                                                <option  class="mainsearchoptions"value="laikipia"> Laikipia   </option>
+                                                <option class="mainsearchoptions" value="kericho">  Kericho   </option>
+                                                <option class="mainsearchoptions" value="bomet">    Bomet   </option>
+                                                <option class="mainsearchoptions" value="kakamega"> Kakamega   </option>
+                                                <option class="mainsearchoptions" value="vihiga">   Vihiga   </option>
+                                                <option class="mainsearchoptions" value="bungoma">  Bungoma   </option>
+                                                <option class="mainsearchoptions" value="busia" >Busia </option>
+                                                <option class="mainsearchoptions" value="siaya" >Siaya </option>
+                                                <option class="mainsearchoptions" value="kisumu">Kisumu  </option>  
+                                                <option class="mainsearchoptions" value="homa Bay">Homa Bay </option>
+                                                <option class="mainsearchoptions" value="migori" >Migori </option>
+                                                <option class="mainsearchoptions" value="kisii" >Kisii  </option>
+                                                <option class="mainsearchoptions" value="nyamira">Nyamira </option> 
+                                                <option class="mainsearchoptions" value="tana River">Tana River</option>
+                                                <option class="mainsearchoptions" value="lamu ">Lamu</option>
+                                                <option class="mainsearchoptions" value="garissa">Garissa </option>
+                                                <option class="mainsearchoptions" value="wajir" >Wajir</option>
+                                                <option class="mainsearchoptions" value="mandera">Mandera </option>
+                                                <option class="mainsearchoptions" value="marsabit">Marsabit </option>
+                                                <option class="mainsearchoptions" value="isiolo ">Isiolo</option>
+                                                <option class="mainsearchoptions" value="embu" >Embu </option>
+                                                <option class="mainsearchoptions" value="kitui "> Kitui</option>
+                                                <option class="mainsearchoptions" value="Machakos">Machakos</option>                                    
+                                                <option class="mainsearchoptions" value="Makueni">Makueni</option>                                    
+                                                <option class="mainsearchoptions" value="Nyandarua">Nyandarua</option>                                    
+                                                <option class="mainsearchoptions" value="Nyeri">Nyeri</option>                                    
+                                                <option class="mainsearchoptions" value="Kirinyaga">Kirinyaga</option>                                    
+                                                <option class="mainsearchoptions" value="Murang'a">Murang'a</option>                                    
+                                                <option class="mainsearchoptions" value=" Kiambu">Kiambu</option>                                                                                    
+                                                <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
+                                                <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
+                                              <input type="submit" value="Submit">
   
-                                        </select>
+                                        </datalist>
 
                                           
                                     </form>

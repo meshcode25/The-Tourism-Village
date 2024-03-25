@@ -464,11 +464,12 @@ else{
            " font-size":"medium",
             "color":"gray",
             "left":"0rem",
+            "transition": "all 0.5s ease"
         });
 
 
         $(".searchcollapsediv").css({
-            "display":"block"
+            // "display":"block"
         })
     })
 // on focuss out 
