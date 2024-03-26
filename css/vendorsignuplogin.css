@@ -1,0 +1,164 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+nav{
+    height:80px;
+    width:100%;
+    background-color:whitesmoke;
+}   
+.navcontainer{
+    /* background-color:brown; */
+    width:90%;
+    height:80px;
+    margin:0 auto; 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.formcontainer{
+    width:40%;
+    margin:0 auto;
+}
+.loginheader{
+    text-align:center;
+}
+
+.formdiv{
+    background-color:whitesmoke;
+    padding:0.5rem;
+ 
+
+}
+.mainerrormessage{
+width:89%;
+/* padding:3rem; */
+/* margin:1rem auto; */
+/* background-color:yellow; */
+
+}
+.form{
+    padding:0.5rem;
+    
+}
+.labeldiv{
+font-size:large;
+}
+.forminput{
+    height:2rem;
+    width:90%;
+}
+
+.formerror{
+    color:red;
+}
+.formdiv{
+    margin:0.5rem 0rem;
+}
+.submitdiv{
+    /* width:40%; */
+    margin:0 auto; 
+}
+.submitbutton{
+    background-color:green;
+    padding:0.5rem 1rem; 
+    border:none;
+    color:white;
+    border-radius:7.5px;
+    font-size: larger;
+    width:90%;
+    margin:0 auto;
+    
+}
+.submitbutton:hover{
+    cursor:pointer;
+    /* cursor:unset; */
+}
+.loading{
+
+}
+.spinning{
+    /* display:none; */
+    display:none;
+}
+.showeye:hover{
+    cursor:pointer;
+}
+.hideeye:hover {
+cursor:pointer;
+}
+.eyeslash{
+display:none;
+}
+.eye{
+
+}
+.logindiv{
+    width:80%;
+}
+.logindivider{
+    margin:1rem auto;
+    width:80%;
+    text-align: center;
+    /* background-color:blueviolet; */
+}
+.divider{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+
+}
+.divider::after, .divider::before{
+    content: "";
+    border-top: 0.1rem double black;
+    align-self: center;
+
+}
+.login a{
+    text-decoration: none;
+    color:white;
+    font-size:larger;
+}
+.logingroup{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width:80%;
+    margin:1rem auto;
+    /* background-color: white; */
+
+}
+.login{
+    /* background-color:blue; */
+    /* border:2px solid white; */
+    padding:0.5rem 1rem;
+    border-radius: 7.5px;
+ 
+}
+.login:hover{
+    cursor:pointer;
+}
+.emaillogin {
+    background-color:blue;
+}
+.googlelogin{
+    background-color:chocolate;
+    color:black;
+
+}
+.facebooklogin{
+    background-color:cyan;
+    color:black;
+}
+.forgotpassdiv{
+    text-align:right;
+    width:90%;
+}
+.forgotpasslink{
+    text-decoration:none;
+    color:blue; 
+}

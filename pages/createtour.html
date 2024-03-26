@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tourism Village</title>
+    <!-- Jquery Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- This pages css in this file -->
+    <link rel="stylesheet"  href="../css/createtour.css">
+    <script src="https://kit.fontawesome.com/d24a9b569b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navcontainer">
+            <div class="logo"><h1>LOGO</h1></div>
+            <div> Any Other necessary Stuff could go Here  </div>
+        </navcontainer>
+    </nav>
+
+    <div class="formcontainer">
+        <div class="formdiv">
+            <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
+            <form class="form" method="post" action="" enctype="multipart/form-data" id="form">
+                <div class="mainerrormessage"></div>
+                <!-- email -->
+                <div class="formdiv emaildiv">
+                    <div class="labeldiv"><label class="formlable" for="mail">Tour Company Official Email:</label></div>
+                    <input type="email" class="forminput emailinput" id="mail"  placeholder="Enter Email" name="email">
+                    <p class="formerror emailerror"></p>
+                </div>
+
+                <!-- Tour Destinoation -->
+                <div class="formdiv tourdestinationdiv">
+                    <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
+                    <input type="text" class="forminput tourdestination" id="tourdestination"  placeholder="Enter Your Tour Destionation" name="email">
+                    <p class="formerror tourdestionationerror"></p>
+                </div>
+
+                <div class="formdiv">
+                    <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
+                        <div class="destinationsearchdiv">
+                            <!-- <label class="mainsearchlabel" >Search Destination/Tour/Travel</label> -->
+                        <div class="destinydiv">
+                            <div class="destinyinputplaceholder">
+                                <h6>Tour Destionation</h6>
+    
+                                <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput" name="destinationdropdown"  id="destinationsearchinput" >
+                                <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
+                                <!-- <button type="button" class="searchiconbtn"> <i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                <button type="button" class="searchiconcancelbtn"><i class="fa-solid fa-x"></i></button>
+                                <!-- <button type="button" class="btncancelsearchcollapsetest"><i class="fa-solid fa-x"></i></button> -->
+                            
+                            <!-- here starrts the collapsediv -->
+                            <div class="searchcollapsediv">
+                                <h5 class="searchcollapseheader">Start Typing or Select Destination <button type="button" class="btncancelsearchcollapse"><i class="fa-solid fa-x"></i></button> </h5>    
+                                <div class="searchcollapse">
+                                    <form class="selectdestinyform">   
+                                        <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown"  style>
+                                                <!-- <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i> -->
+                                                <!-- <option value="select">Select a Destination</option> -->
+                                                <option class="mainsearchoptions" value="nairobi">Nairobi </option>
+                                                <option class="mainsearchoptions" value="nakuru">Nakuru </option>
+                                                <option class="mainsearchoptions" value="mombasa"> Mombasa</option>
+                                                <option class="mainsearchoptions"value="kisumu">Kisumu </option>
+                                                <option class="mainsearchoptions" value="kilifi"> Kilifi</option>
+                                                <option class="mainsearchoptions" value="voi">Voi </option>
+                                                <option class="mainsearchoptions" value="nanyuki">Nanyuki </option>
+                                                <option class="mainsearchoptions" value="turkanana">Turkanana </option>
+                                                <option class="mainsearchoptions" value="trans-zoia">Tranz-Zoia</option>
+                                                <option class="mainsearchoptions" value="narok">Narok </option>
+                                                <option class="mainsearchoptions" value="lamu">Lamu </option>
+                                                <option class="mainsearchoptions" value="kwale"> Kwale</option>
+                                                <option  class="mainsearchoptions"value="tanariver">Tana River  </option>
+                                                <option class="mainsearchoptions" value="taitataveta"> Taita Taveta </option>
+                                                <option class="mainsearchoptions" value="Meru ">Meru</option>
+                                                <option class="mainsearchoptions" value="nanyuki">Tharaka-Niithi </option>
+                                                <option class="mainsearchoptions" value="kajiado">Kajiado </option>
+                                                <option class="mainsearchoptions" value="uasin Gishu "> Uasin Gishu</option>
+                                                <option class="mainsearchoptions" value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
+                                                <option class="mainsearchoptions" value="nandi">   Nandi    </option>
+                                                <option class="mainsearchoptions" value="baringo"> Baringo    </option>
+                                                <option  class="mainsearchoptions"value="laikipia"> Laikipia   </option>
+                                                <option class="mainsearchoptions" value="kericho">  Kericho   </option>
+                                                <option class="mainsearchoptions" value="bomet">    Bomet   </option>
+                                                <option class="mainsearchoptions" value="kakamega"> Kakamega   </option>
+                                                <option class="mainsearchoptions" value="vihiga">   Vihiga   </option>
+                                                <option class="mainsearchoptions" value="bungoma">  Bungoma   </option>
+                                                <option class="mainsearchoptions" value="busia" >Busia </option>
+                                                <option class="mainsearchoptions" value="siaya" >Siaya </option>
+                                                <option class="mainsearchoptions" value="kisumu">Kisumu  </option>  
+                                                <option class="mainsearchoptions" value="homa Bay">Homa Bay </option>
+                                                <option class="mainsearchoptions" value="migori" >Migori </option>
+                                                <option class="mainsearchoptions" value="kisii" >Kisii  </option>
+                                                <option class="mainsearchoptions" value="nyamira">Nyamira </option> 
+                                                <option class="mainsearchoptions" value="tana River">Tana River</option>
+                                                <option class="mainsearchoptions" value="lamu ">Lamu</option>
+                                                <option class="mainsearchoptions" value="garissa">Garissa </option>
+                                                <option class="mainsearchoptions" value="wajir" >Wajir</option>
+                                                <option class="mainsearchoptions" value="mandera">Mandera </option>
+                                                <option class="mainsearchoptions" value="marsabit">Marsabit </option>
+                                                <option class="mainsearchoptions" value="isiolo ">Isiolo</option>
+                                                <option class="mainsearchoptions" value="embu" >Embu </option>
+                                                <option class="mainsearchoptions" value="kitui "> Kitui</option>
+                                                <option class="mainsearchoptions" value="Machakos">Machakos</option>                                    
+                                                <option class="mainsearchoptions" value="Makueni">Makueni</option>                                    
+                                                <option class="mainsearchoptions" value="Nyandarua">Nyandarua</option>                                    
+                                                <option class="mainsearchoptions" value="Nyeri">Nyeri</option>                                    
+                                                <option class="mainsearchoptions" value="Kirinyaga">Kirinyaga</option>                                    
+                                                <option class="mainsearchoptions" value="Murang'a">Murang'a</option>                                    
+                                                <option class="mainsearchoptions" value=" Kiambu">Kiambu</option>                                                                                    
+                                                <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
+                                                <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
+                                              <input type="submit" value="Submit">
+    
+                                        </datalist>
+    
+                                          
+                                    </form>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+    
+                         
+    
+                            <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
+                        </div>
+    
+                        <div class="datediv">
+                            <label class="mainsearchlabel" >Select Date</label>
+                            <div class="destinydiv">
+                                <div class="destinyinputplaceholder">
+                                    <h6>Select Date</h6>
+                                    <input  type="date" class="datetimeinput" name="datepicker" placeholder="Select Date/Travel" min="04/30/2024" >
+                                </div>
+                            </div>
+    
+                            <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
+                        </div>
+    
+                        <div class="travellersdiv">
+                            <label class="travellers" >Select Date</label>
+                            <div class="travellersdiv">
+                                <div class="travellersinputplaceholder">
+                                    <h4>Enter no of travellers</h4>
+                                    <input type="number" class="travellersinput" name="travellersinput" placeholder="Enter number of travellers " >
+                                    <button class="minusbutton"><H1>-</H1></button><input type="number" placeholder="enter number" min="1" minlength="5"><button class="addbutton"><h1>+</h1></button>
+                                </div>
+                            </div>
+    
+                            <div class="addtour"><a href="#">+ Add another tour/Destination</a> </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--username -->
+                <div class="formdiv usernamediv">
+                    <div class="labeldiv"><label class="formlable" for="user">Company Contact Person Name:</label></div>
+                    <input type="text" class="forminput usernameinput" id="user"  placeholder="Enter User Name" name="username">
+                    <p class="formerror usernameerror"></p>
+                </div>
+
+                
+                <!--passoword -->
+                <div class="formdiv passdiv">
+                    <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
+                    <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
+                    <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                    <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                    <p class="formerror passworderror"></p>
+                    
+                </div>
+                <!-- confirm password -->
+                <div class="formdiv conpassdiv">
+                    <div class="labeldiv"><label class="formlable" for="confpass" >Confirm Password:</label></div>
+                    <input type="password" class="forminput conpasswordinput" id="confpass" placeholder="Confirm Password" name="conpassword">
+                    <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                    <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                    <p class="formerror conpassworderror"></p>
+                </div>
+                <!-- submit-->
+                <div class="formdiv submitdiv">
+                    <button class="submitbutton" type="submit" >SIGN UP</button>
+                    <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+                </div>
+
+                <!-- forgot password -->
+                <div class="forgotpassdiv">
+                    <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
+                </div>
+                <!-- forgot passsword -->
+              
+            </form>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Or login  -->
+            <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>
+            <!--login with Google or Email-->
+            <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>
+            
+        </div>
+    </div>
+    
+<script src="../javascript/createtour.js"></script>
+</body>
+</html> 
