@@ -35,7 +35,7 @@ var collapsingdiv=document.getElementsByClassName("showing");
 var bigcollapsecolumncontainer=document.getElementsByClassName("bigcollapsecolumncontainer");
 var bigcollapsecolumheader=document.getElementsByClassName("bigcollapsecolumheader");
 var showingcolumn=document.getElementsByClassName("showingcolumn");
-
+var searchcollapseoption=document.getElementsByClassName('mainsearchoptions');
 
 
 console.log(bigcollapse);
@@ -48,6 +48,7 @@ var bigcollapsecolumnheaders=[...bigcollapsecolumheader]
 var showingcolumns=[...showingcolumn]
 var bigcollapsecolumncontainers=[...bigcollapsecolumncontainer]
 var mainnavlinks=[...mainnavlinke]
+var mainsearchoptions=[...searchcollapseoption]
 
 if(screensize < mediaQueries[1]){
     //This is the beginnning of the of the mobile responsiveneness media querry
@@ -463,56 +464,121 @@ else{
             "top":"-4rem",
            " font-size":"medium",
             "color":"gray",
-            "left":"0rem",
+            "left":".50rem",
             "transition": "all 0.5s ease"
         });
 
 
         $(".searchcollapsediv").css({
-            // "display":"block"
+            // "display":"block",
+            "height":"auto",
+            "opacity":"1",
+            "transition":'all 1s ease',
+            "visibility": "visible"
         })
     })
 // on focuss out 
-    // $(".mainsearchinput").on("focusout", function (){
+    $(".mainsearchinput").on("focusout", function (){
+        if($(".mainsearchinput").val()==""){
+            $(".destinationsearchlabel").css({
+                " position":"relative",
+                 "top":"-2.7rem",
+                " font-size":"medium",
+                 "color":"gray",
+                 "left":".50rem",
+                 "transition": "all 0.5s ease"
+             });
+     
+     
+             $(".searchcollapsediv").css({
+                 // "display":"block",
+                 "height":"0",
+                 "opacity":"0",
+                 "transition":'all 1s ease',
+                 "visibility": "hidden"
+             })
+    
+    
+             $(".searchiconcancelbtn").css({
+                // "display":"block",
+                "height":"0",
+                "opacity":"0",
+                "transition":"all 0.5s ease",
+                "visibility": "hidden",
+            })
+
+        }else{
+
+
+            $(".destinationsearchlabel").css({
+                " position":"relative",
+                "top":"-4rem",
+                " font-size":"medium",
+                "color":"gray",
+                "left":".50rem",
+                "transition": "all 0.5s ease"
+            });
+            
+            
+            $(".searchcollapsediv").css({
+             // "display":"block",
+             "height":"0",
+             "opacity":"0",
+             "transition":'all 1s ease',
+             "visibility": "hidden"
+         })
+
+         
+         $(".searchiconcancelbtn").css({
+             // "display":"block",
+             "height":"auto",
+             "opacity":"1",
+             "transition":"all 0.5s ease",
+             "visibility": "visible",
+            })
+        }
+    })
+
+    // $(".searchcollapsediv").on("mouseover", function (){
     //     $(".destinationsearchlabel").css({
-    //         "position":"relative",
-    //         "top":"-2.7rem",
-    //         "font-size":"medium",
-    //         "color":"gray",
-    //         "left":"10px",
-    //         "padding":"0.5rem", 
-    //         /* /* margin-left:10px; */
-    //         "padding":"0", 
-    //         "margin":"0",
-    //         "pointer-events":" none",
-    //     });
-
-
-    //     $(".searchcollapsediv").css({
-    //         "display":"none"
-    //     })
+    //         " position":"relative",
+    //          "top":"-4rem",
+    //         " font-size":"medium",
+    //          "color":"gray",
+    //          "left":".50rem",
+    //          "transition": "all 0.5s ease",
+    //          "background-color":"purple"
+    //      });
+ 
+ 
+    //      $(".searchcollapsediv").css({
+    //          // "display":"block",
+    //          "height":"auto",
+    //          "opacity":"1",
+    //          "transition":'all 1s ease',
+    //          "visibility": "visible"
+    //      })
     // })
-
-    // $(".searchcollapsediv").on("mousesenter", function (){
+    // $(".searchcollapsediv").on("mouseout", function (){
     //     $(".destinationsearchlabel").css({
-    //         "position":"relative",
-    //         "top":"-2.7rem",
-    //         "font-size":"medium",
-    //         "color":"gray",
-    //         "left":"10px",
-    //         "padding":"0.5rem", 
-    //         /* /* margin-left:10px; */
-    //         "padding":"0", 
-    //         "margin":"0",
-    //         "pointer-events":" none",
-    //     });
-
-
-    //     $(".searchcollapsediv").css({
-    //         "display":"block    "
-    //     })
+    //         " position":"relative",
+    //          "top":"-4rem",
+    //         " font-size":"medium",
+    //          "color":"gray",
+    //          "left":".50rem",
+    //          "transition": "all 0.5s ease",
+    //          "background-color":"green"
+    //      });
+ 
+ 
+    //      $(".searchcollapsediv").css({
+    //          // "display":"block",
+    //          "height":"auto",
+    //          "opacity":"1",
+    //          "transition":'all 3s ease',
+    //         "visibility": "visible"
+    //      })
     // })
-
 
     // on focuss out all above this 
     // .searchselectcollapse{
@@ -530,6 +596,148 @@ else{
     //     color:yellow;
     //     left:2rem;
     // }
+
+    $(".searchiconbtn").on("click", function(){
+        
+    })
+
+    $(".searchiconcancelbtn").on("click", function(){
+        console.log("I have just clicked this"); 
+        console.log($(".mainsearchinput").val());
+        $(".mainsearchinput").attr("reset", "true");
+        $(".mainsearchinput").trigger("reset");
+        $(".mainsearchinput").val("");
+
+
+
+        //here is the clear and reset Search input for the search tour/travel
+        $(".destinationsearchlabel").css({
+            " position":"relative",
+             "top":"-2.8rem",
+            " font-size":"medium",
+             "color":"gray",
+             "left":".50rem",
+             "transition": "all 0.5s ease"
+         });
+ 
+ 
+         $(".searchcollapsediv").css({
+             // "display":"block",
+             "height":"0",
+             "opacity":"0",
+             "transition":'all 1s ease',
+             "visibility": "hidden"
+         })
+        
+         $(".destinationsearchlabel").css({
+            " position":"relative",
+             "top":"-2.7rem",
+            " font-size":"medium",
+             "color":"gray",
+             "left":".50rem",
+             "transition": "all 0.5s ease"
+         });
+ 
+ 
+         $(".searchcollapsediv").css({
+             // "display":"block",
+             "height":"0",
+             "opacity":"0",
+             "transition":'all 1s ease',
+             "visibility": "hidden"
+         })
+
+
+         $(".searchiconcancelbtn").css({
+            // "display":"block",
+            "height":"0",
+            "opacity":"0",
+            "transition":"all 0.5s ease",
+            "visibility": "hidden",
+        })
+    })
+    
+
+   
+
+    $(".mainsearchinput").on("keyup", function(){
+        if($(".mainsearchinput").val()==""){
+            $(".searchiconcancelbtn").css({
+
+                // "display":"hidden",
+                
+            "height":"0",
+            "opacity":"0",
+            "transition":"all 1s ease",
+            "visibility": "hidden"
+            }
+       
+
+        // `
+    )}
+        else{
+            $(".searchiconcancelbtn").css({
+                // "display":"block",
+                "height":"auto",
+                "opacity":"1",
+                "transition":"all 0.5s ease",
+                "visibility": "visible",
+            }
+           
+            
+            );
+
+        }
+        console.log($(".mainsearchinput").val()=="")
+    })
+    
+    mainsearchoptions.forEach((currentoption, index, array)=>{
+        
+        currentoption.addEventListener("click", ()=>{
+            console.log(`here is the chosen option ${currentoption}`);
+            console.log(currentoption)
+            let value= currentoption.getAttribute("value");
+            let firstletterinvaluecapital=value.charAt(0).toUpperCase();
+            var remainingvaluestring=value.slice(1);
+            var capitalizedvalue=firstletterinvaluecapital + remainingvaluestring;
+            console.log(value);
+            console.log(capitalizedvalue);
+
+            //keep the seaerch input space clear /////
+            $(".mainsearchinput").val(capitalizedvalue);
+
+            $(".destinationsearchlabel").css({
+                " position":"relative",
+                 "top":"-4rem",
+                " font-size":"medium",
+                 "color":"gray",
+                 "left":".50rem",
+                 "transition": "all 0.5s ease"
+             });
+     
+     
+             $(".searchcollapsediv").css({
+                 // "display":"block",
+                 "height":"0",
+                 "opacity":"0",
+                 "transition":'all 1s ease',
+                 "visibility": "hidden"
+             })
+
+
+             $(".searchiconcancelbtn").css({
+                // "display":"block",
+                "height":"auto",
+                "opacity":"1",
+                "transition":"all 0.5s ease",
+                "visibility": "visible",
+            })
+
+
+        //end of search input data/////
+
+        })
+    })
                     
 })   
 

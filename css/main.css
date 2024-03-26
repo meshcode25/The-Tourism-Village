@@ -1048,22 +1048,33 @@
         left:0;
         display:block;
         height:auto;
-        width:300px;
-        background-color: pink; 
+        width:100%;
+        background-color:plum; 
         max-height: 250px;
         padding:1rem;
         overflow: auto;
-        
+        border-radius:15px ;
+        position:relative;
+        /* top:90px;
+        left:200px; */
 
     }
     .mainsearchoptions{
         /* position: relative; */
         top:0;
-       padding:1rem 0.5rem;
+       padding:0.5rem 0.2rem;
+    }
+    .mainsearchoptions:hover{
+        background-color:gainsboro;
+        cursor:pointer;
+        /* position: relative; */
+        top:0;
+    
+       padding:0.5rem 0.3rem;
     }
     .destinationsearchlabel{
         position:relative;
-        top:-2.7rem;
+        top:-2.8rem;
         font-size:medium;
         color:gray;
         left:10px;
@@ -1077,12 +1088,12 @@
     .mainsearchinput{
         font-size:medium;
     
-        padding:0.2rem 1.2rem 0.2rem 0.5rem;
+        padding:0.2rem 1.5rem 0.2rem 0.5rem;
         outline: none;
         width:70%;
         border:3px solid violet;
         height:70px;
-        color:blue;
+        /* color:blue; */
         z-index: 10;
     }
     .searchcollapsediv{
@@ -1091,10 +1102,16 @@
           top:-2rem;
          /* height:250px;  */
          border-radius: 15px; 
-         background-color: green;  
+         background-color:whitesmoke;  
           /* display:none;  */
+          height:0;
+          opacity:0;
+          visibility: hidden;
          
         }
+    .searchcollapseheader{
+        padding:0.5rem 1rem;
+    }
     /* .mainsearchinput:focus + .destinationsearchlabel{
         position:relative;
         top:-4rem;
@@ -1121,23 +1138,43 @@
         /* color:yellow; */
         /* left:2rem; */
     }
-    .searchiconspan{
-        color:white;
-        color:purple;
+  
+    .searchiconbtn{
+        /* color:white; */
+        cursor:pointer;
+        /* background-color:black; */
+        position:relative;
+        /* outline: none; */
+        /* border: none; */
+        /* padding:0.1rem; */
+        top:-4rem;
+        left:14.3rem;
+        /* display: block; */
+        /* float: right; */
+    }
+    .searchiconcancelbtn{
+        /* color:white; */
         position:relative;
         top:-2.7rem;
         left:3.5rem;
+        /* background-color: ; */
+        cursor:pointer;
+        top:-4rem;
+        left:14.3rem;
+        opacity:0;
+        visibility: hidden;
+        height:0;
     }
-    .searchiconcancel{
-        color:purple;
-        position:relative;
-        top:-2.7rem;
-        left:3.5rem;
-    }
+   
     .destinationdropdown{
 
     }
- 
+    .btncancelsearchcollapse{
+        /* text-align: right; */
+        float:right;
+        cursor:pointer;
+        align-self:flex-end;
+    }
 }
 
 

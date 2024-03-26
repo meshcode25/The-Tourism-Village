@@ -217,16 +217,17 @@
 
                                 <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput" name="destinationdropdown"  id="destinationsearchinput" >
                                 <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
-                                <span class="searchiconspan"><button><i class="fa-solid fa-magnifying-glass"></i></button></span>
-                                <span class="searchiconcancel"><button><i class="fa-solid fa-x"></i></button></span>
+                                <!-- <button type="button" class="searchiconbtn"> <i class="fa-solid fa-magnifying-glass"></i></button> -->
+                                <button type="button" class="searchiconcancelbtn"><i class="fa-solid fa-x"></i></button>
+                                <!-- <button type="button" class="btncancelsearchcollapsetest"><i class="fa-solid fa-x"></i></button> -->
                             
                             <!-- here starrts the collapsediv -->
                             <div class="searchcollapsediv">
-                                <h5 class="searchcollapseheader">Start Typing or Select Destination</h5>    
+                                <h5 class="searchcollapseheader">Start Typing or Select Destination <button type="button" class="btncancelsearchcollapse"><i class="fa-solid fa-x"></i></button> </h5>    
                                 <div class="searchcollapse">
                                     <form class="selectdestinyform">   
                                         <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown"  style>
-                                                <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i>
+                                                <!-- <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i> -->
                                                 <!-- <option value="select">Select a Destination</option> -->
                                                 <option class="mainsearchoptions" value="nairobi">Nairobi </option>
                                                 <option class="mainsearchoptions" value="nakuru">Nakuru </option>
