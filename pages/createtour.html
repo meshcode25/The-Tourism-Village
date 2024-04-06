@@ -36,19 +36,83 @@
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
                 <form class="form" method="post" action="" enctype="multipart/form-data" id="form">
                     <div class="mainerrormessage"></div>
+                    
+                    
+                    
+                    
                     <!-- email -->
-                    <div class="formdiv emaildiv">
+                    <!-- <div class="formdiv emaildiv">
                         <div class="labeldiv"><label class="formlable" for="mail">Tour Company Official Email:</label></div>
                         <input type="email" class="forminput emailinput" id="mail"  placeholder="Enter Email" name="email">
                         <p class="formerror emailerror"></p>
-                    </div>
+                    </div> -->
 
+                    
+                    
+                    
                     <!-- Tour Destinoation -->
-                    <div class="formdiv tourdestinationdiv">
+                    <!-- <div class="formdiv tourdestinationdiv">
                         <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
                         <input type="text" class="forminput tourdestination" id="tourdestination"  placeholder="Enter Your Tour Destionation" name="email">
                         <p class="formerror tourdestionationerror"></p>
-                    </div>
+                    </div> -->
+
+
+
+
+                    <!--username -->
+                    <!-- <div class="formdiv usernamediv">
+                        <div class="labeldiv"><label class="formlable" for="user">Company Contact Person Name:</label></div>
+                        <input type="text" class="forminput usernameinput" id="user"  placeholder="Enter User Name" name="username">
+                        <p class="formerror usernameerror"></p>
+                    </div> -->
+
+
+
+                    <!--passoword -->
+                    <!-- <div class="formdiv passdiv">
+                        <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
+                        <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
+                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                        <p class="formerror passworderror"></p>
+                    </div> -->
+
+
+
+
+                    <!-- confirm password -->
+                    <!-- <div class="formdiv conpassdiv">
+                        <div class="labeldiv"><label class="formlable" for="confpass" >Confirm Password:</label></div>
+                        <input type="password" class="forminput conpasswordinput" id="confpass" placeholder="Confirm Password" name="conpassword">
+                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                        <p class="formerror conpassworderror"></p>
+                    </div> -->
+
+
+
+
+                    <!-- submit-->
+                    <!-- <div class="formdiv submitdiv">
+                        <button class="submitbutton" type="submit" >SIGN UP</button>
+                        <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+                    </div> -->
+
+
+
+
+                    <!-- forgot password -->
+                    <!-- <div class="forgotpassdiv">
+                        <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
+                    </div> -->
+                    <!-- forgot passsword -->
+
+
+
+
+
+
 
                     <div class="formdiv">
                         <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
@@ -56,8 +120,7 @@
                                 <!-- <label class="mainsearchlabel" >Search Destination/Tour/Travel</label> -->
                             <div class="destinydiv">
                                 <div class="destinyinputplaceholder">
-                                    <h6>Tour Destionation</h6>
-        
+                                    <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
                                     <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput" name="destinationdropdown"  id="destinationsearchinput" >
                                     <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
                                     <!-- <button type="button" class="searchiconbtn"> <i class="fa-solid fa-magnifying-glass"></i></button> -->
@@ -148,7 +211,7 @@
                     <div id="date_picker" class="formdiv">
                         <div id="date_picker_input">
                             <label class="datepickerlabel">Datepicker</label>
-                            <input type="text" id="date" class="onFocus" readonly />
+                            <input type="text" id="date" class="onFocus" readonly placeholder="Pick the date for the Tour/Travel" />
                         </div>
                         <div id="date_picker_calendar" class="hidden"> 
                             <div class="cancelbtndiv"><button type="button" class="cancelbtn"><i class="fa-solid fa-x"></i></button></div>
@@ -167,10 +230,10 @@
 
                     <!-- number of travellers in the tour -->
                     <div class="travellersdiv formdiv " >                                    
-                        <label for="travellersno">Enter no of travellers</label>
+                        <label for="travellersno">Select the Number of Expected Travellers</label>
                         <div class="travellersmaininputdiv" >
-                            <input class="travellersmaininput" value="here isthe shit" id=travellersno type="text">
-                            <button type="button" class="travellersiconcancelbtn"><i class="fa-solid fa-x"></i></button>
+                            <input class="travellersmaininput" readonly id=travellersno type="text" placeholder="Select the number of Travellers">
+                            <button type="button" class="travellersiconcancelbtn collapsetravellerscancelbtn" ><i class="fa-solid fa-x"></i></button>
                             <div class="bothadultchilddiv hidetravellersdiv">
                                 <div class="travellerscollapselabel">Select Number of Travellers <button type="button" class="btncanceltravellerscollapse"><i class="fa-solid fa-x"></i></button> </div>
                                 <div class="adultcount">
@@ -196,38 +259,10 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-                    <!--username -->
-                    <div class="formdiv usernamediv">
-                        <div class="labeldiv"><label class="formlable" for="user">Company Contact Person Name:</label></div>
-                        <input type="text" class="forminput usernameinput" id="user"  placeholder="Enter User Name" name="username">
-                        <p class="formerror usernameerror"></p>
-                    </div>
-
                     
-                    <!--passoword -->
-                    <div class="formdiv passdiv">
-                        <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
-                        <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
-                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
-                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
-                        <p class="formerror passworderror"></p>
-                        
-                    </div>
-                    <!-- confirm password -->
-                    <div class="formdiv conpassdiv">
-                        <div class="labeldiv"><label class="formlable" for="confpass" >Confirm Password:</label></div>
-                        <input type="password" class="forminput conpasswordinput" id="confpass" placeholder="Confirm Password" name="conpassword">
-                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
-                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
-                        <p class="formerror conpassworderror"></p>
-                    </div>
-                    <!-- submit-->
-                    <div class="formdiv submitdiv">
-                        <button class="submitbutton" type="submit" >SIGN UP</button>
+                     <!-- submit-->
+                     <div class="formdiv submitdiv">
+                        <button class="submitbutton createtournextbtn" type="button" >Next Step</button>
                         <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
                     </div>
 
@@ -236,7 +271,7 @@
                         <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
                     </div>
                     <!-- forgot passsword -->
-                
+
                 </form>
             
 

@@ -806,7 +806,7 @@ $(document).ready(function(){
     let dateString = getDateStringFromTimestamp(timestamp);
     input.value = dateString;
     };
-    setDateToInput(todayTimestamp);
+    // setDateToInput(todayTimestamp);
 
     // Add days row to calendar
     for (let i = 0; i < days.length; i++) {
@@ -1063,18 +1063,25 @@ $(document).ready(function(){
         $(".bothadultchilddiv").removeClass("hidetravellersdiv");
     }) 
 
-    if(!$(".travellersmaininput").val()==""){
-        $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
-        console.log("here it  he value of the input of the maintravellers number ");
-        console.log($(".travellersmaininput").val());
-    }else{
-        $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
-        console.log("here it  he value of the input of the maintravellers number of the elese ");
-        console.log($(".travellersmaininput").val());
-    }
-
     $(".travellersiconcancelbtn").on("click",()=>{
-        $(".bothadultchilddiv").addClass("hidetravellersdiv");
+        $(".bothadultchilddiv").removeClass("hidetravellersdiv");
+
+        $(".travellersmaininput").val("");
+
+        $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
+
+        // if(!$(".travellersmaininput").val()==""){
+            // $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
+        //     console.log("here it  he value of the input of the maintravellers number ");
+        //     console.log($(".travellersmaininput").val());
+        // }else{
+        //     $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
+        //     console.log("here it  he value of the input of the maintravellers number of the elese ");
+        //     console.log($(".travellersmaininput").val());
+        // }
+
+
+
     })
 
     $(".btncanceltravellerscollapse").on("click",()=>{
@@ -1104,6 +1111,8 @@ $(document).ready(function(){
 
         $(".travellersmaininput").val($inputval)
 
+
+        $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
         
         
     })
