@@ -4,11 +4,17 @@
  * Into vanilla JS for project
  */
 
+let backbtn =document.getElementById("back");
+
+let cancelbtn=document.querySelector(".cancelbtn");
+let calwrapper=document.getElementById("date_picker_calendar")
+
 const calendar = document.querySelector("#calendar_main"),
   input = document.querySelector("#date"),
   calHeader = document.querySelector("#calendar_header"),
   calHeaderTitle = document.querySelector("#calendar_header span"),
   calDays = document.querySelector("#cal_days"),
+
   days = [
     "Sunday",
     "Monday",
@@ -41,7 +47,7 @@ let todayTimestamp =
 
 let selectedDay = todayTimestamp;
 // console.log(selectedDay); // Str in millisec
-
+let today=todayTimestamp;
 // Get num of days in month
 // month param 0-11
 const getNumberOfDays = (year, month) => {
@@ -53,6 +59,8 @@ const getNumberOfDays = (year, month) => {
 const getDayDetails = (args) => {
   let date = args.index - args.firstDay;
   let day = args.index % 7;
+  let monat=args.month;
+  let jahr=args.year;
   // console.log(day)
   let prevMonth = args.month - 1;
   let prevYear = args.year;
@@ -73,7 +81,9 @@ const getDayDetails = (args) => {
     day,
     month,
     timestamp,
-    dayString: days[day]
+    dayString: days[day],
+    monat,
+    jahr
   };
 };
 
@@ -109,6 +119,12 @@ let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
 let monthDetails = getMonthDetails(year, month);
+
+// console.log(date);
+// console.log(year)
+// console.log(month)
+// console.log(monthDetails);
+
 
 const isCurrentDay = (day, cell) => {
   if (day.timestamp === todayTimestamp) {
@@ -207,6 +223,41 @@ const setCalBody = (monthDetails) => {
     monthDetails[i].month === 0 && isCurrentDay(monthDetails[i], div);
     span.classList.add("cell_item");
 
+    // console.log(monthDetails);
+
+
+    console.log(monthDetails[i].timestamp);
+
+
+    if(monthDetails[i].timestamp<today){
+      div.classList.add("past");
+      div.classList.remove("active");
+      div.classList.remove("current")
+      console.log("These cells should be in the past ")
+
+    
+    
+    }else{
+      // backbtn.removeAttribute("disabled", "");
+  
+      // offset = -1;
+        console.log("These are dates from the future")
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     span.innerText = monthDetails[i].date;
 
     div.appendChild(span);
@@ -215,21 +266,93 @@ const setCalBody = (monthDetails) => {
 };
 
 setCalBody(monthDetails);
+// console.log(monthDetails);
 
 const updateCalendar = (btn) => {
   let newCal, offset;
   if (btn.classList.contains("back")) {
     // let { year, month, monthDetails } = setHeaderNav(-1);
-    offset = -1;
+   offset = -1;      
   } else if (btn.classList.contains("front")) {
     // let { year, month, monthDetails } = setHeaderNav(1);
     offset = 1;
   }
   newCal = setHeaderNav(offset);
   // console.log(monthDetails)
+
+
+
+
+
+
+
+
+
+  let monththis=new Date().getMonth();
+  let yearthis=new Date().getFullYear();
+
+  let firstDayOfNewMonthTimestamp=new Date(newCal.year, newCal.month).getTime() ;
+  let timestampmonth= new Date(yearthis, monththis).getTime();
+  
+
+  let diff= (timestampmonth-firstDayOfNewMonthTimestamp)
+
+  if(diff== 0 || firstDayOfNewMonthTimestamp<timestampmonth){
+
+
+    backbtn.setAttribute("disabled", "");
+  
+    console.log("the day is less that new month")
+  
+  
+  }else{
+    backbtn.removeAttribute("disabled", "");
+
+    // offset = -1;
+      console.log("the moth is biggert than teew month")
+    }
+
+
   setHeader(newCal.year, newCal.month);
   calendar.innerHTML = "";
+
   setCalBody(newCal.monthDetails);
+
+
+  // let firstDayOfNewMonthTimestamp=new Date(newCal.year, newCal.month).getTime() + new Date().getTimezoneOffset() * 1000 * 60;
+  let oneDay = 60 * 60 * 24 * 1000;
+
+  // let firstDayOfNewMonthTimestamp=new Date(newCal.year, newCal.month).getTime() ;
+  // let timestampmonth= new Date(yearthis, monththis).getTime();
+  // console.log("here is the first day of the month timestampt" + firstDayOfNewMonthTimestamp);
+  // console.log("here is today's time stamp" + monththis+ " "+ yearthis);
+  // console.log(diff)
+
+  // let todayTimestamp =
+  //   Date.now() -
+  //   (Date.now() % oneDay) +
+  //   new Date().getTimezoneOffset() * 1000 * 60;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 };
 
 // Only one calendar date is selected
@@ -280,6 +403,7 @@ updateInput();
 // Set header nav actions
 document.querySelectorAll(".cal-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
+    
     updateCalendar(btn);
     updateInput();
   });
@@ -289,4 +413,33 @@ input.addEventListener('click', () => {
   document.querySelector('#date_picker_calendar').classList.toggle('hidden');
   document.querySelector('#date_picker_input').classList.toggle('showCal');
   document.querySelector('#date').classList.toggle('onFocus');
+});
+
+cancelbtn.addEventListener('click', () => {
+  document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+  document.querySelector('#date_picker_input').classList.toggle('showCal');
+  document.querySelector('#date').classList.toggle('onFocus');
+});
+
+calwrapper.addEventListener('onblur', () => {
+  document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+  document.querySelector('#date_picker_input').classList.toggle('showCal');
+  document.querySelector('#date').classList.toggle('onFocus');
+
+
+
+
+  document.addEventListener("click" ,function (e) {
+    var container = calwrapper;
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+         document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+          document.querySelector('#date_picker_input').classList.toggle('showCal');
+          document.querySelector('#date').classList.toggle('onFocus');
+    }
+    else{
+      console.log("boolshit")
+    }
+  }); 
+
+
 });

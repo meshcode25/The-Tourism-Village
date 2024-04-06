@@ -1239,7 +1239,7 @@ grid-column:1/3;
 
     padding:0.2rem 1.5rem 0.2rem 0.5rem;
     outline: none;
-    width:70%;
+    width:100%;
     border:3px solid violet;
     height:70px;
     /* color:blue; */
@@ -1309,7 +1309,7 @@ grid-column:1/3;
     /* background-color: ; */
     cursor:pointer;
     top:-4rem;
-    left:14.3rem;
+    left:18.8rem;
     opacity:0;
     visibility: hidden;
     height:0;
@@ -1325,6 +1325,34 @@ grid-column:1/3;
     align-self:flex-end;
 }
 
+.bodydiv{
+    display:grid;
+    grid-template-columns: 0.78fr 3fr;
+    width:100%;
+    
+}
+
+.bodynavbar{
+    grid-column: 1/2;
+    background-color: lightpink;
+    /* position: fixed; */
+}
+.bodynavbar div{
+    width:100%;
+    margin:1rem 0.5rem;
+}
+.formcontainer{
+    width:100%;
+    grid-column:2/3;
+    background-color:blue;
+
+}
+.formdiv{
+    /* background-color:green; */
+    width:60%;
+    margin:0 auto;
+
+}
 
 
 
@@ -1334,6 +1362,397 @@ grid-column:1/3;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Date Picker csss Stuff */
+
+
+  
+#date_picker {
+    /* width: 100%; */
+    /* margin: 1rem auto; */
+    /* transform: scale(1.2); */
+    /* background-color: green; */
+    /* display: block; */
+    /* position: relative; */
+    /* top: 15%; */
+    /* margin:0; */
+  }
+  
+  #date_picker_input {
+    margin-bottom: 8px;
+    position: relative;
+    width:100%; 
+    /* margin: 0 auto; */
+    background-color: yellow;
+    outline: none;
+  }
+  
+  .datepickerlabel {
+    display: block;
+    /* color: #8A8F9F; */
+    font-size: 1.02rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+    margin:0;
+    padding: 0;
+  }
+  .cancelbtndiv{
+    float: right;
+  }
+
+  .cancelbtn{
+    /* background-color:red; */
+    /* color:white; */
+    border-radius: 5px;
+    /* outline:none; */
+    border:none;
+
+  }
+  .cancelbtn:hover{
+    cursor:pointer;
+    color:brown;
+  }
+  #date {
+    /* color: var(--dark-date-foreground); */
+    font-size: 16px;
+    padding: 12px 20px;
+    width:100%;
+    
+  }
+  
+  #date:hover {
+    cursor: pointer;
+  }
+  
+  #date.onFocus:focus {
+    outline: none;
+  }
+  
+  #date_picker_input:after {
+    content: "▾";
+    /* content:  "►"; */
+    padding: 12px 15px;
+    position: absolute; 
+    right: 4px; 
+    top: 39%;
+    color: #8A8F9F;
+  }
+  
+  #date_picker_input.showCal:after {
+    transform: rotate(180deg);
+  }
+  
+  #date_picker_calendar {
+      height: fit-content;
+      /* box-shadow: 10px 10px 40px rgba(0,0,0,0.2); */
+      overflow: hidden;
+      padding: 12px;
+      background-color: whitesmoke;
+      opacity: 1;
+      visibility: visible;
+      height:fit-content;
+      /* display:none; */
+
+
+    /* border-radius: 15px;
+      width: 100%;
+  }
+  
+  #date{
+      border-radius: 15px;
+      width: 100%;
+      /* background: var(--dark-input); */
+      /* border: 2px solid var(--dark-border); */
+  }
+  
+  /* 
+  * calendar body
+  */
+  
+  #calendar_header {
+    width: 100%;
+    min-height: 30px;
+  /*   background: pink; */
+    margin-bottom: 8px;
+    /* color: var(--dark-date-foreground); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .cal-btn {
+    width: 20px;
+    height: 20px;
+    background:lightgray;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 6px;
+  }
+  
+  .cal-btn img {
+    width: 42%;
+    height: 42%;
+  }
+  
+  .cal-btn.back img {
+    transform: rotate(90deg);
+  }
+  
+  .cal-btn.front img {
+    transform: rotate(-90deg);
+  }
+  
+  #cal_days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    color:black;
+  }
+  #calendar_main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    color:grey;
+  }
+  
+  #cal_days {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #calendar_main {
+    grid-template-rows: repeat(5, min(30px));
+  }
+  
+  .cell_wrapper {
+  /*   background: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .current {
+    background:lightblue;
+    color:black ;
+  }
+  
+  .current:not(.active):hover {
+    background:blue;
+    color:whitesmoke ;
+    border: 2px solid var(--dark-selected);
+  }
+  
+  .cal-btn:hover,
+  .current:hover {
+    cursor: pointer;
+  }
+
+  .backdisable{
+    
+  }
+  
+
+  .active{
+    color:whitesmoke;
+    background-color: blue;
+
+
+
+  }
+  .past {
+   background: url("../Images/diagonalstrock3.png");
+   background-size: 100% 100%;
+   /* width: 200px;
+   height: 100px; */
+
+
+ 
+  }
+
+  .inactive_indicator:after {
+  /*   text-decoration: underline; */
+    /* content: 'here is the shit'; */
+    width: 4rem ;
+    height: 3rem;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+  }
+  
+  .hidden {
+    visibility:hidden;
+    opacity: 0;
+    height: 0;
+    display: none;
+
+  }
+
+
+
+
+
+
+
+/* number of travellers css starsts here  */
+
+.travellersdiv{
+    /* width: 100%; */
+    background-color: blanchedalmond;
+} 
+.formdiv{
+
+}
+.travellersno{
+
+}
+.travellersmaininputdiv{
+    width:100%;
+    position:relative;
+}
+.travellersmaininput{
+    position:relative;
+    top:0;
+    left:0;
+    /* width: 1000px; */
+    padding:0.5rem 0.2rem;
+    width: 100%;
+}
+/* .travellersmaininput:focus + .bothadultchilddiv{
+    background-color:whitesmoke;
+ 
+    display: block;
+} */
+.travellersmaininput {
+    /* background-color:whitesmoke; */
+    padding:0.75rem 1.6rem 0.75rem 0.5rem;
+    font-size:larger
+}
+.bothadultchilddiv{
+    background-color:beige;
+    border-radius: 17.5px;
+    margin:0.25rem;
+    position: relative;
+    top:0;
+    left:0;
+    transition: all 1s ease;
+
+
+} 
+.btncanceltravellerscollapse{
+    float:right;
+    cursor:pointer;
+    align-self:flex-end;
+    margin:0.32rem;
+}
+.travellersiconcancelbtn{
+    position:absolute;
+    top:1rem;
+    right:0.5rem;
+    /* background-color:yellow; */
+    /* font-size: xx-large; */
+}
+.collapsetravellerscancelbtn{
+    display: none;
+}
+.hidetravellersdiv{
+    /* display:none; */
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    position: relative;
+    /* top:2rem; */
+    left:-2rem;
+}
+.adultcount{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding:0.5rem;
+    width:100%;
+    height: auto;
+    /* background-color: green; */
+}
+.adultlabel,.kidslabel{
+    width:60%;
+}
+.minusbutton{
+    padding:0.5rem;
+}
+
+.addsubdiv{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* background-color:#551A8B; */
+    /* margin:0 0rem; */
+    width: 40%;
+    
+
+}
+.adultinput,.childinput{
+    padding:0.5rem 0.5rem;
+    width: 40%;  
+    text-align: center;
+    font-size: 1.5rem;
+    margin:0 auto;
+}
+
+.minusbutton{}
+.kidscount{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+    /* background-color: greenyellow; */
+
+}
+.kidslabel{}
+.travellersinput{}
+
+.travellersdonebtndiv{
+    /* background-color: blue; */
+    text-align:center;
+    margin:0.66rem;
+
+}
+.travellersnumberdonebtn{
+    color:white;
+    background-color:blue;
+    margin:0 auto;
+    width:70%;
+    padding:0.5rem;
+    border-radius: 10px;
+    border:none;
+    text-align:center;
+    font-size:larger;
+    cursor:pointer;
+}
 
 
 
