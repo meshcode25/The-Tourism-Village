@@ -20,7 +20,6 @@
     </nav>
 
     <div class="bodydiv">
-
         <div class="bodynavbar">
             <div class="tourdetailsstep">
                 <p>tour details step</p>
@@ -34,184 +33,109 @@
         <div class="formcontainer">
             <div class="formdiv">
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
-                <form class="form" method="post" action="" enctype="multipart/form-data" id="form">
+                <form class="form" method="post" action="" enctype="multipart/form-data" id="form">  
+                      <!--Form errors go here   -->
                     <div class="mainerrormessage"></div>
-                    
-                    
-                    
-                    
-                    <!-- email -->
-                    <!-- <div class="formdiv emaildiv">
-                        <div class="labeldiv"><label class="formlable" for="mail">Tour Company Official Email:</label></div>
-                        <input type="email" class="forminput emailinput" id="mail"  placeholder="Enter Email" name="email">
-                        <p class="formerror emailerror"></p>
-                    </div> -->
 
-                    
-                    
-                    
-                    <!-- Tour Destinoation -->
-                    <!-- <div class="formdiv tourdestinationdiv">
-                        <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
-                        <input type="text" class="forminput tourdestination" id="tourdestination"  placeholder="Enter Your Tour Destionation" name="email">
-                        <p class="formerror tourdestionationerror"></p>
-                    </div> -->
-
-
-
-
-                    <!--username -->
-                    <!-- <div class="formdiv usernamediv">
-                        <div class="labeldiv"><label class="formlable" for="user">Company Contact Person Name:</label></div>
-                        <input type="text" class="forminput usernameinput" id="user"  placeholder="Enter User Name" name="username">
+                    <!-- Name your Tour/Travell -->
+                     <div class="formdiv tournamediv">
+                        <div class="labeldiv"><label class="formlable" for="tourname">Name your Tour/Travel:</label></div>
+                        <input type="text" class="forminput tournameinput" id="tourname"  placeholder="Enter User Name" name="tourname">
                         <p class="formerror usernameerror"></p>
-                    </div> -->
+                    </div> 
 
-
-
-                    <!--passoword -->
-                    <!-- <div class="formdiv passdiv">
-                        <div class="labeldiv"><label class="formlable" for="pass" >Password:</label></div>
-                        <input type="password" class="forminput passwordinput" id="pass"  placeholder="Enter Password" name="password">
-                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
-                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
-                        <p class="formerror passworderror"></p>
-                    </div> -->
-
-
-
-
-                    <!-- confirm password -->
-                    <!-- <div class="formdiv conpassdiv">
-                        <div class="labeldiv"><label class="formlable" for="confpass" >Confirm Password:</label></div>
-                        <input type="password" class="forminput conpasswordinput" id="confpass" placeholder="Confirm Password" name="conpassword">
-                        <span class="eye"><a class="showeye" ><i class="fa fa-eye" aria-hidden="true"></i></a></span>
-                        <span class="eyeslash"><a class="hideeye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
-                        <p class="formerror conpassworderror"></p>
-                    </div> -->
-
-
-
-
-                    <!-- submit-->
-                    <!-- <div class="formdiv submitdiv">
-                        <button class="submitbutton" type="submit" >SIGN UP</button>
-                        <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
-                    </div> -->
-
-
-
-
-                    <!-- forgot password -->
-                    <!-- <div class="forgotpassdiv">
-                        <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
-                    </div> -->
-                    <!-- forgot passsword -->
-
-
-
-
-
-
-
-                    <div class="formdiv">
-                        <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
-                            <div class="destinationsearchdiv">
-                                <!-- <label class="mainsearchlabel" >Search Destination/Tour/Travel</label> -->
+                    <!-- Destination search container -->
+                    <div class="formdiv destinationsearchcontainer">
+                        <div class="destinationsearchdiv">
                             <div class="destinydiv">
-                                <div class="destinyinputplaceholder">
+                                <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
                                     <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
-                                    <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput" name="destinationdropdown"  id="destinationsearchinput" >
+                                    <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput"  name="destinationdropdown"  >
                                     <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
-                                    <!-- <button type="button" class="searchiconbtn"> <i class="fa-solid fa-magnifying-glass"></i></button> -->
                                     <button type="button" class="searchiconcancelbtn"><i class="fa-solid fa-x"></i></button>
-                                    <!-- <button type="button" class="btncancelsearchcollapsetest"><i class="fa-solid fa-x"></i></button> -->
-                                
-                                <!-- here starrts the collapsediv -->
-                                <div class="searchcollapsediv">
-                                    <h5 class="searchcollapseheader">Start Typing or Select Destination <button type="button" class="btncancelsearchcollapse"><i class="fa-solid fa-x"></i></button> </h5>    
-                                    <div class="searchcollapse">
-                                        <form class="selectdestinyform">   
-                                            <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown"  style>
-                                                    <!-- <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i> -->
-                                                    <!-- <option value="select">Select a Destination</option> -->
-                                                    <option class="mainsearchoptions" value="nairobi">Nairobi </option>
-                                                    <option class="mainsearchoptions" value="nakuru">Nakuru </option>
-                                                    <option class="mainsearchoptions" value="mombasa"> Mombasa</option>
-                                                    <option class="mainsearchoptions"value="kisumu">Kisumu </option>
-                                                    <option class="mainsearchoptions" value="kilifi"> Kilifi</option>
-                                                    <option class="mainsearchoptions" value="voi">Voi </option>
-                                                    <option class="mainsearchoptions" value="nanyuki">Nanyuki </option>
-                                                    <option class="mainsearchoptions" value="turkanana">Turkanana </option>
-                                                    <option class="mainsearchoptions" value="trans-zoia">Tranz-Zoia</option>
-                                                    <option class="mainsearchoptions" value="narok">Narok </option>
-                                                    <option class="mainsearchoptions" value="lamu">Lamu </option>
-                                                    <option class="mainsearchoptions" value="kwale"> Kwale</option>
-                                                    <option  class="mainsearchoptions"value="tanariver">Tana River  </option>
-                                                    <option class="mainsearchoptions" value="taitataveta"> Taita Taveta </option>
-                                                    <option class="mainsearchoptions" value="Meru ">Meru</option>
-                                                    <option class="mainsearchoptions" value="nanyuki">Tharaka-Niithi </option>
-                                                    <option class="mainsearchoptions" value="kajiado">Kajiado </option>
-                                                    <option class="mainsearchoptions" value="uasin Gishu "> Uasin Gishu</option>
-                                                    <option class="mainsearchoptions" value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
-                                                    <option class="mainsearchoptions" value="nandi">   Nandi    </option>
-                                                    <option class="mainsearchoptions" value="baringo"> Baringo    </option>
-                                                    <option  class="mainsearchoptions"value="laikipia"> Laikipia   </option>
-                                                    <option class="mainsearchoptions" value="kericho">  Kericho   </option>
-                                                    <option class="mainsearchoptions" value="bomet">    Bomet   </option>
-                                                    <option class="mainsearchoptions" value="kakamega"> Kakamega   </option>
-                                                    <option class="mainsearchoptions" value="vihiga">   Vihiga   </option>
-                                                    <option class="mainsearchoptions" value="bungoma">  Bungoma   </option>
-                                                    <option class="mainsearchoptions" value="busia" >Busia </option>
-                                                    <option class="mainsearchoptions" value="siaya" >Siaya </option>
-                                                    <option class="mainsearchoptions" value="kisumu">Kisumu  </option>  
-                                                    <option class="mainsearchoptions" value="homa Bay">Homa Bay </option>
-                                                    <option class="mainsearchoptions" value="migori" >Migori </option>
-                                                    <option class="mainsearchoptions" value="kisii" >Kisii  </option>
-                                                    <option class="mainsearchoptions" value="nyamira">Nyamira </option> 
-                                                    <option class="mainsearchoptions" value="tana River">Tana River</option>
-                                                    <option class="mainsearchoptions" value="lamu ">Lamu</option>
-                                                    <option class="mainsearchoptions" value="garissa">Garissa </option>
-                                                    <option class="mainsearchoptions" value="wajir" >Wajir</option>
-                                                    <option class="mainsearchoptions" value="mandera">Mandera </option>
-                                                    <option class="mainsearchoptions" value="marsabit">Marsabit </option>
-                                                    <option class="mainsearchoptions" value="isiolo ">Isiolo</option>
-                                                    <option class="mainsearchoptions" value="embu" >Embu </option>
-                                                    <option class="mainsearchoptions" value="kitui "> Kitui</option>
-                                                    <option class="mainsearchoptions" value="Machakos">Machakos</option>                                    
-                                                    <option class="mainsearchoptions" value="Makueni">Makueni</option>                                    
-                                                    <option class="mainsearchoptions" value="Nyandarua">Nyandarua</option>                                    
-                                                    <option class="mainsearchoptions" value="Nyeri">Nyeri</option>                                    
-                                                    <option class="mainsearchoptions" value="Kirinyaga">Kirinyaga</option>                                    
-                                                    <option class="mainsearchoptions" value="Murang'a">Murang'a</option>                                    
-                                                    <option class="mainsearchoptions" value=" Kiambu">Kiambu</option>                                                                                    
-                                                    <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
-                                                    <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
-                                                <input type="submit" value="Submit">
-        
-                                            </datalist>
-        
-                                            
-                                        </form>
+                                    
+                                    <!-- here starrts the collapsediv -->
+                                    <div class="searchcollapsediv">
+                                        <h5 class="searchcollapseheader">Start Typing or Select Destination <button type="button" class="btncancelsearchcollapse"><i class="fa-solid fa-x"></i></button> </h5>    
+                                        <div class="searchcollapse">
+                                            <form class="selectdestinyform">   
+                                                <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown"  style>
+                                                        <!-- <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i> -->
+                                                        <!-- <option value="select">Select a Destination</option> -->
+                                                        <option class="mainsearchoptions" value="nairobi">Nairobi </option>
+                                                        <option class="mainsearchoptions" value="nakuru">Nakuru </option>
+                                                        <option class="mainsearchoptions" value="mombasa"> Mombasa</option>
+                                                        <option class="mainsearchoptions"value="kisumu">Kisumu </option>
+                                                        <option class="mainsearchoptions" value="kilifi"> Kilifi</option>
+                                                        <option class="mainsearchoptions" value="voi">Voi </option>
+                                                        <option class="mainsearchoptions" value="nanyuki">Nanyuki </option>
+                                                        <option class="mainsearchoptions" value="turkanana">Turkanana </option>
+                                                        <option class="mainsearchoptions" value="trans-zoia">Tranz-Zoia</option>
+                                                        <option class="mainsearchoptions" value="narok">Narok </option>
+                                                        <option class="mainsearchoptions" value="lamu">Lamu </option>
+                                                        <option class="mainsearchoptions" value="kwale"> Kwale</option>
+                                                        <option  class="mainsearchoptions"value="tanariver">Tana River  </option>
+                                                        <option class="mainsearchoptions" value="taitataveta"> Taita Taveta </option>
+                                                        <option class="mainsearchoptions" value="Meru ">Meru</option>
+                                                        <option class="mainsearchoptions" value="nanyuki">Tharaka-Niithi </option>
+                                                        <option class="mainsearchoptions" value="kajiado">Kajiado </option>
+                                                        <option class="mainsearchoptions" value="uasin Gishu "> Uasin Gishu</option>
+                                                        <option class="mainsearchoptions" value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
+                                                        <option class="mainsearchoptions" value="nandi">   Nandi    </option>
+                                                        <option class="mainsearchoptions" value="baringo"> Baringo    </option>
+                                                        <option  class="mainsearchoptions"value="laikipia"> Laikipia   </option>
+                                                        <option class="mainsearchoptions" value="kericho">  Kericho   </option>
+                                                        <option class="mainsearchoptions" value="bomet">    Bomet   </option>
+                                                        <option class="mainsearchoptions" value="kakamega"> Kakamega   </option>
+                                                        <option class="mainsearchoptions" value="vihiga">   Vihiga   </option>
+                                                        <option class="mainsearchoptions" value="bungoma">  Bungoma   </option>
+                                                        <option class="mainsearchoptions" value="busia" >Busia </option>
+                                                        <option class="mainsearchoptions" value="siaya" >Siaya </option>
+                                                        <option class="mainsearchoptions" value="kisumu">Kisumu  </option>  
+                                                        <option class="mainsearchoptions" value="homa Bay">Homa Bay </option>
+                                                        <option class="mainsearchoptions" value="migori" >Migori </option>
+                                                        <option class="mainsearchoptions" value="kisii" >Kisii  </option>
+                                                        <option class="mainsearchoptions" value="nyamira">Nyamira </option> 
+                                                        <option class="mainsearchoptions" value="tana River">Tana River</option>
+                                                        <option class="mainsearchoptions" value="lamu ">Lamu</option>
+                                                        <option class="mainsearchoptions" value="garissa">Garissa </option>
+                                                        <option class="mainsearchoptions" value="wajir" >Wajir</option>
+                                                        <option class="mainsearchoptions" value="mandera">Mandera </option>
+                                                        <option class="mainsearchoptions" value="marsabit">Marsabit </option>
+                                                        <option class="mainsearchoptions" value="isiolo ">Isiolo</option>
+                                                        <option class="mainsearchoptions" value="embu" >Embu </option>
+                                                        <option class="mainsearchoptions" value="kitui "> Kitui</option>
+                                                        <option class="mainsearchoptions" value="Machakos">Machakos</option>                                    
+                                                        <option class="mainsearchoptions" value="Makueni">Makueni</option>                                    
+                                                        <option class="mainsearchoptions" value="Nyandarua">Nyandarua</option>                                    
+                                                        <option class="mainsearchoptions" value="Nyeri">Nyeri</option>                                    
+                                                        <option class="mainsearchoptions" value="Kirinyaga">Kirinyaga</option>                                    
+                                                        <option class="mainsearchoptions" value="Murang'a">Murang'a</option>                                    
+                                                        <option class="mainsearchoptions" value=" Kiambu">Kiambu</option>                                                                                    
+                                                        <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
+                                                        <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
+                                                    <input type="submit" value="Submit">
+            
+                                                </datalist>
+            
+                                                
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                </div>
-                                </div>
-        
-                            
-        
-                                <div class="addtour"><a href="#" class="addtour"> + Add another tour/Destination</a> </div>
+                                    <!-- </div> -->
+                                </form>
                             </div>
-               
-                        </form>
+                        </div>
+                        
+                        <div class="addtour"><a href="#" class="addtour"> + Add another tour/Destination</a> </div>
                     </div>
 
 
                     <!-- Date picker form div -->
                     <div id="date_picker" class="formdiv">
                         <div id="date_picker_input">
-                            <label class="datepickerlabel">Datepicker</label>
-                            <input type="text" id="date" class="onFocus" readonly placeholder="Pick the date for the Tour/Travel" />
+                            <label class="datepickerlabel" for="date">Pick the Start Date of the Tour/Travel</label>
+                            <input type="text" id="date" class="onFocus" readonly placeholder="Pick the Start date for the Tour/Travel" />
                         </div>
                         <div id="date_picker_calendar" class="hidden"> 
                             <div class="cancelbtndiv"><button type="button" class="cancelbtn"><i class="fa-solid fa-x"></i></button></div>
@@ -239,7 +163,7 @@
                                 <div class="adultcount">
                                     <div class="adultlabel"><p>Adults(18 years+):</p></div>
                                     <div class="addsubdiv">
-                                        <button class="minusbutton adultminusbtn" type="button"><h1>-</h1 ></button>
+                                        <button class="minusbutton adultminusbtn" type="button"><h2>-</h2 ></button>
                                         <input type="text" class="adultinput" value="1" name="travellersinput"  >
                                         <button class="addbutton adultaddbtn" type="button"><h2>+</h2 ></button>
                                     </div>
@@ -260,6 +184,30 @@
                         </div>
                     </div>
                     
+
+                     <!-- Duration of the Tour -->
+                     <div class="tourdurationdiv formdiv" >                                    
+                        <label for="tourduration" for="tourduration">Select Tour/Travel Duration</label>
+                        <div class="tourdurationmaininputdiv" >
+                            <input class="tourdurationmaininput" readonly id="tourduration" type="text" placeholder="Select Duration of Travel/Tour">
+                            <button type="button" class="tourdurationcanceliconbtn collapsetourdurationcancelbtn" ><i class="fa-solid fa-x"></i></button>
+                            <div class="collapsetourdurationdiv hidetourdurationdiv ">
+                                <div class="tourdurationcollapselabel">Select The Duration of the Tour/Travel <button type="button" class="btncanceltourdurationcollapse "><i class="fa-solid fa-x"></i></button> </div>
+                                <div class="tourdurationcount ">
+                                    <div class="tourdurationlabel"><p>Tour/Travel Duration (Days):</p></div>
+                                    <div class="tourduration ">
+                                        <button class="tourdurationminusbtn durationminusbutton" type="button"><h2>-</h2 ></button>
+                                        <input type="text" class="tourdurationinput adultinput" value="1" name="tourdurationinput"  >
+                                        <button class="tourdurationaddbtn   durationaddbutton " type="button"><h2>+</h2 ></button>
+                                    </div>   
+                                </div>
+                                <div class="tourdurationdonebtndiv"><button type="button" class="tourdurationdonebtn ">Done</button> </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                      <!-- submit-->
                      <div class="formdiv submitdiv">
                         <button class="submitbutton createtournextbtn" type="button" >Next Step</button>
