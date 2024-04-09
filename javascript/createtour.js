@@ -2,57 +2,31 @@ $(document).ready(function(){
 // importing from html document    
 
     var searchcollapseoption=document.getElementsByClassName('mainsearchoptions');
-    var mainsearchoptions=[...searchcollapseoption]
+    let mainsearchoptions=document.querySelectorAll(".mainsearchoptions");
     const addtour=document.querySelector(".addtour");
-    const destinationsearchcontainer=document.querySelector(".destinationsearchcontainer");
-    const destinationsearchdiv=document.querySelectorAll(".destinationsearchdiv");
-    const destinydiv=document.querySelector(".destinydiv");
+    var destinationsearchcontainer=document.querySelector(".destinationsearchcontainer");
+    var destinationsearchdiv=document.querySelectorAll(".destinationsearchdiv");
+    var  destinydiv=document.querySelector(".destinydiv");
+    var  searchcollapsediv=document.querySelectorAll(".searchcollapediv");
 
-    const searchcollapediv=document.querySelectorAll(".searchcollapediv");
-
-
+    const submitbutton=document.querySelector(".submitbutton")
+    
     
     // const destinationsearchdiv=document.querySelector(".destinationsearchdiv");
     let mainsearchinput=document.querySelectorAll(".mainsearchinput");
-    const submitbutton=document.querySelector(".submitbutton")
-
-
     // destinationsearchcontainer.appendChild(destinationsearchdiv);
-
     // console.log(addtour);
 
-    addtour.addEventListener("click",function(){
 
-        // destinationsearchdiv.forEach((selectedelement, index, arrayoflist)=>{
-        //     selectedelement[0]
-        // })
-
-        let newtour=document.createElement("div");
-        newtour.classList.add("destinationsearchdiv");
-        // newtour.style.background="green";
-        // newtour.style.color="white";
-        
-        console.log("I have been clicked");
+    console.log(mainsearchinput);
 
 
-        const newer= destinationsearchdiv[0].cloneNode(true);
-       
-        // const newer=destinationsearchdiv[0];
-        console.log(destinationsearchdiv[0])
-        // let newer=document.createElement("li")
-        newtour.appendChild(newer);
-        
-
-        // destinationsearchcontainer.appendChild(newtour);
-        addtour.before(newtour)
-
-
-        console.log($(".mainsearchinput"));
-    })
+   
     
     //sign up validation //
     //gmail validation
-       
+    console.log(mainsearchinput);
+
 
 
 
@@ -351,40 +325,204 @@ $(document).ready(function(){
 
 
     //beginning of destionation chooseing from database list ??/////
+    // $(".mainsearchinput").each(function(index,thiselement){
+    // const mainsearchinput=document.querySelectorAll(".mainsearchinput");
+    // const destinationsearchdiv.forEach((selectedelement, index, arrayoflist)=>{
+    //     selectedelement[0]
+    // })
 
-    $(".mainsearchinput").each(function(index,thiselement){
-        thiselement.addEventListener("click", function (){
-            console.log("I have been focused");
-            $(`.destinationsearchlabel:eq(${index})`).css({
+    addtour.addEventListener("click",function(){
+        // mainsearchInputOnClick();
+        // selectCollapseOption(index);
+
+        updateDom();
+        mainsearchInputOnClick();
+        mainsearchInputOnMouseOut();
+        searchinputClearIcon();
+        SearchinputonKeyup();
+
+        
+    })
+
+
+
+
+    function updateDom(){
+            let newtour=document.createElement("div");
+            newtour.classList.add("destinationsearchdiv");
+            // newtour.style.background="green";
+            // newtour.style.color="white";
+            console.log("I have been clicked");
+
+            const newer= destinationsearchdiv[0].cloneNode(true);
+            // const newer=destinationsearchdiv[0];
+            // let newer=document.createElement("li")
+            newtour.appendChild(newer);
+            
+            // destinationsearchcontainer.appendChild(newtour);
+            addtour.before(newtour)
+            
+        mainsearchinput=document.querySelectorAll(".mainsearchinput");
+        mainsearchoptions=document.querySelectorAll(".mainsearchoptions");
+
+
+            console.log(destinationsearchdiv[0])
+            console.log(mainsearchinput);
+    }
+
+
+    function mainsearchInputOnClick(){
+        mainsearchinput.forEach(function(thiselement,index,array){
+            // console.log(thiselement);
+            thiselement.addEventListener("click", function (){
+                console.log("I have been focused");
+                $(`.destinationsearchlabel:eq(${index})`).css({
+                        " position":"relative",
+                        "top":"-4rem",
+                        " font-size":"medium",
+                        "color":"gray",
+                        "left":".50rem",
+                        "transition": "all 0.5s ease"
+                    
+                })
+    
+                $(`.searchcollapsediv:eq(${index})`).css({
+                        // "display":"block",
+                        "height":"auto",
+                        "opacity":"1",
+                        "transition":'all 1s ease',
+                        "visibility": "visible"
+                })
+            })
+    
+            selectCollapseOption(index);
+        })
+    }
+
+    function mainsearchInputOnMouseOut(){
+        // on focuss out 
+        // $(".mainsearchinput").on("focusout", function (){
+        $(".mainsearchinput").each(function(index){
+            $(this).on("focusout", function (){
+    
+                // if($(".mainsearchinput").val()==""){
+                if($(this).val()==""){
+                // $(".destinationsearchlabel").css({
+                    $(`.destinationsearchlabel:eq(${index})`).css({
+                        " position":"relative",
+                        "top":"-2.7rem",
+                        " font-size":"medium",
+                        "color":"gray",
+                        "left":".50rem",
+                        "transition": "all 0.5s ease"
+                    });
+            
+            
+                    // $(".searchcollapsediv").css({
+                    $(`.searchcollapsediv:eq(${index})`).css({
+    
+                        // "display":"block",
+                        "height":"0",
+                        "opacity":"0",
+                        "transition":'all 1s ease',
+                        "visibility": "hidden"
+                    })
+            
+            
+                    // $(".searchiconcancelbtn").css({
+                    $(`.searchiconcancelbtn:eq(${index})`).css({
+    
+                        // "display":"block",
+                        "height":"0",
+                        "opacity":"0",
+                        "transition":"all 0.5s ease",
+                        "visibility": "hidden",
+                    })
+    
+                }else{
+    
+    
+                    // $(".destinationsearchlabel").css({
+                    $(`.destinationsearchlabel:eq(${index})`).css({
+    
+                        " position":"relative",
+                        "top":"-4rem",
+                        " font-size":"medium",
+                        "color":"gray",
+                        "left":".50rem",
+                        "transition": "all 0.5s ease"
+                    });
+                    
+                    
+                    // $(".searchcollapsediv").css({
+                    $(`.searchcollapsediv:eq(${index})`).css({
+    
+                    // "display":"block",
+                    "height":"0",
+                    "opacity":"0",
+                    "transition":'all 1s ease',
+                    "visibility": "hidden"
+                })
+    
+                // $(".searchiconcancelbtn").css({
+                $(`.searchiconcancelbtn:eq(${index})`).css({
+    
+                    // "display":"block",
+                    "height":"auto",
+                    "opacity":"1",
+                    "transition":"all 0.5s ease",
+                    "visibility": "visible",
+                    })
+                }
+            })
+        })
+    }    
+
+
+    $(".searchiconbtn").on("click", function(){
+    
+    })
+
+    // $(".searchiconcancelbtn").on("click", function(){
+    function searchinputClearIcon(){
+        $(`.searchiconcancelbtn`).each(function(index){
+            $(this).on("click", function(){
+                console.log("searchinconbtn clicked, yeah you heard me clicked");
+                console.log("I have just clicked this"); 
+                console.log($(".mainsearchinput").val());
+                // $(".mainsearchinput").attr("reset", "true");
+                $(`.mainsearchinput:eq(${index})`).attr("reset", "true");
+                // $(".mainsearchinput").trigger("reset");
+                $(`.mainsearchinput:eq(${index})`).trigger("reset");
+    
+                // $(".mainsearchinput").val("");
+                $(`.mainsearchinput:eq(${index})`).val("");
+    
+    
+                //here is the clear and reset Search input for the search tour/travel
+                $( `.destinationsearchlabel:eq(${index})`).css({
                     " position":"relative",
-                    "top":"-4rem",
+                    "top":"-2.8rem",
                     " font-size":"medium",
                     "color":"gray",
                     "left":".50rem",
                     "transition": "all 0.5s ease"
-                
-            })
-
-            $(`.searchcollapsediv:eq(${index})`).css({
+                });
+    
+    
+                // $(".searchcollapsediv").css({
+                $( `.searchcollapsediv:eq(${index})`).css({
+    
                     // "display":"block",
-                    "height":"auto",
-                    "opacity":"1",
+                    "height":"0",
+                    "opacity":"0",
                     "transition":'all 1s ease',
-                    "visibility": "visible"
-            })
-        })
-    })
-
-
-// on focuss out 
-    // $(".mainsearchinput").on("focusout", function (){
-    $(".mainsearchinput").each(function(index){
-        $(this).on("focusout", function (){
-
-            // if($(".mainsearchinput").val()==""){
-            if($(this).val()==""){
-            // $(".destinationsearchlabel").css({
-                $(`.destinationsearchlabel:eq(${index})`).css({
+                    "visibility": "hidden"
+                })
+                
+                // $(".destinationsearchlabel").css({
+                $( `.destinationsearchlabel:eq(${index})`).css({
+    
                     " position":"relative",
                     "top":"-2.7rem",
                     " font-size":"medium",
@@ -392,229 +530,141 @@ $(document).ready(function(){
                     "left":".50rem",
                     "transition": "all 0.5s ease"
                 });
-        
-        
+    
+    
                 // $(".searchcollapsediv").css({
-                $(`.searchcollapsediv:eq(${index})`).css({
-
+                $( `.searchcollapsediv:eq(${index})`).css({
+    
                     // "display":"block",
                     "height":"0",
                     "opacity":"0",
                     "transition":'all 1s ease',
                     "visibility": "hidden"
                 })
-        
-        
+    
+    
                 // $(".searchiconcancelbtn").css({
-                $(`.searchiconcancelbtn:eq(${index})`).css({
-
+                $( `.searchiconcancelbtn:eq(${index})`).css({
+    
                     // "display":"block",
                     "height":"0",
                     "opacity":"0",
                     "transition":"all 0.5s ease",
                     "visibility": "hidden",
                 })
-
-            }else{
-
-
-                // $(".destinationsearchlabel").css({
-                $(`.destinationsearchlabel:eq(${index})`).css({
-
-                    " position":"relative",
-                    "top":"-4rem",
-                    " font-size":"medium",
-                    "color":"gray",
-                    "left":".50rem",
-                    "transition": "all 0.5s ease"
-                });
-                
-                
-                // $(".searchcollapsediv").css({
-                $(`.searchcollapsediv:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"0",
-                "opacity":"0",
-                "transition":'all 1s ease',
-                "visibility": "hidden"
-            })
-
-            // $(".searchiconcancelbtn").css({
-            $(`.searchiconcancelbtn:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"auto",
-                "opacity":"1",
-                "transition":"all 0.5s ease",
-                "visibility": "visible",
-                })
-            }
+            }) 
         })
-    })
-
-   
-
-    $(".searchiconbtn").on("click", function(){
         
-    })
+    }
 
-    // $(".searchiconcancelbtn").on("click", function(){
-    $(`.searchiconcancelbtn`).each(function(index){
-        $(this).on("click", function(){
-            console.log("searchinconbtn clicked, yeah you heard me clicked");
-            console.log("I have just clicked this"); 
-            console.log($(".mainsearchinput").val());
-            // $(".mainsearchinput").attr("reset", "true");
-            $(`.mainsearchinput:eq(${index})`).attr("reset", "true");
-            // $(".mainsearchinput").trigger("reset");
-            $(`.mainsearchinput:eq(${index})`).trigger("reset");
-
-            // $(".mainsearchinput").val("");
-            $(`.mainsearchinput:eq(${index})`).val("");
-
-
-            //here is the clear and reset Search input for the search tour/travel
-            $( `.destinationsearchlabel:eq(${index})`).css({
-                " position":"relative",
-                "top":"-2.8rem",
-                " font-size":"medium",
-                "color":"gray",
-                "left":".50rem",
-                "transition": "all 0.5s ease"
-            });
-
-
-            // $(".searchcollapsediv").css({
-            $( `.searchcollapsediv:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"0",
-                "opacity":"0",
-                "transition":'all 1s ease',
-                "visibility": "hidden"
-            })
-            
-            // $(".destinationsearchlabel").css({
-            $( `.destinationsearchlabel:eq(${index})`).css({
-
-                " position":"relative",
-                "top":"-2.7rem",
-                " font-size":"medium",
-                "color":"gray",
-                "left":".50rem",
-                "transition": "all 0.5s ease"
-            });
-
-
-            // $(".searchcollapsediv").css({
-            $( `.searchcollapsediv:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"0",
-                "opacity":"0",
-                "transition":'all 1s ease',
-                "visibility": "hidden"
-            })
-
-
-            // $(".searchiconcancelbtn").css({
-            $( `.searchiconcancelbtn:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"0",
-                "opacity":"0",
-                "transition":"all 0.5s ease",
-                "visibility": "hidden",
-            })
-        }) 
-    })
     
-
-   
 
     // $(".mainsearchinput").on("keyup", function(){
     //     if($(".mainsearchinput").val()==""){
 
-    $(".mainsearchinput").each(function(index){
-        $(this).on("click", function (){
-            // if($(".mainsearchinput").val()==""){
-            if($(this).val()==""){
-                $(`.searchiconcancelbtn:eq(${index})`).css({
+    function SearchinputonKeyup(){
+        $(".mainsearchinput").each(function(index){
+            $(this).on("keyup", function (){
+                // if($(".mainsearchinput").val()==""){
+                if($(this).val()==""){
+                    $(`.searchiconcancelbtn:eq(${index})`).css({
+    
+                            // "display":"hidden",
+                            
+                        "height":"0",
+                        "opacity":"0",
+                        "transition":"all 1s ease",
+                        "visibility": "hidden"
+                    })
+                }
+                else{
+                    // $(".searchiconcancelbtn").css({
+                    $(`.searchiconcancelbtn:eq(${index})`).css({
+    
+                        // "display":"block",
+                        "height":"auto",
+                        "opacity":"1",
+                        "transition":"all 0.5s ease",
+                        "visibility": "visible",
+                    })
+                
+                }
+                console.log($(`.mainsearchinput:eq(${index})`).val())
+            })
+        })
 
-                        // "display":"hidden",
-                        
-                    "height":"0",
-                    "opacity":"0",
-                    "transition":"all 1s ease",
-                    "visibility": "hidden"
-                })
-            }
-            else{
-                // $(".searchiconcancelbtn").css({
-                $(`.searchiconcancelbtn:eq(${index})`).css({
+    }
+    
 
+    function selectCollapseOption(index){
+        // console.log($(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions")) 
+
+        $(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions").each((indexx, currentoption)=>{  
+            // console.log(`here is the chosen option ${currentoption}`);   
+            currentoption.addEventListener("click", ()=>{
+                console.log(currentoption)
+                let value= currentoption.getAttribute("value");
+                let firstletterinvaluecapital=value.charAt(0).toUpperCase();
+                var remainingvaluestring=value.slice(1);
+                var capitalizedvalue=firstletterinvaluecapital + remainingvaluestring;
+                console.log(value);
+                console.log(capitalizedvalue);
+    
+                //keep the seaerch input space clear /////
+                $(`.mainsearchinput:eq(${index})`).val(capitalizedvalue);
+                console.log(`here is the index of mainserchoption ${index}`);
+
+                $(`.destinationsearchlabel:eq(${index})`).css({
+                    " position":"relative",
+                        "top":"-4rem",
+                    " font-size":"medium",
+                        "color":"gray",
+                        "left":".50rem",
+                        "transition": "all 0.5s ease"
+                    });
+            
+            
+                //  $(".searchcollapsediv").css({
+                $(`.searchcollapsediv:eq(${index})`).css({
+                        // "display":"block",
+                        "height":"0",
+                        "opacity":"0",
+                        "transition":'all 1s ease',
+                        "visibility": "hidden"
+                    })
+    
+    
+                //  $(".searchiconcancelbtn").css({
+                $(`.searchiconcancelbtn:eq(${index})`).css({
+    
                     // "display":"block",
                     "height":"auto",
                     "opacity":"1",
                     "transition":"all 0.5s ease",
                     "visibility": "visible",
                 })
-            
-            }
-            console.log($(`.mainsearchinput:eq(${index})`).val())
-        })
-    })
     
-    mainsearchoptions.forEach((currentoption, index, array)=>{  
-        currentoption.addEventListener("click", ()=>{
-            console.log(`here is the chosen option ${currentoption}`);
-            console.log(currentoption)
-            let value= currentoption.getAttribute("value");
-            let firstletterinvaluecapital=value.charAt(0).toUpperCase();
-            var remainingvaluestring=value.slice(1);
-            var capitalizedvalue=firstletterinvaluecapital + remainingvaluestring;
-            console.log(value);
-            console.log(capitalizedvalue);
-
-            //keep the seaerch input space clear /////
-            $(`.mainsearchinput:eq(${index})`).val(capitalizedvalue);
-
-            $(`.destinationsearchlabel:eq(${index})`).css({
-                " position":"relative",
-                 "top":"-4rem",
-                " font-size":"medium",
-                 "color":"gray",
-                 "left":".50rem",
-                 "transition": "all 0.5s ease"
-             });
-     
-     
-            //  $(".searchcollapsediv").css({
-            $(`.searchcollapsediv:eq(${index})`).css({
-                 // "display":"block",
-                 "height":"0",
-                 "opacity":"0",
-                 "transition":'all 1s ease',
-                 "visibility": "hidden"
-             })
-
-
-            //  $(".searchiconcancelbtn").css({
-            $(`.searchiconcancelbtn:eq(${index})`).css({
-
-                // "display":"block",
-                "height":"auto",
-                "opacity":"1",
-                "transition":"all 0.5s ease",
-                "visibility": "visible",
+    
+                
             })
-
-
-        //end of search input data/////
-
         })
-    })
+    }
+    
+    
+    // updateDom();
+    // mainsearchInputOnClick();
+    mainsearchInputOnClick();
+    mainsearchInputOnMouseOut();
+    selectCollapseOption(0);
+    searchinputClearIcon();
+    SearchinputonKeyup();
+    
+    
+    
+    
+    //end of search input data/////This is the endo teh Search input for searchibngt the destinations 
+
+
 
 
 
