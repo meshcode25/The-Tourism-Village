@@ -666,10 +666,7 @@ $(document).ready(function(){
     SearchinputonKeyup();
     selectCollapseOption(0);
     
-    
-    
-    
-    //end of search input data/////This is the endo teh Search input for searchibngt the destinations 
+//end of search input data/////This is the endo teh Search input for searchibngt the destinations 
 
 
 
