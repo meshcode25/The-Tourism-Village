@@ -1027,7 +1027,9 @@
 
     .mainsearchinput{
         font-size:medium;
-    
+        /* position: absolute; */
+        top:0;
+        left:0;
         padding:0.2rem 1.5rem 0.2rem 0.5rem;
         outline: none;
         width:70%;
@@ -1083,24 +1085,22 @@
         /* color:white; */
         cursor:pointer;
         /* background-color:black; */
-        position:relative;
-        /* outline: none; */
-        /* border: none; */
-        /* padding:0.1rem; */
-        top:-4rem;
-        left:14.3rem;
-        /* display: block; */
-        /* float: right; */
+        position:absolute;
+        /* position:absolute; */
+        top:1rem;
+        right:5rem;
     }
     .searchiconcancelbtn{
         /* color:white; */
-        position:relative;
-        top:-2.7rem;
-        left:3.5rem;
+        position:absolute;
+        /* position:absolute; */
+        top:0rem;
+        left:90rem;
+        margin-left:4rem;
         /* background-color: ; */
         cursor:pointer;
-        top:-4rem;
-        left:14.3rem;
+        /* top:-4rem;
+        left:24.3rem; */
         opacity:0;
         visibility: hidden;
         height:0;

@@ -3,6 +3,7 @@ $(document).ready(function(){
 
     var searchcollapseoption=document.getElementsByClassName('mainsearchoptions');
     let mainsearchoptions=document.querySelectorAll(".mainsearchoptions");
+    let searchselectcollapse=document.querySelectorAll(".searcheselectcollapse");
     const addtour=document.querySelector(".addtour");
     var destinationsearchcontainer=document.querySelector(".destinationsearchcontainer");
     var destinationsearchdiv=document.querySelectorAll(".destinationsearchdiv");
@@ -363,7 +364,7 @@ $(document).ready(function(){
             addtour.before(newtour)
             
         mainsearchinput=document.querySelectorAll(".mainsearchinput");
-        mainsearchoptions=document.querySelectorAll(".mainsearchoptions");
+        searchselectcollapse=document.querySelectorAll(".searcheselectcollapse");
 
 
             console.log(destinationsearchdiv[0])
@@ -597,21 +598,27 @@ $(document).ready(function(){
     
 
     function selectCollapseOption(index){
-        // console.log($(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions")) 
+        let optionslist=$(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions") 
+        
+        for(let i=0; i<optionslist.length; i++){
+            console.log(optionslist[i].getAttribute("value"));
+            i++
+        }
 
         $(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions").each((indexx, currentoption)=>{  
             // console.log(`here is the chosen option ${currentoption}`);   
-            currentoption.addEventListener("click", ()=>{
-                console.log(currentoption)
+            currentoption.addEventListener("mouseover", ()=>{
+                // console.log(" here is tehe current value " + currentoption)
+                // console.log("here is the index of the clicked searchoptions" + indexx);
                 let value= currentoption.getAttribute("value");
                 let firstletterinvaluecapital=value.charAt(0).toUpperCase();
                 var remainingvaluestring=value.slice(1);
                 var capitalizedvalue=firstletterinvaluecapital + remainingvaluestring;
-                console.log(value);
-                console.log(capitalizedvalue);
+                console.log("here is teh derived value from the searchoptions " + value);
+                console.log("here is teh derived value from the searchoptions " + capitalizedvalue);
     
                 //keep the seaerch input space clear /////
-                $(`.mainsearchinput:eq(${index})`).val(capitalizedvalue);
+                $(`.mainsearchinput:eq(${index})`).val(`${capitalizedvalue}`);
                 console.log(`here is the index of mainserchoption ${index}`);
 
                 $(`.destinationsearchlabel:eq(${index})`).css({
@@ -655,9 +662,9 @@ $(document).ready(function(){
     // mainsearchInputOnClick();
     mainsearchInputOnClick();
     mainsearchInputOnMouseOut();
-    selectCollapseOption(0);
     searchinputClearIcon();
     SearchinputonKeyup();
+    selectCollapseOption(0);
     
     
     
