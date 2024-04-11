@@ -33,30 +33,30 @@ $(document).ready(function(){
 
 
 
+    "tournameinput"
+    "date"
+    "tourdurationmaininput"
+    "travellersmaininput"
+    "mainsearchinput"
 
-    $(".emailinput").on("keyup", ()=>{
-        validateEmail();
-        console.log("keyed up");
-    })
+  
 
     //username validation
-    $(".usernameinput").on("keyup", ()=>{
-        validateUsername();
+    $(".tournameinput").on("keyup", ()=>{
+        validateTournameInput();
         console.log("keyed up");
 
     })
-    //password validation
-    $(".passwordinput").on("keyup", ()=>{
-        validatePassword();
-        console.log("keyed up");
+    $(".mainsearchinput").on("keyup", ()=>{
+        validateTourSearch();
 
     })
+
+    //mainsearchinput validation
+
+
     //confirm password validation
-    $(".conpasswordinput").on("keyup", ()=>{
-        validateConfpass();
-        console.log("keyed up");
 
-    });
 
     $(".eye:eq(0)").on("click",  function(){
 
@@ -138,24 +138,33 @@ $(document).ready(function(){
         }
     })
 
+
+    
+    "tournameinput"
+    "date"
+    "tourdurationmaininput"
+    "travellersmaininput"
+    "mainsearchinput"
     
     //on submit function
     $(".submitbutton").on("click", function (e){        
       e.preventDefault();
       
-        validateEmail();
-        // validateUsername();
-        validatePassword();
-        // validateConfpass();
+        validateTournameInput();
+
+        validateTourSearch();
+        validateDatePicker();
+        validateTourDuration();
+        validateTravellersNumber();
         // window.location.href="../pages/createtour.html"
 
 
-        if (!validateEmail() && !validateUsername() && !validatePassword() && !validateConfpass() ) {
+        if (!validateTournameInput() && ! validateTourSearch() && !validateDatePicker() && !validateTourDuration() && !validateTravellersNumber() ) {
             console.log("errors all around 1");
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
-            
+             
         }
-         else if (!validateEmail() || !validateUsername() || !validatePassword() || !validateConfpass()) {
+         else if (!validateTournameInput() || ! validateTourSearch() || !validateDatePicker() || !validateTourDuration() || !validateTravellersNumber()) {
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
             console.log("some Erorross heare and about");
             
@@ -167,11 +176,16 @@ $(document).ready(function(){
             var data = new FormData(form);
 
             
-            data.append("email", $(".emailinput").val());
-            
-            data.append("username", $(".usernamelinput").val());
-            data.append("password", $(".passwordinput").val());
-            data.append("conpassword", $(".conpasswordinput").val());
+    "tournameinput"
+    "date"
+    "tourdurationmaininput"
+    "travellersmaininput"
+    "mainsearchinput"
+            data.append("tournameinput", $(".emailinput").val());
+            data.append( "date", $(".usernamelinput").val());
+            data.append("tourdurationmaininput", $(".passwordinput").val());
+            data.append( "travellersmaininput", $(".conpasswordinput").val());
+            data.append(   "mainsearchinput", $(".conpasswordinput").val());
             
 
             $.ajax({
@@ -216,89 +230,89 @@ $(document).ready(function(){
         }
     });
     
-    //individual validation Functions
-    function validateEmail(){
-        
-        var emailPattern=/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        var email=$(".emailinput").val();
-        var validEmail=emailPattern.test(email);
 
-        if(email == ""){
-            $(".emailerror").text('*Email Field Required')
+    //individual validation Functions
+    function validateTournameInput(){    
+        // var emailPattern=/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var tourname=$(".tournameinput").val();
+        // var validEmail=emailPattern.test(email);
+
+        if(tourname == ""){
+            $(".tournameerror").text('*Tourname Field Required')
             console.log("this space is fucking empty")
-            return false;
-        }else if(!validEmail){ 
-            $(".emailerror").text('*Input Valid Email Address')
-            console.log("it's not a  match")
             return false;
         }
         else{
-            $(".emailerror").html(' ')
+            $(".tournameerror").html(' ')
             console.log("it's a fucking match")
             return true;
 
         }
     }
 
-    function validateUsername(){
-        var usernamePattern=/^[A-Za-z0-9\s]+$/
-        var username=$(".usernameinput").val();
-        var validUsername=usernamePattern.test(username);
+    function  validateTourSearch(){
+        // var usernamePattern=/^[A-Za-z0-9\s]+$/
+        var toursearch=$(".mainsearchinput").val();
+        // var validUsername=usernamePattern.test(username);
 
-        if(username ==""){
-            $(".usernameerror").html('*Username Field Required')
-            return false;
-        }
-        else if(!validUsername){ 
-            $(".usernameerror").html('*Input Valid Username Address')
+        if(toursearch ==""){
+            $(".destinationsearcherror").html('*Tourdestination Field Required')
             return false;
         }
         else{
-            $(".usernameerror").html(' ')
+            $(".destinationsearcherror").html(' ')
             return true;
         }
     }
 
-    function validatePassword(){
-        var passwordPattern= /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-        var password=$(".passwordinput").val();
-        var validPassword=passwordPattern.test(password);
 
-        if(password ==""){
-            $(".passworderror").html('*password Field Required')
-            return false;
-        }
-        else if(!validPassword){ 
-            $(".passworderror").html('<p style="width:90%">*Invalid Password! Must be at least 8 characters(at least 1 uppercase, 1 lowercase and 1 Special Character</p>')
+    function validateDatePicker(){ 
+        // var passwordPattern= /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        var datepicker=$(".datepicker").val();
+        // var validPassword=passwordPattern.test(password);
+
+        if(datepicker ==""){
+            $(".datepickererror").html('*Tour Date Field Required')
             return false;
         }
         else{
-            $(".passworderror").html(' ')
+            $(".datepickererror").html(' ')
             return true;
         }
     }
 
-    function validateConfpass(){
-        var password=$(".passwordinput").val();
-        var confpass=$(".conpasswordinput").val();
+    function validateTourDuration(){
+        var tourduration=$(".tourdurationmaininput").val();
       
     
-        if(confpass == ""){
-            $(".conpassworderror").html('*Verify password Field Required')
+        if(tourduration == ""){
+            $(".tourdurationerror").html('*Tour Duration Field Required')
             return false;
         }
-        else if(!(confpass == password)){ 
-            $(".conpassworderror").html('*Password and Verify Password Dont Match')
-            return false;
-        }
+    
         else{
-            $(".conpassworderror").html(' ')
+            $(".tourdurationerror").html(' ')
             return true;
         }
           
     }
 
 
+    function  validateTravellersNumber(){
+        var travellersnumber=$(".travellersmaininput").val();
+      
+    
+        if(travellersnumber == ""){
+            $(".tourtravellerserror").html('*Capacity of Tour Field Required')
+            return false;
+        }
+    
+        else{
+            $(".tourtravellerserrorr").html(' ')
+            return true;
+        }
+          
+    }
 
 
 
@@ -376,6 +390,7 @@ $(document).ready(function(){
         mainsearchinput.forEach(function(thiselement,index,array){
             // console.log(thiselement);
             thiselement.addEventListener("click", function (){
+                
                 console.log("I have been focused");
                 $(`.destinationsearchlabel:eq(${index})`).css({
                         " position":"relative",
@@ -566,6 +581,7 @@ $(document).ready(function(){
     function SearchinputonKeyup(){
         $(".mainsearchinput").each(function(index){
             $(this).on("keyup", function (){
+                validateTourSearch();
                 // if($(".mainsearchinput").val()==""){
                 if($(this).val()==""){
                     $(`.searchiconcancelbtn:eq(${index})`).css({
@@ -601,13 +617,15 @@ $(document).ready(function(){
         let optionslist=$(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions") 
         
         for(let i=0; i<optionslist.length; i++){
-            console.log(optionslist[i].getAttribute("value"));
+            // console.log(optionslist[i].getAttribute("value"));
             i++
         }
 
         $(`.searchselectcollapse:eq(${index})`).children(".mainsearchoptions").each((indexx, currentoption)=>{  
             // console.log(`here is the chosen option ${currentoption}`);   
-            currentoption.addEventListener("mouseover", ()=>{
+            currentoption.addEventListener("mousedown", ()=>{
+                validateTourSearch();
+       
                 // console.log(" here is tehe current value " + currentoption)
                 // console.log("here is the index of the clicked searchoptions" + indexx);
                 let value= currentoption.getAttribute("value");
@@ -619,7 +637,7 @@ $(document).ready(function(){
     
                 //keep the seaerch input space clear /////
                 $(`.mainsearchinput:eq(${index})`).val(`${capitalizedvalue}`);
-                console.log(`here is the index of mainserchoption ${index}`);
+                // console.log(`here is the index of mainserchoption ${index}`);
 
                 $(`.destinationsearchlabel:eq(${index})`).css({
                     " position":"relative",
@@ -811,7 +829,7 @@ $(document).ready(function(){
 
     const isCurrentDay = (day, cell) => {
     if (day.timestamp === todayTimestamp) {
-        cell.classList.add("active");
+        // cell.classList.add("active");
         cell.classList.add("isCurrent");
         
     }
@@ -909,14 +927,14 @@ $(document).ready(function(){
         // console.log(monthDetails);
 
 
-        console.log(monthDetails[i].timestamp);
+        // console.log(monthDetails[i].timestamp);
 
 
         if(monthDetails[i].timestamp<today){
         div.classList.add("past");
         div.classList.remove("active");
         div.classList.remove("current")
-        console.log("These cells should be in the past ")
+        // console.log("These cells should be in the past ")
 
         
         
@@ -924,7 +942,7 @@ $(document).ready(function(){
         // backbtn.removeAttribute("disabled", "");
     
         // offset = -1;
-            console.log("These are dates from the future")
+            // console.log("These are dates from the future")
         }
 
 
@@ -1092,40 +1110,61 @@ $(document).ready(function(){
     });
     });
 
-    input.addEventListener('click', () => {
-    document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-    document.querySelector('#date_picker_input').classList.toggle('showCal');
-    document.querySelector('#date').classList.toggle('onFocus');
-    });
+    // input.addEventListener('click', () => {
+    // document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+    // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    // document.querySelector('#date').classList.toggle('onFocus');
+    // });
 
-    cancelbtn.addEventListener('click', () => {
-    document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-    document.querySelector('#date_picker_input').classList.toggle('showCal');
-    document.querySelector('#date').classList.toggle('onFocus');
-    });
+    // cancelbtn.addEventListener('click', () => {
+    // document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+    // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    // document.querySelector('#date').classList.toggle('onFocus');
+    // });
 
-    calwrapper.addEventListener('onblur', () => {
-    document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-    document.querySelector('#date_picker_input').classList.toggle('showCal');
-    document.querySelector('#date').classList.toggle('onFocus');
+    // input.addEventListener('blur', () => {
+    // document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+    // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    // document.querySelector('#date').classList.toggle('onFocus');
 
 
 
 
     document.addEventListener("click" ,function (e) {
-        var container = calwrapper;
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
+        var container = document.querySelector("#date_picker_calendar");
+        var cancelbtn=document.querySelector(".cancelbtn");
+        var date=document.querySelector("#date");
+
+        console.log("e.target value     " + e.target);
+        console.log(e.target)   
+        console.log("container.containes    " +  container.contains(e.target));
+        console.log(Object.is(container, e.target))
+
+        
+        if(Object.is(cancelbtn, e.target) || Object.is(date, e.target) ){
+            console.log("here I have the needed shit right here ")
             document.querySelector('#date_picker_calendar').classList.toggle('hidden');
             document.querySelector('#date_picker_input').classList.toggle('showCal');
             document.querySelector('#date').classList.toggle('onFocus');
         }
-        else{
-        console.log("boolshit")
+        else if( !Object.is(container, e.target) || !container.contains(e.target)){
+            console.log("here no comment ")
+            document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+            document.querySelector('#date_picker_input').classList.toggle('showCal');
+            document.querySelector('#date').classList.toggle('onFocus');
         }
+       
+        else{
+            console.log("boolshit")
+        }
+
     }); 
 
 
-    });
+
+
+
+
 
 
     // Number of Travellers Main input parts code for the javascript code 

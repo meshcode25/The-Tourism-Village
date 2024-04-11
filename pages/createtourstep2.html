@@ -35,13 +35,13 @@
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
                 <form class="form" method="post" action="" enctype="multipart/form-data" id="form">  
                       <!--Form errors go here   -->
-                    <div class=" formdiv mainerrormessage"></div>
+                    <div class="mainerrormessage"></div>
 
                     <!-- Name your Tour/Travell -->
                      <div class="formdiv tournamediv">
                         <div class="labeldiv"><label class="formlable" for="tourname">Name your Tour/Travel:</label></div>
                         <input type="text" class="forminput tournameinput" id="tourname"  placeholder="Enter User Name" name="tourname">
-                        <p class="formerror tournameerror"></p>
+                        <p class="formerror usernameerror"></p>
                     </div> 
 
                     <!-- Destination search container -->
@@ -50,13 +50,10 @@
                             <div class="destinydiv">
                                 <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
                                     <div class="labeldiv"><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destionation:</label></div>
-                                    <p class="formerror destinationsearcherror"></p>
                                     <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput"  name="destinationdropdown"  >
                                     <!-- <button class="mainsearchinput" type="button" style="background-color: purple;">Here it the button I am talking about it </button> -->
                                     <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
                                     <button type="button" class="searchiconcancelbtn" ><i class="fa-solid fa-x"></i></button>
-
-
                                     
                                     <!-- here starrts the collapsediv -->
                                     <div class="searchcollapsediv">
@@ -139,9 +136,7 @@
                     <div id="date_picker" class="formdiv">
                         <div id="date_picker_input">
                             <label class="datepickerlabel" for="date">Pick the Start Date of the Tour/Travel</label>
-                            <input type="text" id="date" class="onFocus datepicker" readonly placeholder="Pick the Start date for the Tour/Travel" />
-                            <p class="formerror datepickererror"></p>
-
+                            <input type="text" id="date" class="onFocus" readonly placeholder="Pick the Start date for the Tour/Travel" />
                         </div>
                         <div id="date_picker_calendar" class="hidden"> 
                             <div class="cancelbtndiv"><button type="button" class="cancelbtn"><i class="fa-solid fa-x"></i></button></div>
@@ -150,41 +145,19 @@
                                 <span></span>
                                 <button class="cal-btn front" type="button" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJUlEQVR4nO2Uv0oDQRCHR9BKrAQJ2FgIdnc7njtzSbMzd7lGC80T5DXMW+gzpNJHsPEJYuELBA60EBELsfIfBGIixvNyt0IKP9h2vt3fb1iAfxaCXZt0DGuOrO8+jmHNQ3JHnwLDeutrOI4lJDcTAcngDwSDSUSkCbK++RSEJAdfejCkfX+31/63oq1N15H0rn7Bch80s42Z22SsdGsLrHQLVxZJLioLSC8BYKlQELLbQpanCrk/Y+y2C4dPFd6bP3s9hrI455aR9GqO219HUbRSWjB6xV5qDcnL7wJ5RZs2oQpIelqi2BOoShBkq0g6LMg932m11qAOhnX/5+zlEHyALOczhp+BL6x1DSR9mPoOHsM42QSfGE6yUR+kQxO7ttfhC80HheuaG9wAq10AAAAASUVORK5CYII="></button>
                             </div>
-                            <div id="cal_wrapper" >
+                            <div id="cal_wrapper">
                                 <div id="cal_days"></div>
                                 <div id="calendar_main"></div>
                             </div>
                         </div>
                     </div>
-            
-                    <!-- Duration of the Tour -->
-                    <div class="tourdurationdiv formdiv" >                                    
-                    <label for="tourduration" for="tourduration">Select Tour/Travel Duration</label>
-                    <div class="tourdurationmaininputdiv" >
-                        <input class="tourdurationmaininput" readonly id="tourduration" type="text" placeholder="Select Duration of Travel/Tour">
-                        <p class="formerror tourdurationerror"></p>
-                        <button type="button" class="tourdurationcanceliconbtn collapsetourdurationcancelbtn" ><i class="fa-solid fa-x"></i></button>
-                        <div class="collapsetourdurationdiv hidetourdurationdiv ">
-                            <div class="tourdurationcollapselabel">Select The Duration of the Tour/Travel <button type="button" class="btncanceltourdurationcollapse "><i class="fa-solid fa-x"></i></button> </div>
-                            <div class="tourdurationcount ">
-                                <div class="tourdurationlabel"><p>Tour/Travel Duration (Days):</p></div>
-                                <div class="tourduration ">
-                                    <button class="tourdurationminusbtn durationminusbutton" type="button"><h2>-</h2 ></button>
-                                    <input type="text" class="tourdurationinput adultinput" value="1" name="tourdurationinput"  >
-                                    <button class="tourdurationaddbtn   durationaddbutton " type="button"><h2>+</h2 ></button>
-                                </div>   
-                            </div>
-                            <div class="tourdurationdonebtndiv"><button type="button"  class="tourdurationdonebtn ">Done</button> </div>
-                        </div>
-                    </div>
-                </div>
+
 
                     <!-- number of travellers in the tour -->
                     <div class="travellersdiv formdiv " >                                    
                         <label for="travellersno">Select the Number of Expected Travellers</label>
                         <div class="travellersmaininputdiv" >
                             <input class="travellersmaininput" readonly id=travellersno type="text" placeholder="Select the number of Travellers">
-                            <p class="formerror tourtravellerserror"></p>
                             <button type="button" class="travellersiconcancelbtn collapsetravellerscancelbtn" ><i class="fa-solid fa-x"></i></button>
                             <div class="bothadultchilddiv hidetravellersdiv">
                                 <div class="travellerscollapselabel">Select Number of Travellers <button type="button" class="btncanceltravellerscollapse"><i class="fa-solid fa-x"></i></button> </div>
@@ -212,9 +185,33 @@
                         </div>
                     </div>
                     
+
+                     <!-- Duration of the Tour -->
+                     <div class="tourdurationdiv formdiv" >                                    
+                        <label for="tourduration" for="tourduration">Select Tour/Travel Duration</label>
+                        <div class="tourdurationmaininputdiv" >
+                            <input class="tourdurationmaininput" readonly id="tourduration" type="text" placeholder="Select Duration of Travel/Tour">
+                            <button type="button" class="tourdurationcanceliconbtn collapsetourdurationcancelbtn" ><i class="fa-solid fa-x"></i></button>
+                            <div class="collapsetourdurationdiv hidetourdurationdiv ">
+                                <div class="tourdurationcollapselabel">Select The Duration of the Tour/Travel <button type="button" class="btncanceltourdurationcollapse "><i class="fa-solid fa-x"></i></button> </div>
+                                <div class="tourdurationcount ">
+                                    <div class="tourdurationlabel"><p>Tour/Travel Duration (Days):</p></div>
+                                    <div class="tourduration ">
+                                        <button class="tourdurationminusbtn durationminusbutton" type="button"><h2>-</h2 ></button>
+                                        <input type="text" class="tourdurationinput adultinput" value="1" name="tourdurationinput"  >
+                                        <button class="tourdurationaddbtn   durationaddbutton " type="button"><h2>+</h2 ></button>
+                                    </div>   
+                                </div>
+                                <div class="tourdurationdonebtndiv"><button type="button" class="tourdurationdonebtn ">Done</button> </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                      <!-- submit-->
                      <div class="formdiv submitdiv">
-                        <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                        <button class="submitbutton createtournextbtn" type="button" >Next Step</button>
                         <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
                     </div>
 
