@@ -370,6 +370,34 @@ $(document).ready(function(){
             console.log("I have been clicked");
 
             const newer= destinationsearchdiv[0].cloneNode(true);
+
+
+            $(newer).find(".tourdestinationlabeldiv").text("Add Another Tour Destination");
+
+            // console.log($(newer).find("*"));
+            $(newer).find(".tourdestinationlabeldiv").css({
+                "display":"none",
+                "margin":"0",
+                "padding": "0",
+            });
+
+            $(newer).find(".tourdestinationlabeldiv").css({
+                "display":"none"
+            });
+
+            $(newer).find(".mainsearchinput").css({
+                // "margin":"2rem 0",
+                "padding": "0",
+                "background-color":"yellow"
+            });
+            
+            $(newer).css({
+                "margin":"0 0",
+                "padding": "0",
+                "background-color":"green",
+                // "height":"0"
+
+            })
             // const newer=destinationsearchdiv[0];
             // let newer=document.createElement("li")
             newtour.appendChild(newer);
@@ -1132,30 +1160,42 @@ $(document).ready(function(){
 
     document.addEventListener("click" ,function (e) {
         var container = document.querySelector("#date_picker_calendar");
-        var cancelbtn=document.querySelector(".cancelbtn");
+        var cancelbtn=document.querySelector(".datecanceliconbtn");
         var date=document.querySelector("#date");
 
-        console.log("e.target value     " + e.target);
-        console.log(e.target)   
-        console.log("container.containes    " +  container.contains(e.target));
-        console.log(Object.is(container, e.target))
+        // console.log("e.target value     " + e.target);
+        // console.log("container.containes    " +  container.contains(e.target));
+        // console.log(Object.is(container, e.target))
 
         
-        if(Object.is(cancelbtn, e.target) || Object.is(date, e.target) ){
-            console.log("here I have the needed shit right here ")
+        if(Object.is(date, e.target) ){
+            // console.log("here I have the needed shit right here ")
             document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-            document.querySelector('#date_picker_input').classList.toggle('showCal');
-            document.querySelector('#date').classList.toggle('onFocus');
+            // document.querySelector('#date_picker_input').classList.toggle('showCal');
+            // document.querySelector('#date').classList.toggle('onFocus');
         }
-        else if( !Object.is(container, e.target) || !container.contains(e.target)){
-            console.log("here no comment ")
-            document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-            document.querySelector('#date_picker_input').classList.toggle('showCal');
-            document.querySelector('#date').classList.toggle('onFocus');
+        else if(Object.is(container, e.target) || container.contains(e.target)){
+            if(Object.is(cancelbtn, e.target)){
+                document.querySelector('#date_picker_calendar').classList.add('hidden');
+                // console.log(" I have been clicked and I am the cancel button ")
+                // console.log(e.target)   
+// 
+            }
+            else{       
+                console.log("here no comment ")
+                document.querySelector('#date_picker_calendar').classList.remove('hidden');
+                // document.querySelector('#date_picker_input').classList.toggle('showCal');
+                // document.querySelector('#date').classList.toggle('onFocus');
+
+                // console.log(e.target)   
+
+            }
         }
-       
         else{
-            console.log("boolshit")
+            console.log("boolshit");
+            document.querySelector('#date_picker_calendar').classList.add('hidden');
+            // document.querySelector('#date_picker_input').classList.toggle('showCal');
+            // document.querySelector('#date').classList.toggle('onFocus');
         }
 
     }); 
