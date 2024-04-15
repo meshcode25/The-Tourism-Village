@@ -1632,17 +1632,21 @@ grid-column:1/3;
     /* width: 1000px; */
     padding:0.5rem 0.2rem;
     width: 100%;
+    padding:0.75rem 1.6rem 0.75rem 0.5rem;
+    font-size:larger;
+
 }
 /* .travellersmaininput:focus + .bothadultchilddiv{
     background-color:whitesmoke;
  
     display: block;
 } */
-.travellersmaininput {
-    /* background-color:whitesmoke; */
-    padding:0.75rem 1.6rem 0.75rem 0.5rem;
-    font-size:larger
+
+.travellersmaininput:hover{
+    cursor:pointer;
+    /* background-color: #551A8B; */
 }
+
 .bothadultchilddiv{
     background-color:beige;
     border-radius: 17.5px;
@@ -1699,6 +1703,7 @@ grid-column:1/3;
 }
 .minusbutton,.addbutton{
     padding:0.5rem;
+    cursor: pointer;
 }
 
 .addsubdiv{
@@ -1799,6 +1804,10 @@ grid-column:1/3;
     padding:0.75rem 1.6rem 0.75rem 0.5rem;
     font-size:larger;
     width:100%;
+
+}
+.tourdurationmaininput:hover{
+   cursor: pointer;
 }
 .tourdurationmaininput:focus{
     outline: none;
@@ -1886,6 +1895,7 @@ grid-column:1/3;
 
 .tourdurationminusbtn,.tourdurationaddbtn{
     padding:0.5rem;
+    cursor:pointer;
 }
 
 .tourdurationdonebtndiv{
@@ -1904,6 +1914,9 @@ grid-column:1/3;
     border:none;
     text-align:center;
     font-size:larger;
+    cursor:pointer;
+}
+.tourdurationdonebtn:hover {
     cursor:pointer;
 }
 

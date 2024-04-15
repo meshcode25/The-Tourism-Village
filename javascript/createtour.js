@@ -712,7 +712,7 @@ $(document).ready(function(){
     SearchinputonKeyup();
     selectCollapseOption(0);
     
-//end of search input data/////This is the endo teh Search input for searchibngt the destinations 
+    //end of search input data/////This is the endo teh Search input for searchibngt the destinations 
 
 
 
@@ -1131,11 +1131,11 @@ $(document).ready(function(){
 
     // Set header nav actions
     document.querySelectorAll(".cal-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        
-        updateCalendar(btn);
-        updateInput();
-    });
+        btn.addEventListener("click", () => {
+            
+            updateCalendar(btn);
+            updateInput();
+        });
     });
 
     // input.addEventListener('click', () => {
@@ -1158,44 +1158,124 @@ $(document).ready(function(){
 
 
 
-    document.addEventListener("click" ,function (e) {
-        var container = document.querySelector("#date_picker_calendar");
-        var cancelbtn=document.querySelector(".datecanceliconbtn");
-        var date=document.querySelector("#date");
+    // document.addEventListener("click" ,function (e) {
+    //     var container = document.querySelector("#date_picker_calendar");
+    //     var cancelbtn=document.querySelector(".datecanceliconbtn");
+    //     var date=document.querySelector("#date");
 
-        // console.log("e.target value     " + e.target);
-        // console.log("container.containes    " +  container.contains(e.target));
-        // console.log(Object.is(container, e.target))
+    //     // console.log("e.target value     " + e.target);
+    //     // console.log("container.containes    " +  container.contains(e.target));
+    //     // console.log(Object.is(container, e.target))
 
         
-        if(Object.is(date, e.target) ){
-            // console.log("here I have the needed shit right here ")
-            document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-            // document.querySelector('#date_picker_input').classList.toggle('showCal');
-            // document.querySelector('#date').classList.toggle('onFocus');
+    //     if(Object.is(date, e.target) ){
+    //         // console.log("here I have the needed shit right here ")
+    //         document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+    //         // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    //         // document.querySelector('#date').classList.toggle('onFocus');
+    //     }
+    //     else if(Object.is(container, e.target) || container.contains(e.target)){
+    //         if(Object.is(cancelbtn, e.target)){
+    //             document.querySelector('#date_picker_calendar').classList.add('hidden');
+    //             // console.log(" I have been clicked and I am the cancel button ")
+    //             // console.log(e.target)   
+    //         }
+    //         else{       
+    //             console.log("here no comment ")
+    //             document.querySelector('#date_picker_calendar').classList.remove('hidden');
+    //             // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    //             // document.querySelector('#date').classList.toggle('onFocus');
+
+    //             // console.log(e.target)   
+
+    //         }
+    //     }
+    //     else{
+    //         console.log("Clear date container on click outside of div ");
+    //         document.querySelector('#date_picker_calendar').classList.add('hidden');
+    //         // document.querySelector('#date_picker_input').classList.toggle('showCal');
+    //         // document.querySelector('#date').classList.toggle('onFocus');
+    //     }
+
+    // }); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Number of Travellers Main input parts code for the javascript code 
+    $(document).on("click", function(e) {
+
+        if($(".travellersiconcancelbtn").is(e.target)){
+                $(".bothadultchilddiv").removeClass("hidetravellersdiv");
+                $(".travellersmaininput").val("");
+                $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
+                console.log("travellers icon cancel buton has been clicked");
         }
-        else if(Object.is(container, e.target) || container.contains(e.target)){
-            if(Object.is(cancelbtn, e.target)){
-                document.querySelector('#date_picker_calendar').classList.add('hidden');
-                // console.log(" I have been clicked and I am the cancel button ")
-                // console.log(e.target)   
-// 
+        // var travellersmaininput=document.querySelector(".travellersmaininput");
+        else if($(".travellersmaininput").is(e.target)){
+            // if(Object.is(travellersmaininput, e.target) ){
+                $(".bothadultchilddiv").toggleClass("hidetravellersdiv");
+                    console.log("this is it");  
+                    console.log($(".travellersmaininput").is(e.target));
+                    // $(".hidetravellersdiv").toggle();
+            }
+        else if(($(".bothadultchilddiv").is(e.target) ||  $(".bothadultchilddiv").has(e.target))){
+            if($(".btncanceltravellerscollapse").is(e.target)){
+                $(".bothadultchilddiv").addClass("hidetravellersdiv");
+                console.log("btn canceltravellers colloapse has been clicked ");
+            }
+            else if( $(".travellersnumberdonebtn").is(e.target)){
+                    // $(".bothadultchilddiv").removeClass("hidetravellersdiv");
+                $(".bothadultchilddiv").addClass("hidetravellersdiv");
+
+                console.log("herei sthe4 number of travllers done button on click");
+
+                if($(".adultinput").val()>1 && $(".childinput").val()>1 ){
+                    $inputval=$(".adultinput").val() + " Adults ," + $(".childinput").val() + " Children";
+                }else if($(".adultinput").val()>1 && $(".childinput").val()==0 ){
+                    $inputval=$(".adultinput").val() + " Adults ," + $(".childinput").val() + " Children";     
+                }
+                else if($(".adultinput").val()>1 && $(".childinput").val()==1 ){ 
+                    $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Child";     
+                }
+                else if($(".adultinput").val()<2 && $(".childinput").val()==0 ){
+                    $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Children";     
+                }
+                else if($(".adultinput").val()<2 && $(".childinput").val()==1 ){ 
+                    $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Child";     
+                }
+                else if($(".adultinput").val()<2 && $(".childinput").val()>1){
+                    $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Children";     
+                }
+
+                $(".travellersmaininput").val($inputval)
+                $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn");
             }
             else{       
-                console.log("here no comment ")
-                document.querySelector('#date_picker_calendar').classList.remove('hidden');
-                // document.querySelector('#date_picker_input').classList.toggle('showCal');
-                // document.querySelector('#date').classList.toggle('onFocus');
-
-                // console.log(e.target)   
-
+                $(".bothadultchilddiv").addClass("hidetravellersdiv");  
+                console.log("just clear the fuck up")
             }
         }
         else{
-            console.log("boolshit");
-            document.querySelector('#date_picker_calendar').classList.add('hidden');
-            // document.querySelector('#date_picker_input').classList.toggle('showCal');
-            // document.querySelector('#date').classList.toggle('onFocus');
+            $(".bothadultchilddiv").addClass("hidetravellersdiv");
+            console.log("this is the fucking shit")
         }
 
     }); 
@@ -1206,65 +1286,9 @@ $(document).ready(function(){
 
 
 
-
-    // Number of Travellers Main input parts code for the javascript code 
-    $(".travellersmaininput").on("click", ()=>{
-        $(".bothadultchilddiv").removeClass("hidetravellersdiv");
-    }) 
-
-    $(".travellersiconcancelbtn").on("click",()=>{
-        $(".bothadultchilddiv").removeClass("hidetravellersdiv");
-
-        $(".travellersmaininput").val("");
-
-        $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
-
-        // if(!$(".travellersmaininput").val()==""){
-            // $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
-        //     console.log("here it  he value of the input of the maintravellers number ");
-        //     console.log($(".travellersmaininput").val());
-        // }else{
-        //     $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
-        //     console.log("here it  he value of the input of the maintravellers number of the elese ");
-        //     console.log($(".travellersmaininput").val());
-        // }
-
-
-
-    })
-
-    $(".btncanceltravellerscollapse").on("click",()=>{
-        $(".bothadultchilddiv").addClass("hidetravellersdiv");
-    })
-
-    $(".travellersnumberdonebtn").on("click", ()=>{
-        $(".bothadultchilddiv").addClass("hidetravellersdiv");
-
-        if($(".adultinput").val()>1 && $(".childinput").val()>1 ){
-            $inputval=$(".adultinput").val() + " Adults ," + $(".childinput").val() + " Children";
-        }else if($(".adultinput").val()>1 && $(".childinput").val()==0 ){
-            $inputval=$(".adultinput").val() + " Adults ," + $(".childinput").val() + " Children";     
-        }
-        else if($(".adultinput").val()>1 && $(".childinput").val()==1 ){ 
-            $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Child";     
-        }
-        else if($(".adultinput").val()<2 && $(".childinput").val()==0 ){
-            $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Children";     
-        }
-        else if($(".adultinput").val()<2 && $(".childinput").val()==1 ){ 
-            $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Child";     
-        }
-        else if($(".adultinput").val()<2 && $(".childinput").val()>1){
-            $inputval=$(".adultinput").val() + " Adult ," + $(".childinput").val() + " Children";     
-        }
-
-        $(".travellersmaininput").val($inputval)
-
-
-        $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
         
         
-    })
+
 
 
 
