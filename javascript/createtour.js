@@ -19,14 +19,14 @@ $(document).ready(function(){
     // console.log(addtour);
 
 
-    console.log(mainsearchinput);
+    // console.log(mainsearchinput);
 
 
    
     
     //sign up validation //
     //gmail validation
-    console.log(mainsearchinput);
+    // console.log(mainsearchinput);
 
 
 
@@ -390,6 +390,8 @@ $(document).ready(function(){
                 "padding": "0",
                 "background-color":"yellow"
             });
+
+            $(newer).find(".mainsearchinput").val("");
             
             $(newer).css({
                 "margin":"0 0",
@@ -1158,46 +1160,46 @@ $(document).ready(function(){
 
 
 
-    // document.addEventListener("click" ,function (e) {
-    //     var container = document.querySelector("#date_picker_calendar");
-    //     var cancelbtn=document.querySelector(".datecanceliconbtn");
-    //     var date=document.querySelector("#date");
+    document.addEventListener("click" ,function (e) {
+        var container = document.querySelector("#date_picker_calendar");
+        var cancelbtn=document.querySelector(".datecanceliconbtn");
+        var date=document.querySelector("#date");
 
-    //     // console.log("e.target value     " + e.target);
-    //     // console.log("container.containes    " +  container.contains(e.target));
-    //     // console.log(Object.is(container, e.target))
+        // console.log("e.target value     " + e.target);
+        // console.log("container.containes    " +  container.contains(e.target));
+        // console.log(Object.is(container, e.target))
 
         
-    //     if(Object.is(date, e.target) ){
-    //         // console.log("here I have the needed shit right here ")
-    //         document.querySelector('#date_picker_calendar').classList.toggle('hidden');
-    //         // document.querySelector('#date_picker_input').classList.toggle('showCal');
-    //         // document.querySelector('#date').classList.toggle('onFocus');
-    //     }
-    //     else if(Object.is(container, e.target) || container.contains(e.target)){
-    //         if(Object.is(cancelbtn, e.target)){
-    //             document.querySelector('#date_picker_calendar').classList.add('hidden');
-    //             // console.log(" I have been clicked and I am the cancel button ")
-    //             // console.log(e.target)   
-    //         }
-    //         else{       
-    //             console.log("here no comment ")
-    //             document.querySelector('#date_picker_calendar').classList.remove('hidden');
-    //             // document.querySelector('#date_picker_input').classList.toggle('showCal');
-    //             // document.querySelector('#date').classList.toggle('onFocus');
+        if(Object.is(date, e.target) ){
+            // console.log("here I have the needed shit right here ")
+            document.querySelector('#date_picker_calendar').classList.toggle('hidden');
+            document.querySelector('#date_picker_input').classList.toggle('showCal');
+            document.querySelector('#date').classList.toggle('onFocus');
+        }
+        else if(Object.is(container, e.target) || container.contains(e.target)){
+            if(Object.is(cancelbtn, e.target)){
+                document.querySelector('#date_picker_calendar').classList.add('hidden');
+                // console.log(" I have been clicked and I am the cancel button ")
+                // console.log(e.target)   
+            }
+            else{       
+                // console.log("here no comment ")
+                document.querySelector('#date_picker_calendar').classList.remove('hidden');
+                // document.querySelector('#date_picker_input').classList.toggle('showCal');
+                // document.querySelector('#date').classList.toggle('onFocus');
 
-    //             // console.log(e.target)   
+                // console.log(e.target)   
 
-    //         }
-    //     }
-    //     else{
-    //         console.log("Clear date container on click outside of div ");
-    //         document.querySelector('#date_picker_calendar').classList.add('hidden');
-    //         // document.querySelector('#date_picker_input').classList.toggle('showCal');
-    //         // document.querySelector('#date').classList.toggle('onFocus');
-    //     }
+            }
+        }
+        else{
+            // console.log("Clear date container on click outside of div ");
+            document.querySelector('#date_picker_calendar').classList.add('hidden');
+            // document.querySelector('#date_picker_input').classList.toggle('showCal');
+            // document.querySelector('#date').classList.toggle('onFocus');
+        }
 
-    // }); 
+    }); 
 
 
 
@@ -1221,31 +1223,31 @@ $(document).ready(function(){
 
     // Number of Travellers Main input parts code for the javascript code 
     $(document).on("click", function(e) {
-
-        if($(".travellersiconcancelbtn").is(e.target)){
+        if($(".travellersiconcancelbtnicon").is(e.target)){
                 $(".bothadultchilddiv").removeClass("hidetravellersdiv");
                 $(".travellersmaininput").val("");
                 $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
-                console.log("travellers icon cancel buton has been clicked");
+                // console.log("travellers icon cancel buton has been clicked");
         }
         // var travellersmaininput=document.querySelector(".travellersmaininput");
         else if($(".travellersmaininput").is(e.target)){
             // if(Object.is(travellersmaininput, e.target) ){
                 $(".bothadultchilddiv").toggleClass("hidetravellersdiv");
-                    console.log("this is it");  
-                    console.log($(".travellersmaininput").is(e.target));
+                    // console.log("this is it");  
+                    // console.log($(".travellersmaininput").is(e.target));
                     // $(".hidetravellersdiv").toggle();
-            }
-        else if(($(".bothadultchilddiv").is(e.target) ||  $(".bothadultchilddiv").has(e.target))){
-            if($(".btncanceltravellerscollapse").is(e.target)){
+        }
+        else if($(".bothadultchilddiv").is(e.target) ||  $(".bothadultchilddiv").has(e.target).length==1){
+            if($(".btncanceltravellerscollapseicon").is(e.target)){
                 $(".bothadultchilddiv").addClass("hidetravellersdiv");
-                console.log("btn canceltravellers colloapse has been clicked ");
+           
+                // console.log("btn canceltravellers colloapse has been clicked ");
             }
             else if( $(".travellersnumberdonebtn").is(e.target)){
                     // $(".bothadultchilddiv").removeClass("hidetravellersdiv");
                 $(".bothadultchilddiv").addClass("hidetravellersdiv");
 
-                console.log("herei sthe4 number of travllers done button on click");
+                // console.log("herei sthe4 number of travllers done button on click");
 
                 if($(".adultinput").val()>1 && $(".childinput").val()>1 ){
                     $inputval=$(".adultinput").val() + " Adults ," + $(".childinput").val() + " Children";
@@ -1269,13 +1271,15 @@ $(document).ready(function(){
                 $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn");
             }
             else{       
-                $(".bothadultchilddiv").addClass("hidetravellersdiv");  
-                console.log("just clear the fuck up")
+                // $(".bothadultchilddiv").addClass("hidetravellersdiv");  
+           
+                $(".bothadultchilddiv").removeClass("hidetravellersdiv");
+
             }
         }
         else{
             $(".bothadultchilddiv").addClass("hidetravellersdiv");
-            console.log("this is the fucking shit")
+            
         }
 
     }); 
@@ -1382,55 +1386,52 @@ $(document).ready(function(){
 
 
     // Select tour/Travel duration of of the tour input parts code for the javascript code 
-    $(".tourdurationmaininput").on("click", ()=>{
-        $(".collapsetourdurationdiv").removeClass("hidetourdurationdiv");
-    }) 
-
-    $(".tourdurationcanceliconbtn").on("click",()=>{
-        $(".collapsetourdurationdiv").removeClass("hidetourdurationdiv");
-
-        $(".tourdurationmaininput").val("");
-
-        $(".tourdurationcanceliconbtn").addClass("collapsetourdurationcancelbtn");
-
-        // if(!$(".travellersmaininput").val()==""){
-            // $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
-        //     console.log("here it  he value of the input of the maintravellers number ");
-        //     console.log($(".travellersmaininput").val());
-        // }else{
-        //     $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
-        //     console.log("here it  he value of the input of the maintravellers number of the elese ");
-        //     console.log($(".travellersmaininput").val());
-        // }
-
-
-
-    })
-
-    $(".btncanceltourdurationcollapse").on("click",()=>{
-        $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
-    })
-
-
-    $(".tourdurationdonebtn").on("click", ()=>{
-        $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
-
-        // $inputval;
-
-        if($(".tourdurationinput").val()>1 ){
-            $inputval=$(".tourdurationinput").val() + " Days " ;
-        }else{
-            $inputval=$(".tourdurationinput").val() + " Day " ;     
+    $(document).on("click", function(e) {
+        if($(".tourdurationmaininput").is(e.target)){      
+            $(".collapsetourdurationdiv").toggleClass("hidetourdurationdiv");
+        }
+        else if($(".tourdurationcanceliconbtnicon").is(e.target)){
+                $(".collapsetourdurationdiv").removeClass("hidetourdurationdiv");  
+                $(".tourdurationmaininput").val("");
+                $(".tourdurationcanceliconbtn").addClass("collapsetourdurationcancelbtn");
+        
+                // if(!$(".travellersmaininput").val()==""){
+                    // $(".travellersiconcancelbtn").addClass("collapsetravellerscancelbtn");
+                //     console.log("here it  he value of the input of the maintravellers number ");
+                //     console.log($(".travellersmaininput").val());
+                // }else{
+                //     $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn")
+                //     console.log("here it  he value of the input of the maintravellers number of the elese ");
+                //     console.log($(".travellersmaininput").val());
+                // }
+        }
+        else if($(".collapsetourdurationdiv").is(e.target) ||  $(".collapsetourdurationdiv").has(e.target).length==1){
+            if($(".btncanceltourdurationcollapseicon").is(e.target)){     
+                $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
+            }
+            else if( $(".tourdurationdonebtn").is(e.target)){
+                // $inputval;
+                if($(".tourdurationinput").val()>1 ){
+                    $inputval=$(".tourdurationinput").val() + " Days " ;
+                }
+                else{
+                    $inputval=$(".tourdurationinput").val() + " Day " ;     
+                }
+                $(".tourdurationmaininput").val($inputval);
+                $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
+                $(".tourdurationcanceliconbtn").removeClass("collapsetourdurationcancelbtn")
+            
+            }
+            else{       
+                $(".collapsetourdurationdiv").removeClass("hidetourdurationdiv");
+            }
+        }
+        else{
+            $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
+            
         }
 
-        $(".tourdurationmaininput").val($inputval);
-
-
-        $(".tourdurationcanceliconbtn").removeClass("collapsetourdurationcancelbtn")
-        
-        
-    })
-
+    }); 
 
 
     // Add the Number of travellers and subtract on click of the minus and add buttons
@@ -1458,7 +1459,29 @@ $(document).ready(function(){
     })
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -82,31 +82,6 @@
     
 }
 
-/* #destinationsearchinput[type="search"]::-webkit-search-cancel-button,
-#destinationsearchinput[type="search"]::-webkit-search-decoration,
-#destinationsearchinput[type="search"]::-webkit-search-results-button,
-#destinationsearchinput[type="search"]::-webkit-search-results-decoration {
-    display: none;
-    height:0;
-    width:0;
-}
-
-#destinationsearchinput[type="search"]::-ms-clear {
-    display: none;
-    height: 0;
-    width : 0;
-}
-
-#destinationsearchinput[type="search"]::-ms-reveal {
-    display: none;
-    height: 0;
-    width : 0;
-} */
-/* input[type="search"] {
-    border: 6px solid gray;
-    padding: .2em .4em;
-    border-radius: .25em;
-  } */
 
 /* Media Qeuries list */
 @media screen and (max-width:450px){
@@ -989,7 +964,7 @@
         display:block;
         height:auto;
         width:100%;
-        background-color:plum; 
+        /* background-color:plum;  */
         max-height: 250px;
         padding:1rem;
         overflow: auto;
@@ -1005,11 +980,12 @@
        padding:0.5rem 0.2rem; */
     }
     .mainsearchoptions:hover{
-        /* background-color:gainsboro;
+        background-color:gainsboro;
         cursor:pointer;
         top:0;
-        padding:0.5rem 0.3rem; */
-        /* position: relative; */
+        padding:0.5rem 0.3rem;
+        /* position: relative;
+        */
     }
     .destinationsearchlabel{
         position:relative;
@@ -1030,9 +1006,9 @@
         top:0;
         left:0;
         padding:0.2rem 1.5rem 0.2rem 0.5rem;
-        outline: none;
+        /* outline: none; */
         width:70%;
-        border:3px solid violet;
+        /* border:3px solid violet; */
         height:70px;
         /* color:blue; */
         z-index: 10;
@@ -1043,7 +1019,7 @@
           top:-2rem;
          /* height:250px;  */
          border-radius: 15px; 
-         background-color:whitesmoke;  
+         background-color:white;  
           /* display:none;  */
           height:0;
           opacity:0;
@@ -1193,7 +1169,7 @@ grid-column:1/3;
     width:100%;
     /* background-color: whitesmoke; */
     padding: 1.23rem 0.3rem 1.23rem 0.3rem;
-    font-size:small;
+    font-size:medium;
 }
 
 .mainsearchform{
@@ -1222,7 +1198,7 @@ grid-column:1/3;
     display:block;
     height:auto;
     width:100%;
-    background-color:plum; 
+    /* background-color:plum;  */
     max-height: 250px;
     padding:1rem;
     overflow: auto;
@@ -1258,11 +1234,10 @@ grid-column:1/3;
 
 .mainsearchinput{
     font-size:medium;
-
     padding:0.2rem 1.5rem 0.2rem 0.5rem;
-    outline: none;
+    /* outline: none; */
     width:100%;
-    border:3px solid violet;
+    /* border:3px solid violet; */
     height:70px;
     /* color:blue; */
     z-index: 10;
@@ -1273,7 +1248,7 @@ grid-column:1/3;
       top:-2rem;
      /* height:250px;  */
      border-radius: 15px; 
-     background-color:whitesmoke;  
+     /* background-color:whitesmoke;   */
       /* display:none;  */
       height:0;
       opacity:0;
@@ -1391,14 +1366,14 @@ grid-column:1/3;
     position: relative;
     width:100%; 
     /* margin: 0 auto; */
-    background-color: yellow;
+    /* background-color: yellow; */
     outline: none;
   }
   
   .datepickerlabel {
     display: block;
     /* color: #8A8F9F; */
-    font-size: 1.02rem;
+    font-size: 1.22rem;
     font-weight: 300;
     margin: 0.5rem 0;
     margin:0;
@@ -1443,7 +1418,7 @@ grid-column:1/3;
     position: absolute; 
     right: 4px; 
     top: 39%;
-    color: #8A8F9F;
+    color: whitesmoke;
   }
   
   #date_picker_input.showCal:after {
@@ -1455,7 +1430,7 @@ grid-column:1/3;
       /* box-shadow: 10px 10px 40px rgba(0,0,0,0.2); */
       overflow: hidden;
       padding: 12px;
-      background-color: whitesmoke;
+      background-color: rgb(241, 240, 240);
       opacity: 1;
       visibility: visible;
       height:fit-content;
@@ -1740,6 +1715,7 @@ grid-column:1/3;
 
 }
 .kidslabel{}
+
 .travellersinput{}
 
 .travellersdonebtndiv{
@@ -1779,7 +1755,7 @@ grid-column:1/3;
 
 .tourdurationdiv{
     /* width: 100%; */
-    background-color:cyan;
+    /* background-color:cyan; */
 } 
 .formdiv{
 
@@ -1810,7 +1786,7 @@ grid-column:1/3;
    cursor: pointer;
 }
 .tourdurationmaininput:focus{
-    outline: none;
+    /* outline: none; */
 
 }
 
