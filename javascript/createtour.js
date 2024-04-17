@@ -151,20 +151,20 @@ $(document).ready(function(){
       e.preventDefault();
       
         validateTournameInput();
-
         validateTourSearch();
         validateDatePicker();
         validateTourDuration();
         validateTravellersNumber();
+
         // window.location.href="../pages/createtour.html"
 
 
-        if (!validateTournameInput() && ! validateTourSearch() && !validateDatePicker() && !validateTourDuration() && !validateTravellersNumber() ) {
+        if (!validateTournameInput() && !validateTourSearch() && !validateDatePicker() && !validateTourDuration() && !validateTravellersNumber() ) {
             console.log("errors all around 1");
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
              
         }
-         else if (!validateTournameInput() || ! validateTourSearch() || !validateDatePicker() || !validateTourDuration() || !validateTravellersNumber()) {
+         else if (!validateTournameInput() || !validateTourSearch() || !validateDatePicker() || !validateTourDuration() || !validateTravellersNumber()) {
             $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
             console.log("some Erorross heare and about");
             
@@ -284,12 +284,10 @@ $(document).ready(function(){
     function validateTourDuration(){
         var tourduration=$(".tourdurationmaininput").val();
       
-    
         if(tourduration == ""){
             $(".tourdurationerror").html('*Tour Duration Field Required')
             return false;
         }
-    
         else{
             $(".tourdurationerror").html(' ')
             return true;
@@ -300,15 +298,13 @@ $(document).ready(function(){
 
     function  validateTravellersNumber(){
         var travellersnumber=$(".travellersmaininput").val();
-      
-    
         if(travellersnumber == ""){
             $(".tourtravellerserror").html('*Capacity of Tour Field Required')
             return false;
         }
     
         else{
-            $(".tourtravellerserrorr").html(' ')
+            $(".tourtravellerserror").html(' ')
             return true;
         }
           
@@ -376,28 +372,35 @@ $(document).ready(function(){
 
             // console.log($(newer).find("*"));
             $(newer).find(".tourdestinationlabeldiv").css({
-                "display":"none",
+                // "display":"none",
                 "margin":"0",
                 "padding": "0",
             });
 
             $(newer).find(".tourdestinationlabeldiv").css({
-                "display":"none"
+                "margin":"0",
+                "padding":"0"
             });
+
+            // $(newer).find(".tourdestinationlabeldiv").text("Add/Select another Destination/Tour");
+
+            // $(newer).find(".tourdestinationlabeldiv").text("Add/Select another Destination/Tour");
 
             $(newer).find(".mainsearchinput").css({
                 // "margin":"2rem 0",
                 "padding": "0",
-                "background-color":"yellow"
+                "background-color":"whitesmoke",
+         
             });
 
-            $(newer).find(".mainsearchinput").val("");
+            $(newer).find(".mainsearchinput").val(" ");
             
             $(newer).css({
-                "margin":"0 0",
+                "margin":"0",
                 "padding": "0",
-                "background-color":"green",
-                // "height":"0"
+                "margin-left":"1.4rem"
+                // "width":"80%",
+
 
             })
             // const newer=destinationsearchdiv[0];
@@ -410,9 +413,9 @@ $(document).ready(function(){
         mainsearchinput=document.querySelectorAll(".mainsearchinput");
         searchselectcollapse=document.querySelectorAll(".searcheselectcollapse");
 
-
-            console.log(destinationsearchdiv[0])
-            console.log(mainsearchinput);
+        console.log(destinationsearchdiv[0])
+        console.log(mainsearchinput);
+    
     }
 
 
@@ -428,7 +431,9 @@ $(document).ready(function(){
                         " font-size":"medium",
                         "color":"gray",
                         "left":".50rem",
-                        "transition": "all 0.5s ease"
+                        "transition": "all 0.5s ease",
+                        // "display":"block",
+                        // "display":"none"
                     
                 })
     
@@ -1121,6 +1126,10 @@ $(document).ready(function(){
                 
                 cell.querySelector('span').classList.contains('inactive_indicator') 
                 && cell.querySelector('span').classList.remove('inactive_indicator');
+
+
+                validateDatePicker();
+
                 }
             }
             }
@@ -1269,6 +1278,9 @@ $(document).ready(function(){
 
                 $(".travellersmaininput").val($inputval)
                 $(".travellersiconcancelbtn").removeClass("collapsetravellerscancelbtn");
+
+          
+                validateTravellersNumber();
             }
             else{       
                 // $(".bothadultchilddiv").addClass("hidetravellersdiv");  
@@ -1420,6 +1432,10 @@ $(document).ready(function(){
                 $(".tourdurationmaininput").val($inputval);
                 $(".collapsetourdurationdiv").addClass("hidetourdurationdiv");
                 $(".tourdurationcanceliconbtn").removeClass("collapsetourdurationcancelbtn")
+
+      
+                validateTourDuration();
+ 
             
             }
             else{       

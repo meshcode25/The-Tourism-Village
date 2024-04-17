@@ -712,10 +712,11 @@
         box-sizing: border-box;
     }
     
-    nav{
+    .nav{
         height:80px;
         width:100%;
         background-color:whitesmoke;
+        /* position: fixed; */
     }   
     .navcontainer{
         /* background-color:brown; */
@@ -725,20 +726,23 @@
         display:flex;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+
     
     }
     
-    .formcontainer{
-        width:40%;
-        margin:0 auto;
-    }
     .loginheader{
         text-align:center;
+        text-decoration: underline;
     }
     
     .formdiv{
-        background-color:whitesmoke;
-        padding:0.5rem;
+        /* background-color:blanchedalmond; */
+        padding:1rem;
+        width:60%;
+        margin:0 auto;
+  
+
      
     
     }
@@ -764,9 +768,7 @@
     .formerror{
         color:red;
     }
-    .formdiv{
-        margin:0.5rem 0rem;
-    }
+  
     .submitdiv{
         /* width:40%; */
         margin:0 auto; 
@@ -895,60 +897,14 @@
 
 
     /* the staart of the middle container */
-    .nav{
+ 
 
-    }
-    .navcontainer{
-        
-    }
-    .bodycontainer{
-        background-color:gainsboro;
-        width:100%;
-        margin:0 auto;
-        padding:0.5rem;
-    }
-    .wholemiddlecontainer{
-        display: grid;
-        grid-template-columns:1fr 3fr;
-        grid-template-rows: 50px auto auto auto ;
-        
-    }
-
-    .breadcrampsbar{
-    grid-row:1/2;
-    grid-column:1/3;
-    /* background-color:red; */
-    /* padding:0; */
-    /* margin:0; */
-    }
-    .introjumbotron{
-        grid-column:1/2 ;
-        grid-row: 2/3;
-    }
-    .filterdiv{
-        grid-column:1/2;
-        grid-row:3/4;
-
-    }
-    .innerbodycontainer{
-        grid-row: 2/3;
-        grid-column:2/3;
-    }
-    .footer{
-        grid-column:1/3 ;
-        grid-row:4/5;
-
-    }
 
 
     .introjumbotron{
         /* background-color:yellow; */
     }
-    .formdiv{
-        background-color: bisque; 
-        padding:1rem;
-        /* background-color:blue; */
-    }
+
     .mainsearchform{
         
     }
@@ -956,6 +912,11 @@
         background-color: blue;
         height:500px;
         width:100%;
+    }
+    .destinydiv{
+        position:relative;
+        left:0;
+        top:0;
     }
     .searchselectcollapse{
         /* position: relative; */
@@ -987,18 +948,7 @@
         /* position: relative;
         */
     }
-    .destinationsearchlabel{
-        position:relative;
-        top:-2.8rem;
-        font-size:medium;
-        color:gray;
-        left:10px;
-        padding:0.5rem; 
-        /* /* margin-left:10px; */
-        padding:0; 
-        margin:0;
-        pointer-events: none;
-    }
+
 
     .mainsearchinput{
         font-size:medium;
@@ -1006,54 +956,22 @@
         top:0;
         left:0;
         padding:0.2rem 1.5rem 0.2rem 0.5rem;
-        /* outline: none; */
-        width:70%;
-        /* border:3px solid violet; */
         height:70px;
-        /* color:blue; */
         z-index: 10;
-    }
-    .searchcollapsediv{
-          /* width:100%;  */
-          position:relative;
-          top:-2rem;
-         /* height:250px;  */
-         border-radius: 15px; 
-         background-color:white;  
-          /* display:none;  */
-          height:0;
-          opacity:0;
-          visibility: hidden;
-         
-        }
-    .searchcollapseheader{
-        padding:0.5rem 1rem;
-    }
-    /* .mainsearchinput:focus + .destinationsearchlabel{
-        position:relative;
-        top:-4rem;
         font-size:medium;
-        color:gray;
-        left:0rem;
-    } */
-    /* .searchselectcollaps */
-    /* datalist{
-        position: absolute;
-        top:200px;
-        left:200px;
-        width:100px;
-        height:10px;
-        border-radius: 10px;
-        background-color: blueviolet;
-    } */
-    /* .destinyinputplaceholder .mainsearchinput:focus ~ .searchcollapsediv{
-        display:block;
-    } */
+        width:100%;
+        height:70px;
+        z-index: 10;
+        /* background-color:yellow; */
+        
+    }
+ 
+    .searchcollapseheader{
+        /* padding:0.5rem 1rem; */
+    }
+
     #destinationsearchinput{
-        /* position:fixed; */
-        /* top:80px; */
-        /* color:yellow; */
-        /* left:2rem; */
+
     }
   
     .searchiconbtn{
@@ -1065,21 +983,7 @@
         top:1rem;
         right:5rem;
     }
-    .searchiconcancelbtn{
-        /* color:white; */
-        position:absolute;
-        /* position:absolute; */
-        top:0rem;
-        left:90rem;
-        margin-left:4rem;
-        /* background-color: ; */
-        cursor:pointer;
-        /* top:-4rem;
-        left:24.3rem; */
-        opacity:0;
-        visibility: hidden;
-        height:0;
-    }
+
    
     .destinationdropdown{
 
@@ -1101,15 +1005,6 @@
 /* start of body content for the form in create tour */
 
 
-
-
-
-.nav{
-
-}
-.navcontainer{
-    
-}
 .bodycontainer{
     background-color:gainsboro;
     width:100%;
@@ -1123,41 +1018,13 @@
     
 }
 
-.breadcrampsbar{
-grid-row:1/2;
-grid-column:1/3;
-/* background-color:red; */
-/* padding:0; */
-/* margin:0; */
-}
-.introjumbotron{
-    grid-column:1/2 ;
-    grid-row: 2/3;
-}
-.filterdiv{
-    grid-column:1/2;
-    grid-row:3/4;
 
-}
-.innerbodycontainer{
-    grid-row: 2/3;
-    grid-column:2/3;
-}
-.footer{
-    grid-column:1/3 ;
-    grid-row:4/5;
-
-}
 
 
 .introjumbotron{
     /* background-color:yellow; */
 }
-.formdiv{
-    background-color: bisque; 
-    padding:1rem;
-    /* background-color:blue; */
-}
+
 
 /* Name of the Tour form div */
 
@@ -1176,9 +1043,16 @@ grid-column:1/3;
     
 }
 .destinationsearchcontainer{
-    /* list-style: none; */
+    /* background-color: blueviolet; */
+    /* margin:0; */
+    padding:0;
+    /* margin: */
+    width:55%;
 }
 .destinationsearchdiv{
+margin:0rem; 
+/* background-color:blue;  */
+padding:0; 
 
 
 }
@@ -1190,6 +1064,8 @@ grid-column:1/3;
     background-color: blue;
     height:500px;
     width:100%;
+    margin:0;
+    padding:0;
 }
 .searchselectcollapse{
     /* position: relative; */
@@ -1230,33 +1106,27 @@ grid-column:1/3;
     padding:0; 
     margin:0;
     pointer-events: none;
+    /* display: none; */
+
+
 }
 
-.mainsearchinput{
-    font-size:medium;
-    padding:0.2rem 1.5rem 0.2rem 0.5rem;
-    /* outline: none; */
-    width:100%;
-    /* border:3px solid violet; */
-    height:70px;
-    /* color:blue; */
-    z-index: 10;
-}
 .searchcollapsediv{
-      /* width:100%;  */
-      position:relative;
-      top:-2rem;
-     /* height:250px;  */
-     border-radius: 15px; 
-     /* background-color:whitesmoke;   */
-      /* display:none;  */
-      height:0;
-      opacity:0;
-      visibility: hidden;
-     
-    }
+    /* width:100%;  */
+    position:relative;
+    top:0;
+    /* height:250px;  */
+    border-radius: 15px; 
+    background-color:whitesmoke;  
+    /* display:none;  */
+    height:0;
+    opacity:0;
+    visibility: hidden;
+    
+}
+
 .searchcollapseheader{
-    padding:0.5rem 1rem;
+    /* padding:0.5rem 1rem; */
 }
 
 #destinationsearchinput{
@@ -1271,14 +1141,10 @@ grid-column:1/3;
  
 }
 .searchiconcancelbtn{
-    /* color:white; */
-    position:relative;
-    top:-2.7rem;
-    left:3.5rem;
-    /* background-color: ; */
+    position:absolute;
     cursor:pointer;
-    top:-4rem;
-    left:18.8rem;
+    top:2.7rem;
+    right:0.2rem;
     opacity:0;
     visibility: hidden;
     height:0;
@@ -1295,33 +1161,54 @@ grid-column:1/3;
 }
 
 .bodydiv{
-    display:grid;
+    /* display:grid; */
     grid-template-columns: 0.78fr 3fr;
+    grid-template-rows: min-content;
     width:100%;
     
 }
 
 .bodynavbar{
     grid-column: 1/2;
-    background-color: lightpink;
-    /* position: fixed; */
+    /* background-color: lightpink; */
+    grid-row: 0/1;
+    position: fixed;
+    width:27.5%;
+    top:80px;
+    background-color:gold;
+    height: 100vh;
 }
 .bodynavbar div{
     width:100%;
-    margin:1rem 0.5rem;
+}
+.bodynavbar div button{
+    width:100%;
+    margin:0 auto;
+    /* margin:1rem 0.5rem; */
+    background-color:whitesmoke;
+    border: 1px solid grey;
+    padding:0.5rem 0;
+}
+.bodynavbar div button:hover {
+    width:100%;
+    background-color:gold;
+    cursor:pointer;
+    padding-left:0.5rem;
 }
 .formcontainer{
-    width:100%;
-    grid-column:2/3;
+    /* width:72.5%; */
+    /* grid-column:2/3;
+    grid-row:0/1; */
+    /* display: absolute;  */
+    /* top:800px; */
+    /* left:63.5%; */
     background-color:blue;
-
-}
-.formdiv{
-    /* background-color:green; */
-    width:60%;
+    /* margin:0 auto; */
+    width:90%;
     margin:0 auto;
 
 }
+
 
 
 
@@ -1588,11 +1475,9 @@ grid-column:1/3;
 
 .travellersdiv{
     /* width: 100%; */
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
 } 
-.formdiv{
 
-}
 .travellersno{
 
 }
@@ -1757,9 +1642,7 @@ grid-column:1/3;
     /* width: 100%; */
     /* background-color:cyan; */
 } 
-.formdiv{
 
-}
 .tourduration {
 
 }
@@ -1894,12 +1777,6 @@ grid-column:1/3;
 }
 .tourdurationdonebtn:hover {
     cursor:pointer;
-}
-
-
-.formdiv{
-    margin-top:0;
-    margin-bottom: 0;
 }
 
 

@@ -16,23 +16,34 @@
         <div class="navcontainer">
             <div class="logo"><h1>LOGO</h1></div>
             <div> Any Other necessary Stuff could go Here  </div>
-        </navcontainer>
+        </div>
     </nav>
 
     <div class="bodydiv">
         <div class="bodynavbar">
             <div class="tourdetailsstep">
-                <button type="button" >tour details step Step1</button>
+                <button type="button" class="newtourstep1"  ><h2>Tour/Travel Details</h2></button>
             </div>
 
             <div class="tourimages">
-                <button type="button">tour images Step2</button>
+                <button type="button " class="newtourstep2"><h2>Tour/Travel Images Upload </h2> </button>
             </div>
+
+            <div class="tourdetailsstep">
+                <button type="button" class="newtourstep3"  ><h2>Tour/Travel Prices</h2></button>
+            </div>
+
+            <div class="tourimages">
+                <button type="button " class="newtourstep4"><h2>Confirm Tour/Travel </h2> </button>
+            </div>  
+            
+         
         </div>
 
         <div class="formcontainer createtourstep1">
             <div class="formdiv">
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
+                
                 <form class="form" method="post" action="" enctype="multipart/form-data" id="form">  
                       <!--Form errors go here   -->
                     <div class=" formdiv mainerrormessage"></div>
@@ -46,14 +57,15 @@
 
                     <!-- Destination search container -->
                     <div class="formdiv destinationsearchcontainer">
+
                         <div class="destinationsearchdiv">
                             <div class="destinydiv">
-                                <form class="mainsearchform" action="" method="post" enctype="multipart/form-data">
+                                <!-- <form class="mainsearchform" action="" method="post" enctype="multipart/form-data"> -->
                                     <div class="labeldiv tourdestinationlabeldiv" ><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destination:</label></div>
                                     <p class="formerror destinationsearcherror"></p>
-                                    <input list=""  autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput"  name="destinationdropdown"  >
+                                    <input list="" autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput"  name="destinationdropdown"  >
                                     <!-- <button class="mainsearchinput" type="button" style="background-color: purple;">Here it the button I am talking about it </button> -->
-                                    <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p>
+                                    <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p> 
                                     <button type="button" class="searchiconcancelbtn" ><i class="fa-solid fa-x"></i></button>
 
 
@@ -127,13 +139,12 @@
                                         </div>
                                     </div>
                                     <!-- </div> -->
-                                </form>
+                                <!-- </form> -->
                             </div>
                         </div>
                         
-                        <div class="addtour"><a href="#" class="addtour"> + Add another tour/Destination</a> </div>
+                        <div class="addtour"><a href="#" class="addtour"> + Add another Tour/Destination</a> </div>
                     </div>
-
 
                     <!-- Date picker form div -->
                     <div id="date_picker" class="formdiv">
@@ -219,9 +230,9 @@
                     </div>
 
                     <!-- forgot password -->
-                    <div class="forgotpassdiv">
+                    <!-- <div class="forgotpassdiv">
                         <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
-                    </div>
+                    </div> -->
                     <!-- forgot passsword -->
 
                 </form>
@@ -229,16 +240,16 @@
 
 
                 <!-- Or login  -->
-                <div class="logindivider">
+                 <!-- <div class="logindivider">
                     <span class="divider">Or Login With</span>
-                </div>
+                </div>  -->
                 <!--login with Google or Email-->
-                <div class="logingroup">
+                 <!-- <div class="logingroup">
                     <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
                     <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
                     <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
 
-                </div>
+                </div>  -->
                 
             </div>
         </div>
