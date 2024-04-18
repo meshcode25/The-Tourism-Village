@@ -212,6 +212,8 @@ $(document).ready(function(){
                     console.log(response);
                     console.log(status);
                     console.log(xhr);
+
+
                 },
 
 
@@ -220,10 +222,32 @@ $(document).ready(function(){
                     setTimeout(function () {
                         $('.mainerrormessage').html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
                         $('.form').trigger("reset");
-                        $('.submitbutton').html('SIGN UP ');
+                        $('.submitbutton').html('Next Step ');
                         $('.submitbutton').attr("disabled", false);
                         $('.submitbutton').css({ "border-radius": "7.5px" });
                         console.log( "and now here is the completed message from signup request")
+
+                        // $('.spinning').css({"display":"none"})
+
+
+
+
+
+                        
+                    console.log("successfully deliverd to the backend end now step 2 ")
+                    $(".createtourstep1").css({
+                        "display":"none",
+
+                    })
+                    $(".createtourstep2").css({
+                        "display":"block"
+                    })
+
+
+
+
+
+
                     }, 5000);
                 }
             });

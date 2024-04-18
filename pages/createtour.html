@@ -21,30 +21,30 @@
 
     <div class="bodydiv">
         <div class="bodynavbar">
-            <div class="tourdetailsstep">
-                <button type="button" class="newtourstep1"  ><h2>Tour/Travel Details</h2></button>
+            <div class="tourdetailsstep newtourstep1">
+                <button type="button" class="newtourstep1btn  autofocus "><h2>Tour/Travel Details</h2></button>
             </div>
 
-            <div class="tourimages">
-                <button type="button " class="newtourstep2"><h2>Tour/Travel Images Upload </h2> </button>
+            <div class="tourimages  newtourstep2">
+                <button type="button " class="newtourstep2btn"><h2>Tour/Travel Images Upload </h2> </button>
             </div>
 
-            <div class="tourdetailsstep">
-                <button type="button" class="newtourstep3"  ><h2>Tour/Travel Prices</h2></button>
+            <div class="tourdetailsstep  ewtourstep3" >
+                <button type="button" class="newtourstep3btn"  ><h2>Tour/Travel Prices</h2></button>
             </div>
 
-            <div class="tourimages">
-                <button type="button " class="newtourstep4"><h2>Confirm Tour/Travel </h2> </button>
+            <div class="tourimages newtourstep4">
+                <button type="button " class="newtourstep4btn"><h2>Confirm Tour/Travel </h2> </button>
             </div>  
             
          
         </div>
 
         <div class="formcontainer createtourstep1">
-            <div class="formdiv">
+            <div class="formdiv underformcontainer ">
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
                 
-                <form class="form" method="post" action="" enctype="multipart/form-data" id="form">  
+                <form  method="post" action="" enctype="multipart/form-data" id="form">  
                       <!--Form errors go here   -->
                     <div class=" formdiv mainerrormessage"></div>
 
@@ -265,12 +265,239 @@
 
 
 
+
+
+
+
+
+
     <!-- Create tour step 2 this is the content for step 2 of create tour  -->
+    <div class="formcontainer createtourstep2 ">
+        <div class="formdiv ">
+            <div class="loginheader"><h1>Add Tour/ Create New Tour step2</h1></div>
+            
+            <form  method="post" action="" enctype="multipart/form-data" id="form">  
+                  <!--Form errors go here   -->
+                <div class="mainerrormessage"></div>
+
+                <!-- Name your Tour/Travell -->
+                 <div class="formdiv tournamediv">
+                    <div class="labeldiv"><label class="formlable" for="tourname">Name your Tour/Travel:</label></div>
+                    <input type="text" class="forminput tournameinput" id="tourname"  placeholder="Enter User Name" name="tourname">
+                    <p class="formerror tournameerror"></p>
+                </div> 
+
+                <!-- Destination search container -->
+                <div class="formdiv destinationsearchcontainer">
+
+                    <div class="destinationsearchdiv">
+                        <div class="destinydiv">
+                            <!-- <form class="mainsearchform" action="" method="post" enctype="multipart/form-data"> -->
+                                <div class="labeldiv tourdestinationlabeldiv" ><label class="formlable" for="tourdestination">Choose/Add Your Company Tour Destination:</label></div>
+                                <p class="formerror destinationsearcherror"></p>
+                                <input list="" autocomplete="off" aria-roledescription="combobox" role="combobox" type="text" class="mainsearchinput"  name="destinationdropdown"  >
+                                <!-- <button class="mainsearchinput" type="button" style="background-color: purple;">Here it the button I am talking about it </button> -->
+                                <p class="destinationsearchlabel" for="destinationsearchinput">Search/Select Tour/Travel below</p> 
+                                <button type="button" class="searchiconcancelbtn" ><i class="fa-solid fa-x"></i></button>
+
+
+                                
+                                <!-- here starrts the collapsediv -->
+                                <div class="searchcollapsediv">
+                                    <h5 class="searchcollapseheader">Start Typing or Select Destination <button type="button" class="btncancelsearchcollapse"><i class="fa-solid fa-x"></i></button> </h5>    
+                                    <div class="searchcollapse">
+                                        <form class="selectdestinyform">   
+                                            <datalist class="searchselectcollapse" role="listbox" name="destinationdropdown" id="destinationdropdown" >
+                                                    <!-- <label for="destinationdropdown">Start typing to/or Select Destination  <i class="fa-solid fa-chevron-down tourchevron dropdown" style="color:blue"></i> </label><i class="fa-solid fa-x"></i> -->
+                                                    <!-- <option value="select">Select a Destination</option> -->
+                                                    <option class="mainsearchoptions" value="nakuru">Nakuru </option>
+                                                    <option class="mainsearchoptions" value="nairobi">Nairobi </option>
+                                                    <option class="mainsearchoptions "value="kisumu">Kisumu </option>
+                                                    <option class="mainsearchoptions" value="mombasa"> Mombasa</option>
+                                                    <option class="mainsearchoptions" value="voi">Voi </option>
+                                                    <option class="mainsearchoptions" value="nanyuki">Nanyuki </option>
+                                                    <option class="mainsearchoptions" value="turkanana">Turkanana </option>
+                                                    <option class="mainsearchoptions" value="kilifi"> Kilifi</option>
+                                                    <option class="mainsearchoptions" value="trans-zoia">Tranz-Zoia</option>
+                                                    <option class="mainsearchoptions" value="narok">Narok </option>
+                                                    <option class="mainsearchoptions" value="lamu">Lamu </option>
+                                                    <option class="mainsearchoptions" value="kwale"> Kwale</option>
+                                                    <option class="mainsearchoptions" value="tanariver">Tana River  </option>
+                                                    <option class="mainsearchoptions" value="taitataveta"> Taita Taveta </option>
+                                                    <option class="mainsearchoptions" value="Meru ">Meru</option>
+                                                    <option class="mainsearchoptions" value="tharaka-niithi">Tharaka-Niithi </option>
+                                                    <option class="mainsearchoptions" value="kajiado">Kajiado </option>
+                                                    <option class="mainsearchoptions" value="uasin Gishu "> Uasin Gishu</option>
+                                                    <option class="mainsearchoptions" value="elgeyo/Marakwet "> Elgeyo/Marakwet </option>
+                                                    <option class="mainsearchoptions" value="nandi">   Nandi    </option>
+                                                    <option class="mainsearchoptions" value="baringo"> Baringo    </option>
+                                                    <option  class="mainsearchoptions"value="laikipia"> Laikipia   </option>
+                                                    <option class="mainsearchoptions" value="kericho">  Kericho   </option>
+                                                    <option class="mainsearchoptions" value="bomet">    Bomet   </option>
+                                                    <option class="mainsearchoptions" value="kakamega"> Kakamega   </option>
+                                                    <option class="mainsearchoptions" value="vihiga">   Vihiga   </option>
+                                                    <option class="mainsearchoptions" value="bungoma">  Bungoma   </option>
+                                                    <option class="mainsearchoptions" value="busia" >Busia </option>
+                                                    <option class="mainsearchoptions" value="siaya" >Siaya </option>
+                                                    <option class="mainsearchoptions" value="kisumu">Kisumu  </option>  
+                                                    <option class="mainsearchoptions" value="homa Bay">Homa Bay </option>
+                                                    <option class="mainsearchoptions" value="migori" >Migori </option>
+                                                    <option class="mainsearchoptions" value="kisii" >Kisii  </option>
+                                                    <option class="mainsearchoptions" value="nyamira">Nyamira </option> 
+                                                    <option class="mainsearchoptions" value="tana River">Tana River</option>
+                                                    <option class="mainsearchoptions" value="lamu ">Lamu</option>
+                                                    <option class="mainsearchoptions" value="garissa">Garissa </option>
+                                                    <option class="mainsearchoptions" value="wajir" >Wajir</option>
+                                                    <option class="mainsearchoptions" value="mandera">Mandera </option>
+                                                    <option class="mainsearchoptions" value="marsabit">Marsabit </option>
+                                                    <option class="mainsearchoptions" value="isiolo ">Isiolo</option>
+                                                    <option class="mainsearchoptions" value="embu" >Embu </option>
+                                                    <option class="mainsearchoptions" value="kitui "> Kitui</option>
+                                                    <option class="mainsearchoptions" value="Machakos">Machakos</option>                                    
+                                                    <option class="mainsearchoptions" value="Makueni">Makueni</option>                                    
+                                                    <option class="mainsearchoptions" value="Nyandarua">Nyandarua</option>                                    
+                                                    <option class="mainsearchoptions" value="Nyeri">Nyeri</option>                                    
+                                                    <option class="mainsearchoptions" value="Kirinyaga">Kirinyaga</option>                                    
+                                                    <option class="mainsearchoptions" value="Murang'a">Murang'a</option>                                    
+                                                    <option class="mainsearchoptions" value=" Kiambu">Kiambu</option>                                                                                    
+                                                    <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
+                                                    <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
+                                                <input type="submit" value="Submit">
+        
+                                            </datalist>
+        
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                    
+                    <div class="addtour"><a href="#" class="addtour"> + Add another Tour/Destination</a> </div>
+                </div>
+
+                <!-- Date picker form div -->
+                <div id="date_picker" class="formdiv">
+                    <div id="date_picker_input">
+                        <label class="datepickerlabel" for="date">Pick the Start Date of the Tour/Travel</label>
+                        <input type="text" id="date" class="onFocus datepicker" readonly placeholder="Pick the Start date for the Tour/Travel" />
+                        <p class="formerror datepickererror"></p>
+
+                    </div>
+                    <div id="date_picker_calendar" class="hidden"> 
+                        <div class="cancelbtndiv" ><button type="button" class="cancelbtn"><i class="fa-solid fa-x datecanceliconbtn"></i></button></div>
+                        <div id="calendar_header">
+                            <button class="cal-btn back" type="button" id="back"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJUlEQVR4nO2Uv0oDQRCHR9BKrAQJ2FgIdnc7njtzSbMzd7lGC80T5DXMW+gzpNJHsPEJYuELBA60EBELsfIfBGIixvNyt0IKP9h2vt3fb1iAfxaCXZt0DGuOrO8+jmHNQ3JHnwLDeutrOI4lJDcTAcngDwSDSUSkCbK++RSEJAdfejCkfX+31/63oq1N15H0rn7Bch80s42Z22SsdGsLrHQLVxZJLioLSC8BYKlQELLbQpanCrk/Y+y2C4dPFd6bP3s9hrI455aR9GqO219HUbRSWjB6xV5qDcnL7wJ5RZs2oQpIelqi2BOoShBkq0g6LMg932m11qAOhnX/5+zlEHyALOczhp+BL6x1DSR9mPoOHsM42QSfGE6yUR+kQxO7ttfhC80HheuaG9wAq10AAAAASUVORK5CYII="></button>
+                            <span></span>
+                            <button class="cal-btn front" type="button" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJUlEQVR4nO2Uv0oDQRCHR9BKrAQJ2FgIdnc7njtzSbMzd7lGC80T5DXMW+gzpNJHsPEJYuELBA60EBELsfIfBGIixvNyt0IKP9h2vt3fb1iAfxaCXZt0DGuOrO8+jmHNQ3JHnwLDeutrOI4lJDcTAcngDwSDSUSkCbK++RSEJAdfejCkfX+31/63oq1N15H0rn7Bch80s42Z22SsdGsLrHQLVxZJLioLSC8BYKlQELLbQpanCrk/Y+y2C4dPFd6bP3s9hrI455aR9GqO219HUbRSWjB6xV5qDcnL7wJ5RZs2oQpIelqi2BOoShBkq0g6LMg932m11qAOhnX/5+zlEHyALOczhp+BL6x1DSR9mPoOHsM42QSfGE6yUR+kQxO7ttfhC80HheuaG9wAq10AAAAASUVORK5CYII="></button>
+                        </div>
+                        <div id="cal_wrapper" >
+                            <div id="cal_days"></div>
+                            <div id="calendar_main"></div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Duration of the Tour -->
+                <div class="tourdurationdiv formdiv" >                                    
+                    <label for="tourduration" for="tourduration">Select Tour/Travel Duration</label>
+                    <div class="tourdurationmaininputdiv" >
+                        <input class="tourdurationmaininput" readonly id="tourduration" type="text" placeholder="Select Duration of Travel/Tour">
+                        <p class="formerror tourdurationerror"></p>
+                        <button type="button" class="tourdurationcanceliconbtn collapsetourdurationcancelbtn" ><i class="fa-solid fa-x tourdurationcanceliconbtnicon"></i></button>
+                        <div class="collapsetourdurationdiv hidetourdurationdiv ">
+                            <div class="tourdurationcollapselabel">Select The Duration of the Tour/Travel <button type="button" class="btncanceltourdurationcollapse "><i class="fa-solid fa-x btncanceltourdurationcollapseicon"></i></button> </div>
+                            <div class="tourdurationcount ">
+                                <div class="tourdurationlabel"><p>Tour/Travel Duration (Days):</p></div>
+                                <div class="tourduration ">
+                                    <button class="tourdurationminusbtn durationminusbutton" type="button"><h2>-</h2 ></button>
+                                    <input type="text" class="tourdurationinput adultinput" value="1" name="tourdurationinput" readonly >
+                                    <button class="tourdurationaddbtn   durationaddbutton " type="button"><h2>+</h2 ></button>
+                                </div>   
+                            </div>
+                            <div class="tourdurationdonebtndiv"><button type="button"  class="tourdurationdonebtn ">Done</button> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- number of travellers in the tour -->
+                <div class="travellersdiv formdiv " >                                    
+                    <label for="travellersno">Select the Number of Expected Travellers</label>
+                    <div class="travellersmaininputdiv" >
+                        <input class="travellersmaininput" readonly id=travellersno type="text" placeholder="Select the number of Travellers">
+                        <p class="formerror tourtravellerserror"></p>
+                        <button type="button" class="travellersiconcancelbtn collapsetravellerscancelbtn" ><i class="fa-solid fa-x  travellersiconcancelbtnicon"></i></button>
+                        <div class="bothadultchilddiv hidetravellersdiv">
+                            <div class="travellerscollapselabel">Select Number of Travellers <button type="button" class="btncanceltravellerscollapse"><i class="fa-solid fa-x btncanceltravellerscollapseicon"></i></button> </div>
+                            <div class="adultcount">
+                                <div class="adultlabel"><p>Adults(18 years+):</p></div>
+                                <div class="addsubdiv">
+                                    <button class="minusbutton adultminusbtn" type="button"><h2>-</h2 ></button>
+                                    <input type="text" class="adultinput" value="1" name="travellersinput"  readonly>
+                                    <button class="addbutton adultaddbtn" type="button"><h2>+</h2 ></button>
+                                </div>
+                                
+                            </div>
+
+                            <div class="kidscount">
+                                <div class="kidslabel">Kids(18 years/less):</div>
+                                <div class="addsubdiv">
+                                    <button class="minusbutton kidsminusbtn" type="button"><h2>-</h2 ></button>
+                                    <input type="text" class="childinput"  value="0" name="travellersinput" readonly>
+                                    <button class="addbutton kidsaddbtn" type="button"><h2>+</h2 ></button>
+                                </div>
+                            </div>
+
+                            <div class="travellersdonebtndiv"><button type="button" class="travellersnumberdonebtn">Done</button> </div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- submit-->
+                 <div class="formdiv submitdiv">
+                    <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                    <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+                </div>
+
+                <!-- forgot password -->
+                <!-- <div class="forgotpassdiv">
+                    <a href="../pages/vendorpreresetpassword.html" class="forgotpasslink">Forgot Password??</a>
+                </div> -->
+                <!-- forgot passsword -->
+
+            </form>
+        
+
+
+            <!-- Or login  -->
+             <!-- <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>  -->
+            <!--login with Google or Email-->
+             <!-- <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>  -->
+            
+        </div>
+    </div>
 
 
 
 
 
+
+
+
+
+
+
+
+<!-- Create tour step 2 this is the content for step 2 of create tour  -->
 
 
 
