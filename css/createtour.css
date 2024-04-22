@@ -1161,24 +1161,14 @@ padding:0;
     height: 100vh;
 }
 .bodynavbar div{
-    width:100%;
 }
 .bodynavbar div button{
-    width:100%;
-    margin:0.25rem auto;
-    /* margin:1rem 0.5rem; */
-    /* background-color:whitesmoke; */
-    border: 1px solid grey;
-    padding:0.5rem 2rem;
-    text-align: left;
+
 
     
 }
 .bodynavbar div button:hover {
-    width:100%;
-    background-color:lightblue;
-    cursor:pointer;
-    /* padding-left:0.5rem; */
+
 }
 .formcontainer{
     /* width:72.5%; */
@@ -1209,6 +1199,7 @@ padding:0;
     /* background-color: black;
     width: 50%; */
     margin:0 auto;
+    display:none;
 }
 
 #form{
@@ -1216,35 +1207,41 @@ padding:0;
     /* background-color: aquamarine; */
 }
 
-.newtourstep1btn, .newtourstep2btn, .newtourstep3btn, .newtourstep4btn{
-    /* background-color: aqua; */
+
+.newtourstep1, .newtourstep2, .newtourstep3, .newtourstep4{
+    width:100%;
+
 }
 
-.autofocus{
-    background-color:aqua;
-    /* background-color:coral; */
-    /* color:white; */
+.newtourstep1btn, .newtourstep2btn, .newtourstep3btn, .newtourstep4btn{
+    width:100%;
+    margin:0.25rem auto;
+    /* margin:1rem 0.5rem; */
+    /* background-color:whitesmoke; */
+    border: 1px solid grey;
+    padding:0.5rem 2rem;
+    text-align: left;
+}
 
+.newtourstep1btn:hover, .newtourstep2btn:hover, .newtourstep3btn:hover, .newtourstep4btn:hover {
+    width:100%;
+    background-color:lightblue;
+    cursor:pointer;
+    /* padding-left:0.5rem; */
+
+}
+.autofocus{
+    background-color:blue;
+    /* background-color:coral; */
+    color:white;
+    /* color:white; */
+    
 }
 
 .autofocus:hover{
     background-color:blue;
     color:white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1812,12 +1809,84 @@ padding:0;
 /* Start of step 2 of the Create tour and here it is it goes here */
 
 .createtourstep2{
-    display:none;
+    /* display: */
+    /* background-color:#551A8B; */
+    margin:0.5rem 0.5rem;
+    
+}
+.imagesformdiv{
+    width:90%;
+    margin:0 auto;
 }
 
 
+.uploadlabel{
+    width:100%;
+    margin:2rem 0.5rem;
+    /* background-color:#551A8B; */
+    /* padding:0.5rem; */
+}
+
+.uploadimageinputdiv{
+    width:"100%";
+    height:"6.6rem";
+    border: 2px dashed grey;
+    /* display: flex; */
+    align-items:"center";
+    justify-content:"center";
+    flex-direction:"column";
+    background-color:white;
+    padding:0.5rem;
+    text-align: center;
+    /* margin:0 auto; */
+    /* background-color:lightgrey; */
+}
+/* .uploadherediv, .uploadherespan, .uploadimagesinput, .uploadlabel{
+    padding:0.65rem 0.2rem;
+} */
 
 
+.uploadimageinputdiv:hover, .uploadherediv:hover, .uploadherespan:hover, .uploadimagesinput:hover, .uploadlabel:hover{
+    background-color:#F8F8F8;
+    cursor:pointer;
+}
+
+.uploadimgicondiv{
+    color:grey;
+    padding:0.05rem 0.05rem;
+    font-size: xx-large;
+
+}
+.uploadherediv{
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:0.15rem 0.05rem;
+
+}
+.uploadherespan{
+    color:blue;
+
+
+}
+.pictype{
+    padding-left:"0.2rem";
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.uploadimagesinput{
+    position:"absolute";
+    width:"100%" ;
+    top:"0"; 
+    /* bottom:"0";  */
+    display:"flex"; 
+    align-items:"center"; 
+    background-color:"red"; 
+    justify-content:"space-between";
+    opacity:"0"; 
+    visibility: hidden;
+
+}
 
 
 

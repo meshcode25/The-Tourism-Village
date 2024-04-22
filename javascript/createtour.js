@@ -176,11 +176,12 @@ $(document).ready(function(){
             var data = new FormData(form);
 
             
-    "tournameinput"
-    "date"
-    "tourdurationmaininput"
-    "travellersmaininput"
-    "mainsearchinput"
+            "tournameinput"
+            "date"
+            "tourdurationmaininput"
+            "travellersmaininput"
+            "mainsearchinput"
+            
             data.append("tournameinput", $(".emailinput").val());
             data.append( "date", $(".usernamelinput").val());
             data.append("tourdurationmaininput", $(".passwordinput").val());
@@ -243,12 +244,17 @@ $(document).ready(function(){
                         "display":"block"
                     })
 
+                    
+                    $(".newtourstep1btn").removeClass("autofocus");
+
+                    $(".newtourstep2btn").addClass("autofocus");
 
 
 
 
 
-                    }, 5000);
+
+                    }, 500);
                 }
             });
         }
