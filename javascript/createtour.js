@@ -1406,27 +1406,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Select tour/Travel duration of of the tour input parts code for the javascript code 
     $(document).on("click", function(e) {
         if($(".tourdurationmaininput").is(e.target)){      
@@ -1514,6 +1493,81 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Step 2 file upload partyh of the step 2 create4 new tour 
+
+function uploadImages(){
+    $(".uploadimagesinput").on("change", function(e){
+        $image=$(".uploadimagesinput")[0].files[0];
+        console.log("here is the images, Image");
+        console.log($image);
+        
+        $filereader=new FileReader();
+        
+        // $filereader.onload=function(){
+            $previewimgdiv=document.createElement("div")
+            $previewimg=document.createElement("img");
+    
+            $previewimg.classList.add("previewimg")
+            $previewimgdiv.classList.add("previewimgdiv")
+            
+            $imgpath=URL.createObjectURL($image);
+            
+            
+            console.log("heri s the url, createObjecturl  " + $imgpath)
+    
+            console.log($previewimg)
+            console.log($previewimgdiv)
+    
+            $previewimg.setAttribute("src", $imgpath);
+            $previewimgdiv.setAttribute("style", "background-color:green")
+    
+            $previewimg.setAttribute("src", $imgpath);
+    
+    
+            $previewimgdiv.appendChild($previewimg);
+            
+            $(".uploadedimagescontainer")[0].appendChild($previewimgdiv);
+        // }
+      
+
+        // $filereader.onerror=function (){
+        //     $(".mainerrormessage").html("unalbe to Select Image from Your Device")
+
+        // }
+
+    })
+}
+
+uploadImages();
 
 
 
