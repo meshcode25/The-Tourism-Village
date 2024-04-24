@@ -1814,12 +1814,15 @@ padding:0;
     margin:0.5rem 0.5rem;
     /* overflow-y: scroll; */
     height:88vh;
+    /* display: none; */
+    width:72%;
     
 }
 .imagesformdiv{
-    width:90%;
+    width:95%;
     margin:0 auto;
     /* overflow-y: scroll; */
+    /* background-color: #551A8B; */
 }
 
 
@@ -1828,6 +1831,9 @@ padding:0;
     /* margin:2rem 0.5rem; */
     /* background-color:#551A8B; */
     /* padding:0.5rem; */
+    /* position: relative; */
+    /* top:500px; */
+
 }
 
 .uploadedimagescontainer{
@@ -1840,7 +1846,7 @@ padding:0;
     justify-content: space-evenly;
     align-items: center; */
     /* padding:1rem; */
-    background-color:#551A8B; 
+    /* background-color:#551A8B;  */
     width:100%;
     border-radius: 5px;
     display:grid;
@@ -1850,6 +1856,7 @@ padding:0;
     margin:1rem 0.2rem;
     /* padding:0.5rem; */
     /* grid-template-rows: ; */
+    min-height: 100px;
 
 
 
@@ -1862,12 +1869,12 @@ padding:0;
     /* object-fit: cover; */
 }
 .previewimgdiv{
-    /* width: 30%; */
-    /* margin:0.5rem; */
-    max-height:400px;
-    /* max-height: 36%; */
+    height:250px;
     margin:0.25rem;
-
+    border-radius:10px;
+    position: relative;
+    top:0;
+    left:0;
 }
 
 
@@ -1932,6 +1939,24 @@ padding:0;
 
 }
 
+
+.uploadimgcancelbtn{
+    position: absolute;
+    /* top:2rem; */
+    right:0;
+    background-color: greenyellow;
+    border-radius: 2px;
+    padding:0.1rem;
+    border:none;
+    margin:0.3rem;
+}
+.uploadimgcancelbtn:hover{
+    background-color: red;
+}
+
+.uploadimgcancelbtnicon{
+
+}
 
 
 

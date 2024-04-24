@@ -1533,29 +1533,59 @@ function uploadImages(){
         $filereader=new FileReader();
         
         // $filereader.onload=function(){
-            $previewimgdiv=document.createElement("div")
-            $previewimg=document.createElement("img");
-    
-            $previewimg.classList.add("previewimg")
-            $previewimgdiv.classList.add("previewimgdiv")
+            $.previewimgdiv=document.createElement("div");
+            let previewimg=document.createElement("img");
+            $.imguploadcancelbtn=document.createElement("button");
+
+            $.imguploadcancelbtn.setAttribute("type","button")
+            
+            $.imguploadcancelbtn.classList.add("uploadimgcancelbtn");
+
+            console.log($.imguploadcancelbtn);
+            $.imguploadcancelbtn.innerHTML=`<i class="fa-solid fa-x uploadimgcancelbtnicon"></i>`
+
+            // $imguploadcancelicon.text(`<i class="fa-solid fa-x uploadimgcancelbtnicon"></i>`)
+
+
+            previewimg.classList.add("previewimg")
+           $.previewimgdiv.classList.add("previewimgdiv")
             
             $imgpath=URL.createObjectURL($image);
             
+            console.log($image.size());
             
             console.log("heri s the url, createObjecturl  " + $imgpath)
     
-            console.log($previewimg)
-            console.log($previewimgdiv)
+            console.log(previewimg)
+            console.log($.previewimgdiv)
     
-            $previewimg.setAttribute("src", $imgpath);
-            $previewimgdiv.setAttribute("style", "background-color:green")
-    
-            $previewimg.setAttribute("src", $imgpath);
-    
-    
-            $previewimgdiv.appendChild($previewimg);
+            previewimg.setAttribute("src", $imgpath);
+            $.previewimgdiv.setAttribute("style", "background-color:blue", );
             
-            $(".uploadedimagescontainer")[0].appendChild($previewimgdiv);
+            $imguploadcancelicon = $(".uploadimgcancelbtn:eq(0)").clone(true);
+
+            console.log($imguploadcancelicon);
+            console.log( $(".uploadimgcancelbtn:eq(0)"))
+
+            $.previewimgdiv.append("")
+
+            console.log($.previewimgdiv);
+
+            $($.previewimgdiv).css({
+                "background-color" :" green",
+                "background-image" :`url(${$imgpath}) `,
+                "background-repeat" :" no-repeat",
+                // "background-attachment" :"fixed ",
+                "background-position" :"center center ",
+                "background-size" :"100% 100%",
+            })
+    
+            // $previewimg.setAttribute("src", $imgpath);
+    
+            
+            $.previewimgdiv.appendChild($.imguploadcancelbtn);
+            
+            $(".uploadedimagescontainer")[0].appendChild($.previewimgdiv);
         // }
       
 
