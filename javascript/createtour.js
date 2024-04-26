@@ -241,7 +241,10 @@ $(document).ready(function(){
 
                     })
                     $(".createtourstep2").css({
-                        "display":"block"
+                        "display":"none"
+                    })
+                    $(".createtourstep3").css({
+                        "display":"none"
                     })
 
                     
@@ -1529,10 +1532,37 @@ function uploadImages(){
         $image=$(".uploadimagesinput")[0].files[0];
         console.log("here is the images, Image");
         console.log($image);
-        
+        console.log($image.size/(1024*1024)  + " Mbs")
+        console.log($image.type);
+        $imgtype=$image.type.split("/");    
+        console.log($imgtype[1]);
+        $imagetype=$imgtype[1];
+        console.log($imagetype);
+
+        $imagetypesarray=["jpeg", "jpg", "png", "jpeg", "jpg", "svg", "jfif", "pjpeg", "pjp"];
+
+        function validateimgtypes(){
+            console.log($imagetype);
+
+            for(let i=0; i<$imagetypesarray.length; i++){
+                if($imagetype === $imagetypesarray[i]){
+                    return true 
+                }
+                i++
+            }    
+        }
+
         $filereader=new FileReader();
         
-        // $filereader.onload=function(){
+        if($image.size>(1024*1024*10)){    
+            $(".mainerrormessage").html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Image ${image.name} Size is More than 10 MBs </div>`);
+        }
+        else if(!validateimgtypes()){
+            console.log(validateimgtypes())
+            $(".mainerrormessage").html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Invalid image type, only accepts  ".png , .jpeg, .jpg, .svg, .jfif, .pjpeg, .pjp</div>`);
+        }
+        else{
+            // $filereader.onload=function(){
             $.previewimgdiv=document.createElement("div");
             let previewimg=document.createElement("img");
             $.imguploadcancelbtn=document.createElement("button");
@@ -1548,17 +1578,18 @@ function uploadImages(){
 
 
             previewimg.classList.add("previewimg")
-           $.previewimgdiv.classList.add("previewimgdiv")
+            $.previewimgdiv.classList.add("previewimgdiv")
             
             $imgpath=URL.createObjectURL($image);
             
-            console.log($image.size());
+            // console.log($imgpath.width());
+            
             
             console.log("heri s the url, createObjecturl  " + $imgpath)
-    
+
             console.log(previewimg)
             console.log($.previewimgdiv)
-    
+
             previewimg.setAttribute("src", $imgpath);
             $.previewimgdiv.setAttribute("style", "background-color:blue", );
             
@@ -1579,20 +1610,23 @@ function uploadImages(){
                 "background-position" :"center center ",
                 "background-size" :"100% 100%",
             })
-    
+
             // $previewimg.setAttribute("src", $imgpath);
-    
+
             
             $.previewimgdiv.appendChild($.imguploadcancelbtn);
             
             $(".uploadedimagescontainer")[0].appendChild($.previewimgdiv);
         // }
-      
+        
 
         // $filereader.onerror=function (){
         //     $(".mainerrormessage").html("unalbe to Select Image from Your Device")
 
         // }
+
+        }
+       
 
     })
 }
@@ -1604,12 +1638,40 @@ uploadImages();
 
 
 
+// Step 3 Select the type of tour/Travel of the step 2 create4 new tour 
 
 
+function typeOfTour(){
 
+    $tourtypearray=[];
 
+    $(".tourtypebtn").each(function(index){
+        $(this).on("click", ()=>{
+            $tourtypevalue=$(this).attr("value");
 
+            if($(this).hasClass("activetourtype")){
+                $(this).removeClass("activetourtype")
+                $tourtypeindex=$tourtypearray.indexOf($tourtypevalue);
+                $tourtypearray.splice($tourtypeindex, 1)
+            }
+            else{
+                $(this).addClass("activetourtype")
+                $tourtypearray.push($tourtypevalue)
+            }
 
+            
+            $(this).css({
+                
+            }) 
+            console.log($tourtypearray);
+            console.log($(this));
+            console.log($tourtypevalue)
+        })
+    })
+
+}
+
+typeOfTour()
 
 
 

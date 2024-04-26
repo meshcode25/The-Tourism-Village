@@ -29,15 +29,23 @@
                 <button type="button " class="newtourstep2btn newtourbtn"><h2>Tour/Travel Images Upload </h2> </button>
             </div>
 
-            <div class="tourdetailsstep  newtourstep3" >
-                <button type="button" class="newtourstep3btn newtourbtn"  ><h2>Tour/Travel Prices</h2></button>
+            
+            <div class="traveltype  newtourstep3">
+                <button type="button " class="newtourstep3btn newtourbtn"><h2>Tour/Travel Type </h2> </button>
             </div>
 
-            <div class="tourimages newtourstep4">
-                <button type="button " class="newtourstep4btn newtourbtn"><h2>Confirm Tour/Travel </h2> </button>
+            <div class="tourdetailsstep  newtourstep4" >
+                <button type="button" class="newtourstep4btn newtourbtn"  ><h2>Tour/Travel Features</h2></button>
+            </div>
+
+            <div class="tourimages newtourstep5">
+                <button type="button " class="newtourstep5btn newtourbtn"><h2>Tour/Travel Prices </h2> </button>
             </div>  
             
          
+            <div class="tourdetailsstep  newtourstep6" >
+                <button type="button" class="newtourstep6btn newtourbtn"  ><h2>Confirm Tour Travel</h2></button>
+            </div>
         </div>
 
         <div class="formcontainer createtourstep1">
@@ -276,7 +284,6 @@
         <div class="imagesformdiv ">
             <div class="loginheader"><h1>Add Tour/ Create New Tour Step 2</h1></div>
 
-            <div class="mainerrormessage"></div>
 
             <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
                   <!--Form errors go here   -->
@@ -290,21 +297,13 @@
                         <div class="uploadimgicondiv "><i class="fa-regular fa-image"></i></div>
                         <div class="uploadherediv"> Drag and Drop or Click <span class="uploadherespan">Here</span> to upload Photos</div>
                         <div class="pictype">(Accepts .jpg, .jpeg, .svg, .png upto 10Mbs)</div>
-                        <input class="uploadimagesinput" id="uploadimagesid"  type="file" name="uploadimagesdiv" accept=".png , .jpeg, .jpg, .svg, .jfif, .pjpeg, .pjp" title="upload photos of your Apartment" ></input>            
+                        <input class="uploadimagesinput" id="uploadimagesid"  type="file" name="uploadimagesdiv" accept=".png, .jpeg, .jpg, .svg, .jfif, .pjpeg, .pjp" title="upload photos of your Apartment" ></input>            
                         
                     </div>
                 </label >
                     
-                <!-- Name your Tour/Travell -->
- 
+                <div class="mainerrormessage"></div>
 
-                <!-- Date picker form div -->
-        
-        
-                <!-- Duration of the Tour -->
-
-
-                <!-- number of travellers in the tour -->
           
 
                  <!-- submit-->
@@ -335,6 +334,7 @@
 
 
 
+     
 
 
 
@@ -343,10 +343,111 @@
 
 
 
-<!-- Create tour step 2 this is the content for step 2 of create tour  -->
 
 
 
+
+    <!-- Create tour step Tour Type Selection this is the content for step 3 of create tour  -->
+    <div class="formcontainer createtourstep3 ">
+        <div class="Tourtypediv ">
+            <div class="loginheader"><h2>Add Tour/ Create New Tour Step 3</h2></div>
+            <div class="loginheader tourtypeminiheader"><p>Select one or more as Type of Travel</p></div>
+
+            <div class="mainerrormessage"></div>
+
+            <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
+                <!--Form errors go here   -->
+
+                <div class="tourtypeselectioncontainer"> 
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="safari">Safari </button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="lodge">Lodge </button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="tented camp">Tented Camp</button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="hotel">Hotel</button> </div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="beach hotel">Beach Hotel</button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="safari park">Safari Park  </button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn" type="button"  value="national park">National Wildlife Park</button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="marine park">Marine Park</button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="national reserve">National Reserve </button></div>
+                    <div class="tourtypediv"><button class="tourtypebtn"  type="button" value="museum visit">Museum Visit  </button></div>
+
+                </div>
+
+            </form>
+        
+
+     <!-- submit-->
+     <div class="formdiv submitdiv tourtypesubmitbtn">
+        <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+        <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+    </div>
+        
+            <!-- Or login  -->
+            <!-- <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>  -->
+            <!--login with Google or Email-->
+            <!-- <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>y
+
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>  -->
+            
+        </div>
+    </div>
+
+
+
+
+    
+    <!-- Create tour Features Offers for the Tour -->
+    <div class="formcontainer createtourstep4 ">
+        <div class="tourfeaturesdiv ">
+            <div class="loginheader"><h2>Add Tour/ Create New Tour Step 4</h2></div>
+            <div class="loginheader tourtypeminiheader"><p>Select one or more features of the Travel</p></div>
+
+            <div class="mainerrormessage"></div>
+
+            <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
+                <!--Form errors go here   -->
+
+                <div class="tourtypeselectioncontainer"> 
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="breakfast">Breakfast</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="pickup">Pickup </button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="dropping">Dropping</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="lunch">Lunch</button> </div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="hotel">Hotel</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn" type="button"  value=""></button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
+
+                </div>
+
+            </form>
+        
+
+            <!-- submit-->
+            <div class="formdiv submitdiv tourtypesubmitbtn">
+                <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+            </div>
+        
+            <!-- Or login  -->
+            <!-- <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>  -->
+            <!--login with Google or Email-->
+            <!-- <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>  -->
+            
+        </div>
     </div>
     
 <script src="../javascript/createtour.js"></script>
