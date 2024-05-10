@@ -1195,12 +1195,8 @@ padding:0;
     /* background-color:#551A8B */
 
 }
-.createtourstep1{
-    /* background-color: black;
-    width: 50%; */
-    margin:0 auto;
-    display:none;
-}
+
+
 
 #form{
     /* overflow-y: auto; */
@@ -1208,12 +1204,12 @@ padding:0;
 }
 
 
-.newtourstep1, .newtourstep2, .newtourstep3, .newtourstep4, .newtourstep5{
+.newtourstep1, .newtourstep2, .newtourstep3, .newtourstep4, .newtourstep5, .newtourstep6 .newtourstep7{
     width:100%;
 
 }
 
-.newtourstep1btn, .newtourstep2btn, .newtourstep3btn, .newtourstep4btn, .newtourstep5btn{
+.newtourstep1btn, .newtourstep2btn, .newtourstep3btn, .newtourstep4btn, .newtourstep5btn, .newtourstep6btn, .newtourstep7btn{
     width:100%;
     margin:0.25rem auto;
     /* margin:1rem 0.5rem; */
@@ -1223,25 +1219,14 @@ padding:0;
     text-align: left;
 }
 
-.newtourstep1btn:hover, .newtourstep2btn:hover, .newtourstep3btn:hover, .newtourstep4btn:hover {
+.newtourstep1btn:hover, .newtourstep2btn:hover, .newtourstep3btn:hover, .newtourstep4btn:hover, .newtourstep5btn:hover, .newtourstep6btn:hover, .newtourstep7btn:hover{
     width:100%;
     background-color:lightblue;
     cursor:pointer;
     /* padding-left:0.5rem; */
 
 }
-.autofocus{
-    background-color:blue;
-    /* background-color:coral; */
-    color:white;
-    /* color:white; */
-    
-}
 
-.autofocus:hover{
-    background-color:blue;
-    color:white;
-}
 
 
 
@@ -1814,7 +1799,7 @@ padding:0;
     margin:0.5rem 0.5rem;
     /* overflow-y: scroll; */
     height:88vh;
-    display: none;
+    /* display: none; */
     width:72%;
     
 }
@@ -1958,15 +1943,19 @@ padding:0;
 .uploadimgcancelbtnicon{
 
 }
+.imagerror{
+    
+}
 
 
 
 /* Beginning of Tour Type Selection Container  */
+
 .createtourstep3{
 /* background-color: #551A8B; */
     overflow: scroll;
     height: 90vh;
-    display:none
+    /* display:none */
 }
 
 .tourtypediv{
@@ -1995,9 +1984,10 @@ padding:0;
     /* width:20%; */
 }
 .tourtypebtn:hover{
-    /* background-color */
+    background-color:blue;
     color:white;
     cursor:pointer;
+
 }
 
 .tourtypesubmitbtn{
@@ -2020,10 +2010,257 @@ width: 40%;
 
 
 .createtourstep4{
+/* display:none; */
+overflow: scroll;
+height: 90vh;
     
 }
 
 
+
+
+
+.tourfeaturesdiv{
+    /* background-color: peru; */
+    width:50%;
+    margin:0 auto;
 }
+.tourfeaturesbtn{
+    background-color: whitesmoke;
+    width:100%;
+    padding:0.65rem 0.2rem;
+    margin:0.2rem 0;
+    /* border:3px solid plum; */
+    font-size:large;
+    border:none;
+    /* border:none; */
+    /* width:20%; */
+}
+.tourfeaturesbtn:hover{
+    /* background-color */
+    background-color:blue;
+    cursor:pointer;
+    color:white;
+}
+.activetourfeature{
+    background-color:blue;
+    color:white;
+    
+}
+
+.wholetransportdiv{
+    height:87.5vh;
+    /* padding:2rem 0.5rem; */
+}
+.tourtransportmeansdiv{
+    /* background-color: peru; */
+    /* height:70h; */
+    overflow: auto;
+    width:50%;
+    margin:0 auto;
+}
+.tourtransportmeansbtn{
+
+    background-color: whitesmoke;
+    width:100%;
+    padding:0.65rem 0.2rem;
+    margin:0.2rem 0;
+    /* border:3px solid plum; */
+    font-size:large;
+    border:none;
+    /* border:none; */
+    /* width:20%; */
+}
+.tourtransportmeansbtn:hover{
+    /* background-color */
+    background-color:blue;
+    cursor:pointer;
+    color:white;
+}
+
+.activetransportmeans{
+    background-color:blue;
+    color:white;
+    
+}
+
+.tourtransportmeanscontainer{
+    margin-top:1rem;
+    background-color: #551A8B;
+}
+
+
+
+.tourtranportmeansdiv{
+    background-color: yellowgreen;
+}
+
+.tourtransportmeanscontainer{
+    background-color: yellow;
+}
+.tourtransportmeansdiv{
+    background-color: green;
+}
+.transportday{
+    /* background-color: blue; */
+}
+.Dayonediv{
+    background-color: purple;
+}
+
+.dayonelabel{
+
+}
+
+.pickupinputlabel{
+
+}
+
+.pickupselectdiv{
+    position: relative;
+    left:0;
+    top:0;
+
+}
+
+.transportselectinput{
+    width:100%;
+    padding:0.75rem 0.34rem;
+    font-size:large;
+}
+
+.transportselectcancelbtn{
+    opacity: 0;
+    visibility: hidden;
+    height:0;
+    position: absolute;
+    top:0.75rem;
+    right:0.2rem;
+    z-index: 10;
+    /* display: none; */
+    /* display: block; */
+
+
+
+    
+}
+.transportselectcancelbtn:hover{
+    cursor:pointer;
+}
+.transportcancelbtnshow{
+    opacity: 1;
+    visibility: visible;
+    height:fit-content;
+    position: absolute;
+    top:0.75rem;
+    right:0.2rem;
+    z-index: 10;
+    
+    display: block;
+}
+
+.pickupselect{
+    /* display: block; */
+}
+.transportselectoptions{
+    padding:0.5rem 0.3rem;
+
+}
+
+.transportselectoptions:hover{
+    cursor:pointer;    
+}
+
+.toggletransportselect{
+    display:block;
+}
+
+.touraccomodationcontainer{
+    width:80%;
+    margin:0 auto;
+    /* background-color: yellow; */
+}
+.accomodationtypediv{
+    width:50%;
+    /* background-color: #551A8B; */
+    margin: 0.35rem auto;
+    
+}
+.accomodationtypebtn{
+    width:100%;
+    padding:0.65rem 0 ;
+    background-color: whitesmoke;
+    border:none;
+    font-size:large
+}
+
+.accomodationtypebtn:hover{
+    cursor:pointer;
+    color:white;
+    background-color: blue;
+}
+
+
+
+
+.createtourstep5{
+    /* display:none; */
+}
+
+
+
+
+.createtourstep7{
+    /* display: none; */
+}
+
+
+.tourstep{
+    display:none;
+}
+
+.createtourstep1{
+    display:none;
+    margin:0 auto;
+    
+}
+.createtourstep1{
+    display: block;
+    /* background-color: #551A8B; */
+
+    /* height:87vh; */
+}
+
+
+
+
+.autofocus{
+    background-color:blue;
+    /* background-color:coral; */
+    color:white;
+    /* color:white; */
+    
+}
+
+.autofocus:hover{
+    background-color:blue;
+    color:white;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

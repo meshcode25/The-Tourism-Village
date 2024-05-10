@@ -34,30 +34,41 @@
                 <button type="button " class="newtourstep3btn newtourbtn"><h2>Tour/Travel Type </h2> </button>
             </div>
 
-            <div class="tourdetailsstep  newtourstep4" >
+            <div class="featuresstep  newtourstep4" >
                 <button type="button" class="newtourstep4btn newtourbtn"  ><h2>Tour/Travel Features</h2></button>
             </div>
 
-            <div class="tourimages newtourstep5">
-                <button type="button " class="newtourstep5btn newtourbtn"><h2>Tour/Travel Prices </h2> </button>
+            <div class="transportmeansstep newtourstep5">
+                <button type="button " class="newtourstep5btn newtourbtn"><h2>Transportation Means </h2> </button>
             </div>  
             
-         
-            <div class="tourdetailsstep  newtourstep6" >
-                <button type="button" class="newtourstep6btn newtourbtn"  ><h2>Confirm Tour Travel</h2></button>
+              
+            <div class="touraccomodationstep  newtourstep6" >
+                <button type="button" class="newtourstep6btn newtourbtn"  ><h2>Accomodation And Food </h2></button>
             </div>
+
+            <div class="tourconfirmationstep  newtourstep7" >
+                <button type="button" class="newtourstep7btn newtourbtn"  ><h2>Confirm Tour Travel</h2></button>
+            </div>
+
         </div>
 
-        <div class="formcontainer createtourstep1">
+
+
+
+
+
+        <div class="formcontainer createtourstep1 tourstep">
+                        
             <div class="formdiv underformcontainer ">
                 <div class="loginheader"><h1>Add Tour/ Create New Tour</h1></div>
                 
                 <form  method="post" action="" enctype="multipart/form-data" id="form">  
-                      <!--Form errors go here   -->
+                    <!--Form errors go here   -->
                     <div class=" formdiv mainerrormessage"></div>
 
                     <!-- Name your Tour/Travell -->
-                     <div class="formdiv tournamediv">
+                    <div class="formdiv tournamediv">
                         <div class="labeldiv"><label class="formlable" for="tourname">Name your Tour/Travel:</label></div>
                         <input type="text" class="forminput tournameinput" id="tourname"  placeholder="Enter User Name" name="tourname">
                         <p class="formerror tournameerror"></p>
@@ -139,9 +150,9 @@
                                                         <option class="mainsearchoptions" value="West Pokot">West Pokot</option>                                    
                                                         <option class="mainsearchoptions" value="Samburu">Samburu</option>                                    
                                                     <input type="submit" value="Submit">
-            
+
                                                 </datalist>
-            
+
                                                 
                                             </form>
                                         </div>
@@ -175,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <!-- Duration of the Tour -->
                     <div class="tourdurationdiv formdiv" >                                    
                         <label for="tourduration" for="tourduration">Select Tour/Travel Duration</label>
@@ -231,8 +242,8 @@
                         </div>
                     </div>
                     
-                     <!-- submit-->
-                     <div class="formdiv submitdiv">
+                    <!-- submit-->
+                    <div class="formdiv submitdiv">
                         <button class="submitbutton createtournextbtn" type="button">Next Step</button>
                         <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
                     </div>
@@ -244,15 +255,15 @@
                     <!-- forgot passsword -->
 
                 </form>
-            
+
 
 
                 <!-- Or login  -->
-                 <!-- <div class="logindivider">
+                <!-- <div class="logindivider">
                     <span class="divider">Or Login With</span>
                 </div>  -->
                 <!--login with Google or Email-->
-                 <!-- <div class="logingroup">
+                <!-- <div class="logingroup">
                     <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
                     <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
                     <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
@@ -278,9 +289,8 @@
 
 
 
-
     <!-- Create tour step 2 this is the content for step 2 of create tour  -->
-    <div class="formcontainer createtourstep2 ">
+    <div class="formcontainer createtourstep2 tourstep ">
         <div class="imagesformdiv ">
             <div class="loginheader"><h1>Add Tour/ Create New Tour Step 2</h1></div>
 
@@ -302,7 +312,7 @@
                     </div>
                 </label >
                     
-                <div class="mainerrormessage"></div>
+                <div class="mainerrormessage imageerror"></div>
 
           
 
@@ -348,7 +358,7 @@
 
 
     <!-- Create tour step Tour Type Selection this is the content for step 3 of create tour  -->
-    <div class="formcontainer createtourstep3 ">
+    <div class="formcontainer createtourstep3  tourstep">
         <div class="Tourtypediv ">
             <div class="loginheader"><h2>Add Tour/ Create New Tour Step 3</h2></div>
             <div class="loginheader tourtypeminiheader"><p>Select one or more as Type of Travel</p></div>
@@ -375,12 +385,12 @@
             </form>
         
 
-     <!-- submit-->
-     <div class="formdiv submitdiv tourtypesubmitbtn">
-        <button class="submitbutton createtournextbtn" type="button">Next Step</button>
-        <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
-    </div>
-        
+        <!-- submit-->
+        <div class="formdiv submitdiv tourtypesubmitbtn">
+            <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+            <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+        </div>
+            
             <!-- Or login  -->
             <!-- <div class="logindivider">
                 <span class="divider">Or Login With</span>
@@ -402,7 +412,7 @@
 
     
     <!-- Create tour Features Offers for the Tour -->
-    <div class="formcontainer createtourstep4 ">
+    <div class="formcontainer createtourstep4 tourstep ">
         <div class="tourfeaturesdiv ">
             <div class="loginheader"><h2>Add Tour/ Create New Tour Step 4</h2></div>
             <div class="loginheader tourtypeminiheader"><p>Select one or more features of the Travel</p></div>
@@ -418,11 +428,238 @@
                     <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="dropping">Dropping</button></div>
                     <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="lunch">Lunch</button> </div>
                     <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="hotel">Hotel</button></div>
-                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
-                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn" type="button"  value=""></button></div>
-                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
-                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
-                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value=""></button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Picknik</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn" type="button"  value="">Park Walk</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Swimming Pool</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Sauna</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">1 Bedroom Sharing</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Pool Tennis</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Pool Table </button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Archery</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Archery</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="">Archery</button></div>
+
+
+
+
+
+
+
+
+                </div>
+
+            </form>
+        
+
+            <!-- submit-->
+            <div class="formdiv submitdiv tourtypesubmitbtn">
+                <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+            </div>
+        
+            <!-- Or login  -->
+            <!-- <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>  -->
+            <!--login with Google or Email-->
+            <!-- <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>  -->
+            
+        </div>
+    </div>
+
+
+
+
+    <!-- Create Transport Type Offers for the Tour -->
+    <div class="formcontainer createtourstep5 wholetransportdiv tourstep">
+        <div class="tourtranportmeansdiv ">
+            <div class="loginheader"><h2>Transportation Means Type</h2></div>
+            <div class="loginheader tourtypeminiheader"><p>Transport Means/ Type </p></div>
+
+            <div class="mainerrormessage"></div>
+
+            <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
+                <!--Form errors go here   -->
+
+                <div class="tourtransportmeanscontainer"> 
+                    <div class="tourtransportmeansdiv">
+
+                        <div class="transportday">
+                            <div class="Dayonediv">
+                                <h2 class="dayonelabel">Day 1 </h2>
+
+                                <label class="pickupinputlabel" for="pickupselectid">Enter/Select Pickup Point</label>
+                                
+                                <div class="pickupselectdiv " >
+                                    <input class="transportselectinput " list="transportselectinput" placeholder= "Enter Destination" name="transportselectname">
+                                    <button type="button" class="transportselectcancelbtn" ><i class="fa-solid fa-x"></i></button>
+
+
+                                    <datalist class="pickupselect"  name="pickuppoint" id="pickupselectid">
+                                        <option class="transportselectoptions" value="nakuru">Within Nakuru </option>
+                                        <option class="transportselectoptions" value="nairobi">Within Nairobi </option>
+                                        <option class="transportselectoptions "value="kisumu">Within Kisumu </option>
+                                        <option class="transportselectoptions" value="mombasa"> Within Mombasa</option>
+                                        <option class="transportselectoptions" value="voi">Within Voi </option>
+                                        <option class="transportselectoptions" value="nanyuki">Within Nanyuki </option>
+                                        <option class="transportselectoptions" value="turkanana">Within Turkanana </option>
+                                        <option class="transportselectoptions" value="kilifi"> Within Kilifi</option>
+                                        <option class="transportselectoptions" value="trans-zoia">Within Tranz-Zoia</option>
+                                        <option class="transportselectoptions" value="narok">Within Narok </option>
+                                        <option class="transportselectoptions" value="lamu">Within Lamu </option>
+                                        <option class="transportselectoptions" value="kwale">Within  Kwale</option>
+                                        <option class="transportselectoptions" value="tanariver">Within Tana River  </option>
+                                        <option class="transportselectoptions" value="taitataveta"> Within Taita Taveta </option>
+                                        <option class="transportselectoptions" value="Meru ">Within Meru</option>
+                                        <option class="transportselectoptions" value="tharaka-niithi">Within Tharaka-Niithi </option>
+                                        <option class="transportselectoptions" value="kajiado">Within Kajiado </option>
+                                        <option class="transportselectoptions" value="uasin Gishu ">Within  Uasin Gishu</option>
+                                        <option class="transportselectoptions" value="elgeyo/Marakwet "> Within Elgeyo/Marakwet </option>
+                                        <option class="transportselectoptions" value="nandi">  Within  Nandi    </option>
+                                        <option class="transportselectoptions" value="baringo"> Within Baringo    </option>
+                                        <option  class="transportselectoptions"value="laikipia"> Within Laikipia   </option>
+                                        <option class="transportselectoptions" value="kericho">  Within Kericho   </option>
+                                        <option class="transportselectoptions" value="bomet">    Within Bomet   </option>
+                                        <option class="transportselectoptions" value="kakamega"> Within Kakamega   </option>
+                                        <option class="transportselectoptions" value="vihiga">   Within Vihiga   </option>
+                                        <option class="transportselectoptions" value="bungoma">  Within Bungoma   </option>
+                                        <option class="transportselectoptions" value="busia" >Within Busia </option>
+                                        <option class="transportselectoptions" value="siaya" >Within Siaya </option>
+                                        <option class="transportselectoptions" value="kisumu">Within Kisumu  </option>  
+                                        <option class="transportselectoptions" value="homa Bay">Within Homa Bay </option>
+                                        <option class="transportselectoptions" value="migori" >Within Migori </option>
+                                        <option class="transportselectoptions" value="kisii" >Within Kisii  </option>
+                                        <option class="transportselectoptions" value="nyamira">Within Nyamira </option> 
+                                        <option class="transportselectoptions" value="tana River">Within Tana River</option>
+                                        <option class="transportselectoptions" value="lamu ">Within Lamu</option>
+                                        <option class="transportselectoptions" value="garissa">Within Garissa </option>
+                                        <option class="transportselectoptions" value="wajir" >Within Wajir</option>
+                                        <option class="transportselectoptions" value="mandera">Within Mandera </option>
+                                        <option class="transportselectoptions" value="marsabit">Within Marsabit </option>
+                                        <option class="transportselectoptions" value="isiolo ">Within Isiolo</option>
+                                        <option class="transportselectoptions" value="embu" >Within Embu </option>
+                                        <option class="transportselectoptions" value="kitui "> Within Kitui</option>
+                                        <option class="transportselectoptions" value="Machakos">Within Machakos</option>                                    
+                                        <option class="transportselectoptions" value="Makueni">Within Makueni</option>                                    
+                                        <option class="transportselectoptions" value="Nyandarua">Within Nyandarua</option>                                    
+                                        <option class="transportselectoptions" value="Nyeri">Within Nyeri</option>                                    
+                                        <option class="transportselectoptions" value="Kirinyaga">Within Kirinyaga</option>                                    
+                                        <option class="transportselectoptions" value="Murang'a">Within Murang'a</option>                                    
+                                        <option class="transportselectoptions" value=" Kiambu">Within Kiambu</option>                                                                                    
+                                        <option class="transportselectoptions" value="West Pokot">Within West Pokot</option>                                    
+                                        <option class="transportselectoptions" value="Samburu">Within Samburu</option>   
+                                    </datalist>
+                                    <!-- <input class="pickupinput" type=""> -->
+                                    <!-- <button class="tourtransportmeansbtn"  type="button" value="bus">Bus</button></div> -->
+                                </div> 
+
+                            </div>
+                            <div class="addtransportday"><a href="#" > + Add another Day of Tour/Destination</a> </div>
+                        </div>
+                    </div>
+                                 
+                </div>
+                                 
+            </form>
+        
+
+            <!-- submit-->
+            <div class="formdiv submitdiv tourtypesubmitbtn">
+                <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+            </div>
+        
+            <!-- Or login  -->
+            <!-- <div class="logindivider">
+                <span class="divider">Or Login With</span>
+            </div>  -->
+            <!--login with Google or Email-->
+            <!-- <div class="logingroup">
+                <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+            </div>  -->
+            
+            
+
+
+        </div>
+    </div>
+
+
+ 
+
+
+        <!-- Create Transport Type Offers for the Tour -->
+        <div class="formcontainer createtourstep6 tourstep" >
+            <div class="touraccomodationdiv">
+                <div class="loginheader"><h2>Accomodation</h2></div>
+                <div class="loginheader tourtypeminiheader"><p>Accomodation Type </p></div>
+
+                <div class="mainerrormessage"></div>
+
+                <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
+                    <!--Form errors go here   -->
+
+                    <div class="touraccomodationcontainer" > 
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Hotel </button></div>
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Camps </button></div>
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Tents </button></div>
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Buffet</button></div>
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Break Fast </button></div>
+                        <div class="accomodationtypediv"><button class="accomodationtypebtn"  type="button" value="bus">Lunch </button></div>
+
+
+
+                    </div>
+
+                </form>
+            
+
+                <!-- submit-->
+                <div class="formdiv submitdiv tourtypesubmitbtn">
+                    <button class="submitbutton createtournextbtn" type="button">Next Step</button>
+                    <span class="spinning" style="background-color:yellow; "><i class="fas fa-spinner fa-pulse " style="color:green; font-size: x-large;"></i></span>
+                </div>
+            
+                <!-- Or login  -->
+                <!-- <div class="logindivider">
+                    <span class="divider">Or Login With</span>
+                </div>  -->
+                <!--login with Google or Email-->
+                <!-- <div class="logingroup">
+                    <div class="login emaillogin" ><a href="./vendorlogin.html" class="googleloginlink" >Email Login</a></div>
+                    <div class="login googlelogin"><a href="#" class="googleloginlink" ><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+                    <div class="login facebooklogin"><a href="#" class="facebookloginlink" ><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></div>
+
+                </div>  -->
+                
+            </div>
+        </div>
+
+
+
+    <!-- Create tour Features Offers for the Tour -->
+    <div class="formcontainer createtourstep7 tourstep " >
+        <div class="tourpricesdiv ">
+            <div class="loginheader"><h2>Add Tour/ Create New Tour Step 7</h2></div>
+            <div class="loginheader tourpricesminiheader"><p>Set Your Travel Prices</p></div>
+
+            <div class="mainerrormessage"></div>
+
+            <form  method="post" action="" enctype="multipart/form-data" id="imagesform"  >  
+                <!--Form errors go here   -->
+
+                <div class="tourtypeselectioncontainer"> 
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="breakfast">Breakfast</button></div>
+                    <div class="tourfeaturesdiv"><button class="tourfeaturesbtn"  type="button" value="pickup">Pickup </button></div>
+             
 
                 </div>
 
@@ -450,6 +687,7 @@
         </div>
     </div>
     
+    <!-- <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam alias quas tempore eum fugit est dolore, totam quam natus veritatis, suscipit soluta perspiciatis? Impedit excepturi fuga, maxime quae officiis autem.</div> -->
 <script src="../javascript/createtour.js"></script>
 </body>
 </html> 

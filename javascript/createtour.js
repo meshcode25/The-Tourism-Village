@@ -147,120 +147,262 @@ $(document).ready(function(){
     "mainsearchinput"
     
     //on submit function
-    $(".submitbutton").on("click", function (e){        
-      e.preventDefault();
-      
-        validateTournameInput();
-        validateTourSearch();
-        validateDatePicker();
-        validateTourDuration();
-        validateTravellersNumber();
-
-        // window.location.href="../pages/createtour.html"
-
-
-        if (!validateTournameInput() && !validateTourSearch() && !validateDatePicker() && !validateTourDuration() && !validateTravellersNumber() ) {
-            console.log("errors all around 1");
-            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
-             
-        }
-         else if (!validateTournameInput() || !validateTourSearch() || !validateDatePicker() || !validateTourDuration() || !validateTravellersNumber()) {
-            $(".mainerrormessage").html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
-            console.log("some Erorross heare and about");
-            
-        }
-        else {
-            console.log("Seems everything is Okayok");
-            $(".mainerrormessage").html("");
-            var form = $('.form')[0];
-            var data = new FormData(form);
-
-            
-            "tournameinput"
-            "date"
-            "tourdurationmaininput"
-            "travellersmaininput"
-            "mainsearchinput"
-            
-            data.append("tournameinput", $(".emailinput").val());
-            data.append( "date", $(".usernamelinput").val());
-            data.append("tourdurationmaininput", $(".passwordinput").val());
-            data.append( "travellersmaininput", $(".conpasswordinput").val());
-            data.append(   "mainsearchinput", $(".conpasswordinput").val());
-            
-
-            $.ajax({
-                type: "POST",
-                url:"http://localhost/www/php/index.php/signup",
-                data: data,
-                processData: false,
-                contentType: false,
-                cache: false,
-                async: false,
-
-                beforeSend:function () {
-                        $('.submitbutton').html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
-                        // $('.spinning').hide();
-                        $('.spinning').css({"color":"white"})
-                        // $('.submitbutton').html(``)
-                        $('.submitbutton').attr("disabled", true);
-                        $('.submitbutton').css({ "border-radius": "7.5px" });
-                },
-
-                success: function (response, status, xhr) {
-                    $('.mainerrormessage').html('<p style="bakckground-color:red"></p>');
-                    console.log(" sign up submit was  was successfull");
-                    console.log(response);
-                    console.log(status);
-                    console.log(xhr);
-
-
-                },
-
-
-
-                complete: function () {
-                    setTimeout(function () {
-                        $('.mainerrormessage').html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
-                        $('.form').trigger("reset");
-                        $('.submitbutton').html('Next Step ');
-                        $('.submitbutton').attr("disabled", false);
-                        $('.submitbutton').css({ "border-radius": "7.5px" });
-                        console.log( "and now here is the completed message from signup request")
-
-                        // $('.spinning').css({"display":"none"})
-
-
-
-
-
-                        
-                    console.log("successfully deliverd to the backend end now step 2 ")
-                    $(".createtourstep1").css({
-                        "display":"none",
-
-                    })
-                    $(".createtourstep2").css({
-                        "display":"none"
-                    })
-                    $(".createtourstep3").css({
-                        "display":"none"
-                    })
-
-                    
-                    $(".newtourstep1btn").removeClass("autofocus");
-
-                    $(".newtourstep2btn").addClass("autofocus");
-
-
-
-
-
-
-                    }, 500);
+    $(".submitbutton").each(function(index){
+        if(index==0){
+            $(this).on("click",function(e){
+                e.preventDefault();
+              
+                validateTournameInput();
+                validateTourSearch();
+                validateDatePicker();
+                validateTourDuration();
+                validateTravellersNumber();
+        
+                // window.location.href="../pages/createtour.html"
+        
+        
+                if (!validateTournameInput() && !validateTourSearch() && !validateDatePicker() && !validateTourDuration() && !validateTravellersNumber() ) {
+                    console.log("errors all around 1");
+                    $(`.mainerrormessage:eq(${index})`).html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required field</div>`);
+                     
                 }
-            });
+                 else if (!validateTournameInput() || !validateTourSearch() || !validateDatePicker() || !validateTourDuration() || !validateTravellersNumber()) {
+                    $(`.mainerrormessage:eq(${index})`).html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem"> Please fill out all the required fields</div>`);
+                    console.log("some Erorross heare and about");
+                    
+                }
+                else {
+                    console.log("Seems everything is Okayok");
+                    $(`.mainerrormessage:eq(${index})`).html("");
+                    var form = $('.form')[0];
+                    var data = new FormData(form);
+        
+                    
+                    "tournameinput"
+                    "date"
+                    "tourdurationmaininput"
+                    "travellersmaininput"
+                    "mainsearchinput"
+                    
+                    data.append("tournameinput", $(".emailinput").val());
+                    data.append( "date", $(".usernamelinput").val());
+                    data.append("tourdurationmaininput", $(".passwordinput").val());
+                    data.append( "travellersmaininput", $(".conpasswordinput").val());
+                    data.append(   "mainsearchinput", $(".conpasswordinput").val());
+                    
+        
+                    $.ajax({
+                        type: "POST",
+                        url:"http://localhost/www/php/index.php/signup",
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        async: false,
+        
+                        beforeSend:function () {
+                                $(`.submitbutton:eq(${index})`).html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
+                                // $('.spinning').hide();
+                                $('.spinning').css({"color":"white"})
+                                // $('.submitbutton').html(``)
+                                $(`.submitbutton:eq(${index})`).attr("disabled", true);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                        },
+        
+                        success: function (response, status, xhr) {
+                            $(`.mainerrormessage:eq(${index})` ).html('<p style="bakckground-color:red"></p>');
+                            console.log(" sign up submit was  was successfull");
+                            console.log(response);
+                            console.log(status);
+                            console.log(xhr);
+        
+        
+                        },
+        
+        
+        
+                        complete: function () {
+                            setTimeout(function () {
+                                $(`.mainerrormessage:eq(${index})` ).html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
+                                $('.form').trigger("reset");
+                                $(`.submitbutton:eq(${index})`).html('Next Step ');
+                                $(`.submitbutton:eq(${index})`).attr("disabled", false);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                                console.log( "and now here is the completed message from signup request")
+        
+                                // $('.spinning').css({"display":"none"})
+        
+        
+        
+                                
+                                console.log("here isthe index before molestations " + index)
+        
+                            $(".newtourbtn").each((i)=>{
+                                // console.log($(".submitbutton")) 
+                                    $(`.newtourbtn:eq(${i})`).removeClass("autofocus")
+                                    console.log("fuck they are not even close ")                                
+                                    // console.log($(".newtourbtn"))
+                                    // return false     
+                            })
+        
+                            $newindex=index + 1
+                            $(`.newtourbtn:eq(${$newindex})`).addClass("autofocus");
+            
+                                
+        
+                            $(".tourstep").each(function(i){
+                                $(this).css({
+                                    "display":"none",
+                                })
+                            })
+        
+                            $(`.tourstep:eq(${$newindex})`).css({
+                                "display":"block",
+        
+                            })
+                             
+                            
+        
+                            console.log($(".tourstep"))
+        
+                            }, 500);
+                        }
+                    });
+                }
+                })
         }
+        else if(index==1){
+            $(this).on("click",function(e){
+                e.preventDefault();
+              
+                validateImageContainer()
+        
+                // window.location.href="../pages/createtour.html"
+        
+        
+                if (!validateImageContainer()) {
+                    console.log("No Image Selected");
+                    $(`.mainerrormessage:eq(${index})`).html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem">*No Image Selected</div>`);
+                     
+                }
+                else {
+                    console.log("Seems everything is Okayok");
+                    $(`.mainerrormessage:eq(${index})`).html("");
+                    var form = $('.form')[0];
+                    var data = new FormData(form);
+        
+                    
+                    "tournameinput"
+                    "date"
+                    "tourdurationmaininput"
+                    "travellersmaininput"
+                    "mainsearchinput"
+                    
+                    data.append("tournameinput", $(".emailinput").val());
+                    data.append( "date", $(".usernamelinput").val());
+                    data.append("tourdurationmaininput", $(".passwordinput").val());
+                    data.append( "travellersmaininput", $(".conpasswordinput").val());
+                    data.append(   "mainsearchinput", $(".conpasswordinput").val());
+                    
+        
+                    $.ajax({
+                        type: "POST",
+                        url:"http://localhost/www/php/index.php/signup",
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        async: false,
+        
+                        beforeSend:function () {
+                                $(`.submitbutton:eq(${index})`).html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
+                                // $('.spinning').hide();
+                                $('.spinning').css({"color":"white"})
+                                // $('.submitbutton').html(``)
+                                $(`.submitbutton:eq(${index})`).attr("disabled", true);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                        },
+        
+                        success: function (response, status, xhr) {
+                            $(`.mainerrormessage:eq(${index})` ).html('<p style="bakckground-color:red"></p>');
+                            console.log(" sign up submit was  was successfull");
+                            console.log(response);
+                            console.log(status);
+                            console.log(xhr);
+                        },
+
+                        complete: function () {
+                            setTimeout(function () {
+                                $(`.mainerrormessage:eq(${index})` ).html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
+                                $('.form').trigger("reset");
+                                $(`.submitbutton:eq(${index})`).html('Next Step ');
+                                $(`.submitbutton:eq(${index})`).attr("disabled", false);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                                console.log( "and now here is the completed message from signup request")
+        
+                                // $('.spinning').css({"display":"none"})
+        
+        
+        
+                                
+                                console.log("here isthe index before molestations " + index)
+        
+                            $(".newtourbtn").each((i)=>{
+                                // console.log($(".submitbutton")) 
+                                    $(`.newtourbtn:eq(${i})`).removeClass("autofocus")
+                                    console.log("fuck they are not even close ")                                
+                                    // console.log($(".newtourbtn"))
+                                    // return false     
+                            })
+        
+                            $newindex=index + 1
+                            $(`.newtourbtn:eq(${$newindex})`).addClass("autofocus");
+            
+                                
+        
+                            $(".tourstep").each(function(i){
+                                $(this).css({
+                                    "display":"none",
+                                })
+                            })
+        
+                            $(`.tourstep:eq(${$newindex})`).css({
+                                "display":"block",
+        
+                            })
+                             
+                            
+        
+                            console.log($(".tourstep"))
+        
+                            }, 500);
+                        }
+                    });
+                }
+            })
+        }
+        else if(index==2){
+
+        }
+        else if(index==3){
+
+        }
+        else if(index==4){
+
+        }
+        else if(index==5){
+
+        }
+        else if(index==6){
+
+        }
+        else if(index==7){
+
+        }
+        
+        
+
+        
     });
     
 
@@ -348,8 +490,40 @@ $(document).ready(function(){
 
 
 
+    function ChangeCreateTourNav(){
+        $(".newtourbtn").each(function(i){
+            $(`.newtourbtn:eq(${i})`).removeClass("autofocus");
+        })
+        
+    }
+    
+
+    function SwitchCreateTourNav(){
+        $(".newtourbtn").each(function(i){      
+            $(this).on("click", ()=>{
+                ChangeCreateTourNav()
+                $(this).addClass("autofocus");
+
+                $(".tourstep").each(function(i){
+                    $(this).css({
+                        "display":"none",
+                    })
+                })
+
+                $(`.tourstep:eq(${i})`).css({
+                    "display":"block",
+
+                })
+            })
+        })
+        
+    }
 
 
+
+    SwitchCreateTourNav()
+
+    
 
 
 
@@ -1526,9 +1700,13 @@ $(document).ready(function(){
 
 
 // Step 2 file upload partyh of the step 2 create4 new tour 
+$imagevalidation=[]
 
 function uploadImages(){
     $(".uploadimagesinput").on("change", function(e){
+        
+        // console.log(index);
+
         $image=$(".uploadimagesinput")[0].files[0];
         console.log("here is the images, Image");
         console.log($image);
@@ -1539,6 +1717,7 @@ function uploadImages(){
         $imagetype=$imgtype[1];
         console.log($imagetype);
 
+        $imagevalidation=[]
         $imagetypesarray=["jpeg", "jpg", "png", "jpeg", "jpg", "svg", "jfif", "pjpeg", "pjp"];
 
         function validateimgtypes(){
@@ -1555,13 +1734,15 @@ function uploadImages(){
         $filereader=new FileReader();
         
         if($image.size>(1024*1024*10)){    
-            $(".mainerrormessage").html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Image ${image.name} Size is More than 10 MBs </div>`);
+            $(`.imageerror`).html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Image ${image.name} Size is More than 10 MBs </div>`);
         }
         else if(!validateimgtypes()){
             console.log(validateimgtypes())
-            $(".mainerrormessage").html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Invalid image type, only accepts  ".png , .jpeg, .jpg, .svg, .jfif, .pjpeg, .pjp</div>`);
+            $(`.imageerror`).html(`<div class="error mainerror" style="color:red; padding:0.5rem 0.2rem"> Invalid image type, only accepts  ".png , .jpeg, .jpg, .svg, .jfif, .pjpeg, .pjp</div>`);
         }
         else{
+            $(`.imageerror`).html("");
+
             // $filereader.onload=function(){
             $.previewimgdiv=document.createElement("div");
             let previewimg=document.createElement("img");
@@ -1616,8 +1797,13 @@ function uploadImages(){
             
             $.previewimgdiv.appendChild($.imguploadcancelbtn);
             
+            $imagevalidation.push($.previewimgdiv);
             $(".uploadedimagescontainer")[0].appendChild($.previewimgdiv);
-        // }
+            
+            console.log($(".uploadeimagescontainer").length)
+            console.log($(".uploadeimagescontainer"))
+            console.log($imagevalidation);
+            // }
         
 
         // $filereader.onerror=function (){
@@ -1632,6 +1818,20 @@ function uploadImages(){
 }
 
 uploadImages();
+
+
+function validateImageContainer(){
+    // console.log($("uploadedimagescontainer").length)
+    if($imagevalidation.length>0){
+        return true;
+    }
+    else{
+        // $("uploadedimagescontainer")
+        return false;
+    }
+    
+    
+}
 
 
 
@@ -1679,9 +1879,143 @@ typeOfTour()
 
 
 
+// Step 3 Select the type of tour/Travel of the step 2 create4 new tour 
+
+
+function featuresOfTour(){
+
+    $tourfeaturesarray=[];
+
+    $(".tourfeaturesbtn").each(function(index){
+        $(this).on("click", ()=>{
+            $tourfeaturevalue=$(this).attr("value");
+
+            if($(this).hasClass("activetourfeature")){
+                $(this).removeClass("activetourfeature")
+                $tourfeatureindex=$tourfeaturesarray.indexOf($tourfeaturevalue);
+                $tourfeaturesarray.splice($tourfeatureindex, 1)
+            }
+            else{
+                $(this).addClass("activetourfeature")
+                $tourfeaturesarray.push($tourfeaturevalue)
+            }
+
+            
+            $(this).css({
+                
+            }) 
+            console.log($tourfeaturesarray);
+            console.log($(this));
+            console.log($tourfeaturevalue)
+        })
+    })
+
+}
+
+featuresOfTour()
+
+
+// Step 5 Select  the type of Transportation means of the tour/Travel of 
+
+
+function transportmeansOfTour(){
+
+    $transportmeansarray=[];
+
+    $(".transportselectinput").each(function(index){
+        $(this).on("click", ()=>{
+            // console.log("here is the clickd on the input transprot ")
+            // $(".pickupselect").addClass("toggletransportselect");
+            
+            // console.log(e.target)
+            // $transportmeansvalue
+            $(".transportselectoptions").each(function(index){
+                $(this).on("click", ()=>{
+                    $transportmeansvalue=$(this).attr("value");
+
+                    $firstvaluecharacter=$transportmeansvalue.charAt(0).toUpperCase();
+                    $restofvaluecharacters=$transportmeansvalue.slice(1);
+
+                    $transportselectedvalue=$firstvaluecharacter + $restofvaluecharacters;
+                    console.log($transportselectedvalue);
+
+                    $(".transportselectinput").val($transportselectedvalue);
+                    // console.log($transportmeansvalue)
+                    $(".transportselectcancelbtn").addClass("transportcancelbtnshow")
+                    console.log("consoele this first ")
+                    console.log( $(".transportselectcancelbtn")) 
+
+                })
+            })
+
+            $(".transportselectcancelbtn").on("click", ()=>{
+                $(".transportselectinput").val("");
+                $(".transportselectcancelbtn").removeClass("transportcancelbtnshow")
+            })
+            
+            // console.log($transportmeansarray);
+            // console.log($(this));
+            // console.log($transportmeansvalue)
+        })
+
+        $(this).on("keyup", ()=>{
+            if($(".transportselectinput").val()==""){
+                $(".transportselectcancelbtn").removeClass("transportcancelbtnshow")
+            }else{
+                $(".transportselectcancelbtn").addClass("transportcancelbtnshow")
+            }
+        })
+
+    })
+
+    $(document).on("click", (e)=>{
+        // console.log($(".transportselectcancelbtn"))
+        
+        $(".transportselectinput")
+        console.log(e.target);
+        if($(".transportselectinput").is(e.target)){
+            $(".pickupselect").toggleClass("toggletransportselect");
+            console.log("here is the togllge from inputtransport")
+        }
+        else if($(".pickupselectdiv").is(e.target) || $(".pickupselectdiv").has(e.target).length==1){
+            
+            if($(".transportselectcancelbtn").is(e.target)){
+                $(".pickupselect").addClass("toggletransportselect");
+                console.log("here content for cancelbtntransport ")
+
+            }else if($(".transportselectoptions").is(e.target)){
+                console.log("transportselectoptions");
+                $(".pickupselect").removeClass("toggletransportselect");
+                
+            }
+            else{
+                $(".pickupselect").addClass("toggletransportselect");
+                console.log("here content for inside container but is options ")
+            }
+
+        }
+        else{
+            $(".pickupselect").removeClass("toggletransportselect");
+            console.log("here content Outside of whole container ")            
+        }
+
+    })
+
+    function replecateTourDurationDays(){
+        
+            $(".addtransportday").on("click", ()=>{
+        
+            })
+
+    }
 
 
 
+    replecateTourDurationDays()
+
+}
+
+transportmeansOfTour()
 
 
 
