@@ -382,10 +382,232 @@ $(document).ready(function(){
             })
         }
         else if(index==2){
-
+            $(this).on("click",function(e){
+                e.preventDefault();
+              
+                validateTourType();
+        
+                // window.location.href="../pages/createtour.html"
+        
+        
+                if (!validateTourType()) {
+                    console.log("errors all around 1");
+                    $(`.mainerrormessage:eq(${index})`).html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem; width:40%; margin:0 auto";> *Please Select Type of Tour/travel</div>`);
+                     
+                }
+                else {
+                    console.log("Seems everything is Okayok");
+                    $(`.mainerrormessage:eq(${index})`).html("");
+                    var form = $('.form')[0];
+                    var data = new FormData(form);
+        
+                    
+                    "tournameinput"
+                    "date"
+                    "tourdurationmaininput"
+                    "travellersmaininput"
+                    "mainsearchinput"
+                    
+                    data.append("tournameinput", $(".emailinput").val());
+                    data.append( "date", $(".usernamelinput").val());
+                    data.append("tourdurationmaininput", $(".passwordinput").val());
+                    data.append( "travellersmaininput", $(".conpasswordinput").val());
+                    data.append(   "mainsearchinput", $(".conpasswordinput").val());
+                    
+        
+                    $.ajax({
+                        type: "POST",
+                        url:"http://localhost/www/php/index.php/signup",
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        async: false,
+        
+                        beforeSend:function () {
+                                $(`.submitbutton:eq(${index})`).html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
+                                // $('.spinning').hide();
+                                $('.spinning').css({"color":"white"})
+                                // $('.submitbutton').html(``)
+                                $(`.submitbutton:eq(${index})`).attr("disabled", true);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                        },
+        
+                        success: function (response, status, xhr) {
+                            $(`.mainerrormessage:eq(${index})` ).html('<p style="bakckground-color:red"></p>');
+                            console.log(" sign up submit was  was successfull");
+                            console.log(response);
+                            console.log(status);
+                            console.log(xhr);
+        
+        
+                        },
+        
+        
+        
+                        complete: function () {
+                            setTimeout(function () {
+                                $(`.mainerrormessage:eq(${index})` ).html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
+                                $('.form').trigger("reset");
+                                $(`.submitbutton:eq(${index})`).html('Next Step ');
+                                $(`.submitbutton:eq(${index})`).attr("disabled", false);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                                console.log( "and now here is the completed message from signup request")
+        
+                                // $('.spinning').css({"display":"none"})
+        
+        
+        
+                                
+                                console.log("here isthe index before molestations " + index)
+        
+                            $(".newtourbtn").each((i)=>{
+                                // console.log($(".submitbutton")) 
+                                    $(`.newtourbtn:eq(${i})`).removeClass("autofocus")
+                                    console.log("fuck they are not even close ")                                
+                                    // console.log($(".newtourbtn"))
+                                    // return false     
+                            })
+        
+                            $newindex=index + 1
+                            $(`.newtourbtn:eq(${$newindex})`).addClass("autofocus");
+            
+                                
+        
+                            $(".tourstep").each(function(i){
+                                $(this).css({
+                                    "display":"none",
+                                })
+                            })
+        
+                            $(`.tourstep:eq(${$newindex})`).css({
+                                "display":"block",
+        
+                            })
+                             
+                            
+        
+                            console.log($(".tourstep"))
+        
+                            }, 500);
+                        }
+                    });
+                }
+                })
         }
         else if(index==3){
-
+            $(this).on("click",function(e){
+                e.preventDefault();
+              
+                tourFeaturesValidate();
+        
+                // window.location.href="../pages/createtour.html"
+        
+        
+                if (!tourFeaturesValidate()) {
+                    console.log("errors all around 1");
+                    $(`.mainerrormessage:eq(${index})`).html(`<div class="error mainerror" style="background-color:red; color:white; padding:0.5rem 0.2rem; width:60%; margin:0 auto";> *Please Select Features of Tour/travel</div>`);
+                     
+                }
+                else {
+                    console.log("Seems everything is Okayok");
+                    $(`.mainerrormessage:eq(${index})`).html("");
+                    var form = $('.form')[0];
+                    var data = new FormData(form);
+        
+                    
+                    "tournameinput"
+                    "date"
+                    "tourdurationmaininput"
+                    "travellersmaininput"
+                    "mainsearchinput"
+                    
+                    data.append("tournameinput", $(".emailinput").val());
+                    data.append( "date", $(".usernamelinput").val());
+                    data.append("tourdurationmaininput", $(".passwordinput").val());
+                    data.append( "travellersmaininput", $(".conpasswordinput").val());
+                    data.append(   "mainsearchinput", $(".conpasswordinput").val());
+                    
+        
+                    $.ajax({
+                        type: "POST",
+                        url:"http://localhost/www/php/index.php/signup",
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        async: false,
+        
+                        beforeSend:function () {
+                                $(`.submitbutton:eq(${index})`).html(`<i class="fas fa-spinner fa-pulse " style="color:white; font-size: x-large;"></i>`);
+                                // $('.spinning').hide();
+                                $('.spinning').css({"color":"white"})
+                                // $('.submitbutton').html(``)
+                                $(`.submitbutton:eq(${index})`).attr("disabled", true);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                        },
+        
+                        success: function (response, status, xhr) {
+                            $(`.mainerrormessage:eq(${index})` ).html('<p style="bakckground-color:red"></p>');
+                            console.log(" sign up submit was  was successfull");
+                            console.log(response);
+                            console.log(status);
+                            console.log(xhr);
+        
+        
+                        },
+        
+        
+        
+                        complete: function () {
+                            setTimeout(function () {
+                                $(`.mainerrormessage:eq(${index})` ).html('<p style="background-color:green; color:white padding:0.5rem 0.2rem >You have successfully Signed up, Thank you!</p>')
+                                $('.form').trigger("reset");
+                                $(`.submitbutton:eq(${index})`).html('Next Step ');
+                                $(`.submitbutton:eq(${index})`).attr("disabled", false);
+                                $(`.submitbutton:eq(${index})`).css({ "border-radius": "7.5px" });
+                                console.log( "and now here is the completed message from signup request")
+        
+                                // $('.spinning').css({"display":"none"})
+        
+        
+        
+                                
+                                console.log("here isthe index before molestations " + index)
+        
+                            $(".newtourbtn").each((i)=>{
+                                // console.log($(".submitbutton")) 
+                                    $(`.newtourbtn:eq(${i})`).removeClass("autofocus")
+                                    console.log("fuck they are not even close ")                                
+                                    // console.log($(".newtourbtn"))
+                                    // return false     
+                            })
+        
+                            $newindex=index + 1
+                            $(`.newtourbtn:eq(${$newindex})`).addClass("autofocus");
+            
+                                
+        
+                            $(".tourstep").each(function(i){
+                                $(this).css({
+                                    "display":"none",
+                                })
+                            })
+        
+                            $(`.tourstep:eq(${$newindex})`).css({
+                                "display":"block",
+        
+                            })
+                             
+                            
+        
+                            console.log($(".tourstep"))
+        
+                            }, 500);
+                        }
+                    });
+                }
+                })
         }
         else if(index==4){
 
@@ -1841,10 +2063,9 @@ function validateImageContainer(){
 // Step 3 Select the type of tour/Travel of the step 2 create4 new tour 
 
 
+$tourtypearray=[];
+
 function typeOfTour(){
-
-    $tourtypearray=[];
-
     $(".tourtypebtn").each(function(index){
         $(this).on("click", ()=>{
             $tourtypevalue=$(this).attr("value");
@@ -1855,6 +2076,8 @@ function typeOfTour(){
                 $tourtypearray.splice($tourtypeindex, 1)
             }
             else{
+                $(".tourtypeerror").html("");
+
                 $(this).addClass("activetourtype")
                 $tourtypearray.push($tourtypevalue)
             }
@@ -1874,17 +2097,23 @@ function typeOfTour(){
 typeOfTour()
 
 
-
+function validateTourType(){
+    if($tourtypearray.length>0){
+        return true
+    }
+    else{
+        return false 
+    }
+}
 
 
 
 
 // Step 3 Select the type of tour/Travel of the step 2 create4 new tour 
 
+$tourfeaturesarray=[];
 
 function featuresOfTour(){
-
-    $tourfeaturesarray=[];
 
     $(".tourfeaturesbtn").each(function(index){
         $(this).on("click", ()=>{
@@ -1898,6 +2127,7 @@ function featuresOfTour(){
             else{
                 $(this).addClass("activetourfeature")
                 $tourfeaturesarray.push($tourfeaturevalue)
+                $(".tourfeatureserror").html("")
             }
 
             
@@ -1914,7 +2144,15 @@ function featuresOfTour(){
 
 featuresOfTour()
 
-
+function tourFeaturesValidate(){
+    if($tourfeaturesarray.length>0){
+        return true;
+    }
+    else{
+        return false;
+    } 
+    
+}
 // Step 5 Select  the type of Transportation means of the tour/Travel of 
 
 

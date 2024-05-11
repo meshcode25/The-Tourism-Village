@@ -45,9 +45,11 @@ try{
 
     
     ECHO " SUCCESSFULLY CONNECTED TO THE DATABASE   ";
+    
 
 }catch(PDOException $e){
     echo "DATABASE CONNECTION FAILED   ". $e->getMessage(). "END OF DATABASE CONNECTION ERROR   ";
+    error_log("DATABASE CONNECTION FAILED   ". $e->getMessage(). "END OF DATABASE CONNECTION ERROR   ")
 
 }
 
@@ -73,11 +75,17 @@ require_once('./routes/router.php');
         // echo $array["email"]. "<br>";
         // echo $array["id"]. "<br>";
         echo "these are the params of the query string above and below    ". "<br>    ";
+        error_log("these are the params of the query string above and below  ")
         print_r($array);
     }else{
         $params=[];
+
         echo "the params are not set";
+        error_log("these are the params of the query string above and below  ")
+
     }
+
+    error_log("these are the params of the query string above and below  ")
 
     echo "this is the path of we got from the request string    ";
     new Routing(rtrim($path ?? '','/'), rtrim($par ?? ' ', '/'));
